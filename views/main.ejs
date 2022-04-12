@@ -1,0 +1,176 @@
+<!-- <HTML>
+
+    <HEAD>
+        <style>
+            .dropbtn {
+              background-color: #3498DB;
+              color: white;
+              padding: 16px;
+              font-size: 16px;
+              border: none;
+              cursor: pointer;
+            }
+            
+            .dropbtn:hover, .dropbtn:focus {
+              background-color: #2980B9;
+            }
+            
+            .dropdown {
+              position: relative;
+              display: inline-block;
+            }
+            
+            .dropdown-content {
+              display: none;
+              position: absolute;
+              background-color: #f1f1f1;
+              min-width: 160px;
+              overflow: auto;
+              box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+              z-index: 1;
+            }
+            
+            .dropdown-content a {
+              color: black;
+              padding: 5px 5px;
+              text-decoration: none;
+              display: block;
+            }
+            
+            .dropdown a:hover {background-color: #ddd;}
+            
+            .show {display: block;}
+            </style>
+    
+    <TITLE>Your Title Here</TITLE>
+    
+    </HEAD>
+    
+    <BODY BGCOLOR="FFFFFF">
+        
+    <HR>
+    
+    <a href="http://somegreatsite.com">Link Name</a>
+    
+    is a link to another nifty site
+    
+    <H1>This is a Header</H1>
+    
+    <H2>This is a Medium Header</H2>
+    
+    Send me mail at <a href="mailto:support@yourcompany.com">
+    
+    support@yourcompany.com</a>.
+    
+    <P> This is a new paragraph!
+    
+    <P> <B>This is a new paragraph!</B>
+    
+    <BR> <B><I>This is a new sentence without a paragraph break, in bold italics.</I></B>
+    
+    <HR>
+
+    <div class = "dropdown">
+        <form method="POST" action="/submit-form">
+            <button type="button" onclick="myFunction()" class="dropbtn">Accounts</button>
+
+            <input type="text" name="data" />
+            <input type="text" name="data2" />
+            <input type="text" name="data3" />
+
+            <div id="myDropdown" class ="dropdown-content">
+
+                <ul name="data4" id="accounts" multiple="multiple">
+                    <% for (var i = 0; i < accounts.length; i++) { %>
+                        <a><input type="checkbox" name="check" value="1" /> <%= accounts[i]  %></a>
+                    <% } %> 
+                </ul>
+            </div>
+
+            <input type="submit" />
+        </form>
+    </div>
+    <ul>
+        <% for (var i = 0; i < accounts.length; i++) { %>
+            <li> <%= accounts[i]  %> </li> 
+        <% } %> 
+    </ul>
+
+    <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+        
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+            //   if (openDropdown.classList.contains('show')) {
+            //     openDropdown.classList.remove('show');
+            //   }
+            }
+          }
+        }
+        </script>
+    
+    </BODY>
+    
+</HTML> -->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>IBM Engagement</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand">IBM University Engagement</a>
+        </div>
+    </nav>
+
+    <!-- FORM -->
+
+    <form method="POST" action="/submit-form">
+
+        <div class="input-group mt-2 ms-2 w-50 ">
+            <span class="input-group-text" id="basic-addon3">Twitter query: </span>
+            <input type="text" class="form-control" id="basic-url" name="query" aria-describedby="basic-addon3">
+            <input type="submit" class="btn btn-primary">
+
+        </div>
+
+    </form>
+
+    <div id="tweet_container" class="w-50 ms-2" style="overflow-y:scroll; height:800px;">
+        <div id="tweet" style="max-width: 50%; margin:auto"></div>
+    </div>
+
+    <!-- FORM END -->
+
+    <!-- broserify - for twitter widgets -->
+    <script src="../bundle.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
