@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"context"
+	"encoding/json"
 	"fmt"
 	"log"
 	"os"
@@ -29,6 +30,15 @@ func run_search(query string, retweets bool) {
 	}
 	defer f.Close()
 
+	f2, err := os.Create("data/raw_tweets.json")
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	defer f2.Close()
+	f2.WriteString(" { \"tweets\": {\n")
+
 	scraper := twitterscraper.New()
 	scraper.SetSearchMode(twitterscraper.SearchLatest)
 	// fmt.Printf("here...")
@@ -41,11 +51,11 @@ func run_search(query string, retweets bool) {
 		}
 		// tweet.
 
-		unixTimeUTC := time.Unix(tweet.Timestamp, 0) //gives unix time stamp in utc
+		// unixTimeUTC := time.Unix(tweet.Timestamp, 0) //gives unix time stamp in utc
 
-		unitTimeInRFC3339 := unixTimeUTC.Format(time.RFC3339) //
+		// unitTimeInRFC3339 := unixTimeUTC.Format(time.RFC3339) //
 
-		fmt.Printf("\nRT: %t Created at: %s\nName: %s\nText: %s\n\n\n", tweet.IsRetweet, unitTimeInRFC3339, tweet.Username, tweet.Text)
+		// fmt.Printf("\nRT: %t Created at: %s\nName: %s\nText: %s\n\n\n", tweet.IsRetweet, unitTimeInRFC3339, tweet.Username, tweet.Text)
 		// fmt.Println(tweet.IsRetweet)
 		tweets = append(tweets, tweet.ID)
 
@@ -53,9 +63,12 @@ func run_search(query string, retweets bool) {
 			log.Println(err)
 		}
 
-	}
+		toJson(tweet.Tweet, f2)
 
-	fmt.Printf("\n\n len = %d \n\n", len(tweets))
+	}
+	f2.WriteString("\"0\":0\n}}")
+
+	// fmt.Printf("\n\n len = %d \n\n", len(tweets))
 }
 
 func fetch(query string) {
@@ -153,6 +166,17 @@ func query_all() {
 	}
 
 	file.Close()
+
+}
+
+func toJson(tweet twitterscraper.Tweet, fp *os.File) {
+
+	e, err := json.MarshalIndent(tweet, "", " ")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fp.WriteString("\"" + tweet.ID + "\":" + string(e) + ",\n")
 
 }
 
