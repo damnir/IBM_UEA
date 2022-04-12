@@ -8,7 +8,7 @@ var body_parser = require("body-parser")
 
 app.use(express.static('public'))
 
-var accounts = ['uon', 'uob', 'uos']
+var accounts = read_accounts()
 
 
 app.set('view engine', 'ejs')
@@ -65,6 +65,19 @@ function read_result() {
     }
 
     return data
+}
+
+function read_accounts() {
+
+    var accounts = ""
+    
+    try {
+        accounts = fs.readFileSync('data/accounts.txt', 'utf8')
+    } catch (err) {
+        console.error(err)
+    }
+
+    return accounts.split('\n')
 }
 
 app.listen(8080, () => console.log("listening on 8080"))
