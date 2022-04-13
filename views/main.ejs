@@ -28,8 +28,9 @@
       <div class="col">
         <form method="POST" action="/submit-form">
 
+          <h4 class="ms-2">Twitter Feed (recent)</h4>
           <div class="input-group mt-2 ms-2 w-100 ">
-            <span class="input-group-text" id="basic-addon3">Twitter query: </span>
+            <span class="input-group-text" id="basic-addon3">Custom Query: </span>
             <input type="text" class="form-control" id="basic-url" name="query" aria-describedby="basic-addon3">
             <input type="submit" class="btn btn-primary">
 
@@ -42,33 +43,68 @@
         </div>
       </div>
       <div class="col">
+        <h4>Query Builder</h4>
         <div class="dropdown mt-2">
           <button class="btn btn-secondary dropdown-toggle w-100" type="button" id="dropdownMenuButton1"
             data-bs-toggle="dropdown" aria-expanded="false">
             Accounts
           </button>
           <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton1">
+
+            <div class="row row-cols-1 row-cols-lg-3 g-2 g-lg-3 ms-4">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                <label class="form-check-label" for="flexCheckDefault">
+                  Official Accounts
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                <label class="form-check-label" for="flexCheckDefault">
+                  Russel Group
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                <label class="form-check-label" for="flexCheckDefault">
+                  Related (extended)
+                </label>
+              </div>
+              
+
+            </div>
+
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
             <% for (var i=0; i < accounts.length-2; i+=3) { %>
-              <div class="row row-cols-2 row-cols-lg-3 g-2 g-lg-3">
+              <div class="row row-cols-2 row-cols-lg-3 g-2 g-lg-3 ms-2">
                 <div class="col">
                   <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                    <label class="form-check-label" for="flexSwitchCheckChecked"> <%= accounts[i] %>
+                    <input class="form-check-input" type="checkbox" role="switch" id=<%=accounts[i] %> checked>
+                    <label class="form-check-label" for="flexSwitchCheckChecked">
+                      <%= accounts[i] %>
                     </label>
                   </div>
                 </div>
                 <div class="col">
                   <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                    <label class="form-check-label" for="flexSwitchCheckChecked"><%= accounts[i+1] %></label>
+                    <input class="form-check-input" type="checkbox" role="switch" id=<%=accounts[i+1] %> checked>
+                    <label class="form-check-label" for="flexSwitchCheckChecked">
+                      <%= accounts[i+1] %>
+                    </label>
                   </div>
                 </div>
                 <div class="col">
                   <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                    <label class="form-check-label" for="flexSwitchCheckChecked"><%= accounts[i+2] %></label>
+                    <input class="form-check-input" type="checkbox" role="switch" id=<%=accounts[i+2] %> checked>
+                    <label class="form-check-label" for="flexSwitchCheckChecked">
+                      <%= accounts[i+2] %>
+                    </label>
                   </div>
-                </div>      
+                </div>
               </div>
               <% } %>
           </ul>
@@ -99,6 +135,12 @@
               <label class="form-check-label" for="flexSwitchCheckChecked">Include Mentions</label>
             </div>
           </div>
+
+          <label for="start">Timeline <label class="fst-italic">( from - until )</label>: </label>
+
+          <input type="date" id="start" name="trip-start" value="2018-07-22">
+          <input type="date" id="end" name="trip-end" value="2018-07-22">
+
           <button type="button" class="btn btn-primary ms-2">Submit</button>
 
         </div>

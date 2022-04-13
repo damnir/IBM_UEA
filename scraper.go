@@ -59,6 +59,10 @@ func run_search(query string, retweets bool) {
 		// fmt.Println(tweet.IsRetweet)
 		tweets = append(tweets, tweet.ID)
 
+		// if _, err := f.WriteString("ID: " + tweet.ID + " Text: " + tweet.Text + "\n"); err != nil {
+		// 	log.Println(err)
+		// }
+
 		if _, err := f.WriteString(tweet.ID + "\n"); err != nil {
 			log.Println(err)
 		}
