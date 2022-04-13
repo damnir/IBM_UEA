@@ -1,0 +1,130 @@
+{
+  "status": 200,
+  "statusText": "OK",
+  "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-allow-methods": "GET, PUT, POST, DELETE, OPTIONS",
+    "cache-control": "no-cache, no-store, no-transform, max-age=0",
+    "pragma": "no-cache",
+    "expires": "0",
+    "x-content-type-options": "nosniff",
+    "x-xss-protection": "1",
+    "content-security-policy": "default-src 'none'",
+    "access-control-allow-headers": "Origin, Content-Type, Content-Length, Accept, X-Watson-Authorization-Token, X-WDC-PL-OPT-OUT, X-Watson-UserInfo, X-Watson-Learning-Opt-Out, X-Watson-Metadata",
+    "content-type": "application/json;charset=utf-8",
+    "content-length": "859",
+    "strict-transport-security": "max-age=31536000; includeSubDomains;",
+    "x-dp-watson-tran-id": "ba618df4-4311-472d-9c32-8dff85c3fbeb",
+    "x-request-id": "ba618df4-4311-472d-9c32-8dff85c3fbeb",
+    "x-global-transaction-id": "ba618df4-4311-472d-9c32-8dff85c3fbeb",
+    "server": "watson-gateway",
+    "x-edgeconnect-midmile-rtt": "92",
+    "x-edgeconnect-origin-mex-latency": "355",
+    "date": "Wed, 13 Apr 2022 18:54:31 GMT",
+    "connection": "close",
+    "vary": "Accept-Encoding"
+  },
+  "result": {
+    "matching_results": 1,
+    "session_token": "1_nfp5lJzp1W9YwCB4_cqS6f8WLa",
+    "results": [
+      {
+        "id": "49a040f2ff5f2d46d98dc210a23d9188",
+        "result_metadata": {
+          "confidence": 0.08408220853860772,
+          "score": 1
+        },
+        "extracted_metadata": {
+          "sha1": "4d7193e113bef712d92b15d0f79b25342af5cfd4",
+          "filename": "raw_tweets.json",
+          "file_type": "json"
+        },
+        "text": "Students have previously worked at industry giants like IBM, Microsoft and BT but wherever you end up, you’ll be paid a salary during your year in industry. Our placement team set up everything, plus they'll stay in touch throughout the year to give you any support you need.",
+        "enriched_text": {
+          "entities": [
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "BT",
+              "relevance": 0.922942,
+              "type": "Company"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "IBM",
+              "relevance": 0.840767,
+              "type": "Company",
+              "disambiguation": {
+                "subtype": [
+                  "SoftwareLicense",
+                  "OperatingSystemDeveloper",
+                  "ProcessorManufacturer",
+                  "SoftwareDeveloper",
+                  "CompanyFounder",
+                  "ProgrammingLanguageDesigner",
+                  "ProgrammingLanguageDeveloper"
+                ],
+                "name": "IBM",
+                "dbpedia_resource": "http://dbpedia.org/resource/IBM"
+              }
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "Microsoft",
+              "relevance": 0.726509,
+              "type": "Company",
+              "disambiguation": {
+                "subtype": [
+                  "OperatingSystemDeveloper",
+                  "ProcessorManufacturer",
+                  "SoftwareDeveloper",
+                  "VentureFundedCompany",
+                  "VideoGameDeveloper",
+                  "VideoGamePublisher",
+                  "ProgrammingLanguageDesigner"
+                ],
+                "name": "Microsoft",
+                "dbpedia_resource": "http://dbpedia.org/resource/Microsoft"
+              }
+            }
+          ],
+          "concepts": [
+            {
+              "text": "Industry",
+              "relevance": 0.9044,
+              "dbpedia_resource": "http://dbpedia.org/resource/Industry"
+            }
+          ],
+          "categories": [
+            {
+              "score": 0.935168,
+              "label": "/technology and computing/operating systems"
+            },
+            {
+              "score": 0.783105,
+              "label": "/business and industrial/paper industry"
+            },
+            {
+              "score": 0.782914,
+              "label": "/technology and computing/hardware/computer"
+            }
+          ]
+        }
+      }
+    ],
+    "retrieval_details": {
+      "document_retrieval_strategy": "untrained"
+    }
+  }
+}
