@@ -23,7 +23,7 @@ const listCollectionsParams = {
 //tweet test 2
 const queryParams = {
     environmentId: '44c46920-a956-4d4a-b37e-3120a33f7216',
-    collectionId: 'e86e2de7-65f6-41fb-a627-d98d47f629dc',
+    collectionId: file.collectionid,
     count: '25'
 };
 
@@ -72,7 +72,7 @@ function add_documents() {
     data.forEach(val => {
         var addDocumentParams = {
             environmentId: '44c46920-a956-4d4a-b37e-3120a33f7216',
-            collectionId: 'db22f816-2a5e-4d82-a186-d005cdc2eee9',
+            collectionId: file.collectionid,
             file: fs.createReadStream('./data/query_result/' + val + '.json')
         }
 
@@ -90,14 +90,6 @@ function add_documents() {
             });
     }
 }
-
-module.exports = {
-    query
-}
-
-// add_documents()
-// delete_documents()
-// query()
 
 function refresh_collection() {
 
@@ -140,9 +132,11 @@ function refresh_collection() {
             console.log('error:', err);
         });
     }
-
-
-
 }
 
-refresh_collection()
+module.exports = {
+    query
+}
+
+// add_documents()
+// query()
