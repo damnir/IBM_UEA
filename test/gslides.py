@@ -68,35 +68,35 @@ def main():
         print(x)
         
     requests = [
-        # {
-        #     'createSlide': {
-        #         'objectId': "my5rdpage",
-        #         'insertionIndex': '2',
-        #         'slideLayoutReference': {
-        #             'predefinedLayout': 'TITLE_AND_TWO_COLUMNS'
-        #         }
-        #     }
-        # },
         {
-            'replaceAllText': {
-                'pageObjectIds': ["my4rdpage"],
-                'containsText': {
-                    'text': '{{text1}}',
-                    'matchCase': False
-                },
-                'replaceText': "poo"
-            }
-        },
-        {
-            'createImage': {
-                'url': 'https://pbs.twimg.com/media/FQMNYMdWYAEi-Tq?format=jpg&name=small',
-                'elementProperties' : {
-                    'pageObjectId': "my4rdpage",
-                    'size': obj['size'],
-                    'transform': obj['transform']
+            'createSlide': {
+                'objectId': "main_slide",
+                'insertionIndex': '1',
+                'slideLayoutReference': {
+                    'predefinedLayout': 'TITLE_AND_TWO_COLUMNS'
                 }
             }
         }
+        # {
+        #     'replaceAllText': {
+        #         'pageObjectIds': ["my4rdpage"],
+        #         'containsText': {
+        #             'text': '{{text1}}',
+        #             'matchCase': False
+        #         },
+        #         'replaceText': "poo"
+        #     }
+        # },
+        # {
+        #     'createImage': {
+        #         'url': 'https://pbs.twimg.com/media/FQMNYMdWYAEi-Tq?format=jpg&name=small',
+        #         'elementProperties' : {
+        #             'pageObjectId': "my4rdpage",
+        #             'size': obj['size'],
+        #             'transform': obj['transform']
+        #         }
+        #     }
+        # }
     ]
 
     # If you wish to populate the slide with elements,

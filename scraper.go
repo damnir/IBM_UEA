@@ -3,7 +3,9 @@ package main
 import (
 	"bufio"
 	"context"
+	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"log"
 	"os"
 	"strings"
@@ -37,7 +39,7 @@ func run_search(query string, retweets bool) {
 	// fmt.Printf("sending... %s\n\n", query)
 
 	for tweet := range scraper.WithDelay(1).SearchTweets(context.Background(),
-		query, 25) { //50 limit
+		query, 15) { //50 limit
 		if tweet.Error != nil {
 			panic(tweet.Error)
 		}
@@ -59,15 +61,16 @@ func run_search(query string, retweets bool) {
 			log.Println(err)
 		}
 
-		f2, err := os.Create("data/query_result/" + tweet.ID + ".json")
+		// f2, err := os.Create("data/query_result/" + tweet.ID + ".json")
 
-		if err != nil {
-			log.Fatal(err)
-		}
+		// if err != nil {
+		// 	log.Fatal(err)
+		// }
 
-		defer f2.Close()
+		// defer f2.Close()
 
-		toJson(tweet.Tweet, f2)
+		// toJson(tweet.Tweet, f2)
+		toJson(tweet.Tweet)
 
 	}
 
@@ -171,7 +174,14 @@ func query_all() {
 
 }
 
-func toJson(tweet twitterscraper.Tweet, fp *os.File) {
+type TweetCompact struct {
+	T_id   string `json:"id"`
+	Name   string `json:"name"`
+	ImgUrl string `json:"url"`
+	Text   string `json:"text"`
+}
+
+func toJson(tweet twitterscraper.Tweet) {
 
 	// e, err := json.MarshalIndent(tweet, "", " ")
 	// if err != nil {
@@ -182,8 +192,32 @@ func toJson(tweet twitterscraper.Tweet, fp *os.File) {
 	var text = tweet.Text
 	text = strings.Replace(text, "\n", " *nl* ", -1)
 
-	fp.WriteString("{\"tweet_id\":" + "\"" + tweet.ID + "\"" + ",\n\"text\":" + "\"" + text + "\"\n}")
+	// if len(tweet.Photos) >= 1 {
+	// 	fp.WriteString("{\"tweet_id\":" + "\"" + tweet.ID + "\"" + ",\n\"image\":" + "\"" + tweet.Photos[0] + "\"" + ",\n\"text\":" + "\"" + text + "\"\n}")
+	// } else {
+	// 	fp.WriteString("{\"tweet_id\":" + "\"" + tweet.ID + "\"" + ",\n\"text\":" + "\"" + text + "\"\n}")
+	// }
 
+	var photo_url = ""
+
+	if len(tweet.Photos) >= 1 {
+		photo_url = tweet.Photos[0]
+	}
+
+	data := &TweetCompact{
+		T_id:   tweet.ID,
+		Name:   tweet.Username,
+		ImgUrl: photo_url,
+		Text:   text,
+	}
+
+	// println(data.T_id)
+	// println(data.text)
+
+	out, _ := json.MarshalIndent(data, "", " ")
+	println(string(out))
+
+	_ = ioutil.WriteFile("data/query_result/"+tweet.ID+".json", out, 0644)
 }
 
 func main() {
