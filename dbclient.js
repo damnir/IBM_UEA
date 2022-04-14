@@ -3,9 +3,6 @@ var url = "mongodb://localhost:27017/";
 
 var dbclient
 
-
-
-
 function createCollection() {
     var dbo = db.db("mydb");
     dbo.createCollection("watson_response", function (err, res) {

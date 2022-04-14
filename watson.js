@@ -16,39 +16,9 @@ const discovery = new DiscoveryV1({
     serviceUrl: 'https://api.eu-gb.discovery.watson.cloud.ibm.com/instances/57273055-1496-469a-8c45-5fdf421f711b',
 });
 
-// discovery.listEnvironments()
-//     .then(listEnvironmentsResponse => {
-//         console.log(JSON.stringify(listEnvironmentsResponse, null, 2));
-//     })
-//     .catch(err => {
-//         console.log('error:', err);
-//     });
-
 const listCollectionsParams = {
     environmentId: '44c46920-a956-4d4a-b37e-3120a33f7216',
 };
-
-// discovery.listCollections(listCollectionsParams)
-//     .then(listCollectionsResponse => {
-//         console.log(JSON.stringify(listCollectionsResponse, null, 2));
-//     })
-//     .catch(err => {
-//         console.log('error:', err);
-//     });
-
-// discovery.queryLog()
-//     .then(logQueryResponse => {
-//         console.log(JSON.stringify(logQueryResponse, null, 2));
-//     })
-//     .catch(err => {
-//         console.log('error:', err);
-//     });
-
-//tweet test 1
-// const queryParams = {
-//     environmentId: '44c46920-a956-4d4a-b37e-3120a33f7216',
-//     collectionId: '644da777-16be-47f9-bbfa-378bcda1a0e7',
-// };
 
 //tweet test 2
 const queryParams = {
@@ -56,7 +26,6 @@ const queryParams = {
     collectionId: 'e86e2de7-65f6-41fb-a627-d98d47f629dc',
     count: '25'
 };
-
 
 function query() {
     var db = require('./dbclient')
@@ -122,31 +91,6 @@ function add_documents() {
     }
 }
 
-function delete_documents() {
-
-    data = get_docs_id()
-
-    data.forEach(val => {
-        var deleteDocsParams = {
-            environmentId: '44c46920-a956-4d4a-b37e-3120a33f7216',
-            collectionId: 'db22f816-2a5e-4d82-a186-d005cdc2eee9',
-            doc_name: (val + ".json")
-        }
-
-        deleteRequest(deleteDocsParams)
-    })
-
-    function deleteRequest(params) {
-        discovery.deleteDocument(params)
-            .then(deleteDocumentResponse => {
-                console.log(JSON.stringify(deleteDocumentResponse, null, 2));
-            })
-            .catch(err => {
-                console.log('error:', err);
-            });
-    }
-}
-
 module.exports = {
     query
 }
@@ -171,16 +115,19 @@ function refresh_collection() {
     discovery.deleteCollection(deleteCollectionParams)
         .then(deleteCollectionResponse => {
             console.log(JSON.stringify(deleteCollectionResponse, null, 2));
+            createNewCollection(createCollectionParams)
         })
         .catch(err => {
             console.log('error:', err);
         });
 
-    discovery.createCollection(createCollectionParams)
+    function createNewCollection(params)
+    {
+        discovery.createCollection(params)
         .then(collection => {
             console.log(JSON.stringify(collection, null, 2));
 
-            file.collectionid = collection.collection_id
+            file.collectionid = collection.result.collection_id
 
             fs.writeFile(fileName, JSON.stringify(file, null, 2), function writeJSON(err) {
                 if (err) return console.log(err);
@@ -192,8 +139,10 @@ function refresh_collection() {
         .catch(err => {
             console.log('error:', err);
         });
+    }
+
+
 
 }
 
 refresh_collection()
-
