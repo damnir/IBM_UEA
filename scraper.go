@@ -3,7 +3,6 @@ package main
 import (
 	"bufio"
 	"context"
-	"encoding/json"
 	"fmt"
 	"log"
 	"os"
@@ -30,14 +29,7 @@ func run_search(query string, retweets bool) {
 	}
 	defer f.Close()
 
-	f2, err := os.Create("data/raw_tweets.json")
-
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	defer f2.Close()
-	f2.WriteString(" { \"tweets\": {\n")
+	// f2.WriteString(" { \"tweets\": {\n")
 
 	scraper := twitterscraper.New()
 	scraper.SetSearchMode(twitterscraper.SearchLatest)
@@ -67,12 +59,18 @@ func run_search(query string, retweets bool) {
 			log.Println(err)
 		}
 
+		f2, err := os.Create("data/query_result/" + tweet.ID + ".json")
+
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		defer f2.Close()
+
 		toJson(tweet.Tweet, f2)
 
 	}
-	f2.WriteString("\"0\":0\n}}")
 
-	// fmt.Printf("\n\n len = %d \n\n", len(tweets))
 }
 
 func fetch(query string) {
@@ -175,12 +173,16 @@ func query_all() {
 
 func toJson(tweet twitterscraper.Tweet, fp *os.File) {
 
-	e, err := json.MarshalIndent(tweet, "", " ")
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	fp.WriteString("\"" + tweet.ID + "\":" + string(e) + ",\n")
+	// e, err := json.MarshalIndent(tweet, "", " ")
+	// if err != nil {
+	// 	fmt.Println(err)
+	// 	return
+	// }
+	// fp.WriteString(string(e))
+	var text = tweet.Text
+	text = strings.Replace(text, "\n", " *nl* ", -1)
+
+	fp.WriteString("{\"id\":" + "\"" + tweet.ID + "\"" + ",\n\"text\":" + "\"" + text + "\"\n}")
 
 }
 

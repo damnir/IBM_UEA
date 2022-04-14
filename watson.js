@@ -49,10 +49,13 @@ const listCollectionsParams = {
 //tweet test 2
 const queryParams = {
     environmentId: '44c46920-a956-4d4a-b37e-3120a33f7216',
-    collectionId: '15c212fe-247c-43a7-9f7e-7bb634ae185f',
+    collectionId: 'e86e2de7-65f6-41fb-a627-d98d47f629dc',
+    count: '25'
 };
 
-discovery.query(queryParams)
+
+function query() {
+    discovery.query(queryParams)
     .then(queryResponse => {
         response = JSON.stringify(queryResponse, null, 2)
         console.log(response);
@@ -68,3 +71,11 @@ discovery.query(queryParams)
     .catch(err => {
         console.log('error:', err);
     });
+}
+
+module.exports = {
+    query
+}
+
+query()
+
