@@ -80,4 +80,10 @@ function read_accounts() {
     return accounts.split('\n')
 }
 
+var dbclient = require('./dbclient')
+var watsonclient = require('./watson')
+
+// dbclient.pushNewWatson(watsonclient.query())
+watsonclient.query()
+
 app.listen(8080, () => console.log("listening on 8080"))

@@ -13,20 +13,20 @@
     "access-control-allow-headers": "Origin, Content-Type, Content-Length, Accept, X-Watson-Authorization-Token, X-WDC-PL-OPT-OUT, X-Watson-UserInfo, X-Watson-Learning-Opt-Out, X-Watson-Metadata",
     "content-type": "application/json;charset=utf-8",
     "strict-transport-security": "max-age=31536000; includeSubDomains;",
-    "x-dp-watson-tran-id": "bc097a85-4862-4ddc-aff3-8f41425f9a30",
-    "x-request-id": "bc097a85-4862-4ddc-aff3-8f41425f9a30",
-    "x-global-transaction-id": "bc097a85-4862-4ddc-aff3-8f41425f9a30",
+    "x-dp-watson-tran-id": "f0c270f1-870b-4a14-9f2a-8e634af053a2",
+    "x-request-id": "f0c270f1-870b-4a14-9f2a-8e634af053a2",
+    "x-global-transaction-id": "f0c270f1-870b-4a14-9f2a-8e634af053a2",
     "server": "watson-gateway",
     "content-length": "10120",
-    "x-edgeconnect-midmile-rtt": "88",
-    "x-edgeconnect-origin-mex-latency": "432",
-    "date": "Wed, 13 Apr 2022 23:28:48 GMT",
+    "x-edgeconnect-midmile-rtt": "95",
+    "x-edgeconnect-origin-mex-latency": "444",
+    "date": "Thu, 14 Apr 2022 13:46:23 GMT",
     "connection": "close",
     "vary": "Accept-Encoding"
   },
   "result": {
     "matching_results": 25,
-    "session_token": "1_nfp5lJzp1W9JBFI5oO6zaR6sbi",
+    "session_token": "1_nfp5lJzp1W9UT2m3oO6zaR6sbi",
     "results": [
       {
         "id": "49a040f2ff5f2d46d98dc210a23d9188",

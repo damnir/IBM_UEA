@@ -3,6 +3,10 @@ const { IamAuthenticator } = require('ibm-watson/auth');
 const fs = require('fs')
 
 var response = ""
+var collectionId = ""
+
+const fileName = './data/watson_api.json';
+const file = require(fileName);
 
 const discovery = new DiscoveryV1({
     version: '2020-08-27',
@@ -55,27 +59,141 @@ const queryParams = {
 
 
 function query() {
+    var db = require('./dbclient')
     discovery.query(queryParams)
-    .then(queryResponse => {
-        response = JSON.stringify(queryResponse, null, 2)
-        console.log(response);
+        .then(queryResponse => {
+            response = JSON.stringify(queryResponse, null, 2)
+            console.log(response);
 
-        fs.writeFile('./data/watson_response.json', response, err => {
-            if (err) {
-              console.error(err)
-              return
-            }
-            //file written successfully
-          })
+            fs.writeFile('./data/watson_response.json', response, err => {
+                if (err) {
+                    console.error(err)
+                    return
+                }
+                //file written successfully
+            })
+
+            db.pushNewWatson(JSON.parse(response))
+        })
+        .catch(err => {
+            console.log('error:', err);
+        });
+
+}
+
+function get_docs_id() {
+    var data = []
+    try {
+
+        data = fs.readFileSync('data/query_result.txt', 'utf8')
+        // fs.unlink("data/query_result.txt", () => {})
+        // console.log(data)
+    } catch (err) {
+        console.error(err)
+        return
+    }
+
+    return data.split('\n')
+}
+
+function add_documents() {
+
+    data = get_docs_id()
+
+    data.forEach(val => {
+        var addDocumentParams = {
+            environmentId: '44c46920-a956-4d4a-b37e-3120a33f7216',
+            collectionId: 'db22f816-2a5e-4d82-a186-d005cdc2eee9',
+            file: fs.createReadStream('./data/query_result/' + val + '.json')
+        }
+
+        addRequest(addDocumentParams)
     })
-    .catch(err => {
-        console.log('error:', err);
-    });
+
+    function addRequest(params) {
+        discovery.addDocument(params)
+            .then(documentAccepted => {
+                const resnponse = documentAccepted.result;
+                console.log(JSON.stringify(resnponse, null, 2));
+            })
+            .catch(err => {
+                console.log('error:', err);
+            });
+    }
+}
+
+function delete_documents() {
+
+    data = get_docs_id()
+
+    data.forEach(val => {
+        var deleteDocsParams = {
+            environmentId: '44c46920-a956-4d4a-b37e-3120a33f7216',
+            collectionId: 'db22f816-2a5e-4d82-a186-d005cdc2eee9',
+            doc_name: (val + ".json")
+        }
+
+        deleteRequest(deleteDocsParams)
+    })
+
+    function deleteRequest(params) {
+        discovery.deleteDocument(params)
+            .then(deleteDocumentResponse => {
+                console.log(JSON.stringify(deleteDocumentResponse, null, 2));
+            })
+            .catch(err => {
+                console.log('error:', err);
+            });
+    }
 }
 
 module.exports = {
     query
 }
 
-query()
+// add_documents()
+// delete_documents()
+// query()
+
+function refresh_collection() {
+
+    var deleteCollectionParams = {
+        environmentId: file.envid,
+        collectionId: file.collectionid
+    }
+
+    var createCollectionParams = {
+        environmentId: file.envid,
+        name: 'tweet_analysis',
+        language: 'en',
+    };
+
+    discovery.deleteCollection(deleteCollectionParams)
+        .then(deleteCollectionResponse => {
+            console.log(JSON.stringify(deleteCollectionResponse, null, 2));
+        })
+        .catch(err => {
+            console.log('error:', err);
+        });
+
+    discovery.createCollection(createCollectionParams)
+        .then(collection => {
+            console.log(JSON.stringify(collection, null, 2));
+
+            file.collectionid = collection.collection_id
+
+            fs.writeFile(fileName, JSON.stringify(file, null, 2), function writeJSON(err) {
+                if (err) return console.log(err);
+                console.log(JSON.stringify(file));
+                console.log('writing to ' + fileName);
+            });
+
+        })
+        .catch(err => {
+            console.log('error:', err);
+        });
+
+}
+
+refresh_collection()
 

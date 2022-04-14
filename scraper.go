@@ -182,7 +182,7 @@ func toJson(tweet twitterscraper.Tweet, fp *os.File) {
 	var text = tweet.Text
 	text = strings.Replace(text, "\n", " *nl* ", -1)
 
-	fp.WriteString("{\"id\":" + "\"" + tweet.ID + "\"" + ",\n\"text\":" + "\"" + text + "\"\n}")
+	fp.WriteString("{\"tweet_id\":" + "\"" + tweet.ID + "\"" + ",\n\"text\":" + "\"" + text + "\"\n}")
 
 }
 
