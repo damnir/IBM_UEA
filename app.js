@@ -58,7 +58,7 @@ function read_result() {
 
     try {
         data = fs.readFileSync('data/query_result.txt', 'utf8')
-        fs.unlink("data/query_result.txt", () => {})
+        // fs.unlink("data/query_result.txt", () => {})
         console.log(data)
     } catch (err) {
         console.error(err)

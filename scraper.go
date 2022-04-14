@@ -194,6 +194,20 @@ func main() {
 	// case "all":
 	// 	query_all()
 	// }
+	err := os.RemoveAll("data/query_result")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	os.Mkdir("data/query_result/", os.ModePerm)
+
+	f, err := os.Create("data/query_result.txt")
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	defer f.Close()
 
 	if os.Args[1] == "a" {
 		query_all()
