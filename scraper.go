@@ -175,7 +175,7 @@ func query_all() {
 }
 
 type TweetCompact struct {
-	T_id   string `json:"id"`
+	T_id   string `json:"t_id"`
 	Name   string `json:"name"`
 	ImgUrl string `json:"url"`
 	Text   string `json:"text"`
