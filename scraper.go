@@ -17,7 +17,7 @@ import (
 func run_search(query string, retweets bool) {
 
 	if retweets {
-		query += " include:nativeretweets include:retweets include:replies until:2023-01-02 since:2021-01-01"
+		query += " include:nativeretweets include:retweets include:replies until:2023-01-02 since:2022-01-01"
 		// query += " include:nativeretweets include:retweets until:2022-04-10 since:2021-01-01"
 		println(query + "\n")
 	}

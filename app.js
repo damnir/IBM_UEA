@@ -5,6 +5,9 @@ const { spawn } = require("child_process")
 const fs = require('fs')
 
 var body_parser = require("body-parser")
+var dbclient = require('./dbclient')
+var watsonclient = require('./watson')
+const { resolve } = require("path")
 
 app.use(express.static('public'))
 
@@ -43,14 +46,35 @@ app.post('/submit-form', (req, res) => {
 
     //query - ibm university until:2022-04-10 since:2021-04-01
     var process = spawn("go", ["run", "scraper.go", query]);
+    // var process = spawn("go", ["run", "scraper.go", "a"]);
 
     process.on('exit', function () {
         console.log("query finished")
+        watsonclient.refresh_collection()
+        wait()
 
-        res.redirect("/")
     })
 
+    async function wait() {
+        if(!watsonclient.check_status)
+        {
+            console.log("false")
+            await sleep(2000)
+            wait()
+        }
+        else{
+            res.redirect("/")
+        }
+
+    }
+
 })
+
+function sleep(ms) {
+    return new Promise((resolve) => {
+        setTimeout(resolve, ms)
+    })
+}
 
 function read_result() {
 
@@ -80,8 +104,7 @@ function read_accounts() {
     return accounts.split('\n')
 }
 
-var dbclient = require('./dbclient')
-var watsonclient = require('./watson')
+
 
 // dbclient.pushNewWatson(watsonclient.query())
 // watsonclient.query()

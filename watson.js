@@ -55,8 +55,12 @@ function get_docs_id() {
     try {
 
         data = fs.readFileSync('data/query_result.txt', 'utf8')
+
+        data = data.replace(/^\s+|\s+$/g, '');
+
         // fs.unlink("data/query_result.txt", () => {})
-        // console.log(data)
+        console.log(data)
+        console.log(typeof (data))
     } catch (err) {
         console.error(err)
         return
@@ -87,8 +91,33 @@ function add_documents() {
             })
             .catch(err => {
                 console.log('error:', err);
-            });
+            })
     }
+}
+
+function check_status() {
+
+    var finished = false
+
+    var getCollectionParams = {
+        environmentId: file.envid,
+        collectionId: file.collectionid
+    }
+
+    discovery.getCollection(getCollectionParams)
+        .then(collection => {
+            console.log(collection['result']['document_counts'])
+            if (collection['result']['document_counts']['processing'] == 0 &&
+                collection['result']['document_counts']['pending'] == 0) {
+                finished = true
+            }
+            // console.log(JSON.stringify(collection, null, 2));
+        })
+        .catch(err => {
+            console.log('error:', err);
+        })
+
+    return finished
 }
 
 function refresh_collection() {
@@ -113,30 +142,33 @@ function refresh_collection() {
             console.log('error:', err);
         });
 
-    function createNewCollection(params)
-    {
+    function createNewCollection(params) {
         discovery.createCollection(params)
-        .then(collection => {
-            console.log(JSON.stringify(collection, null, 2));
+            .then(collection => {
+                console.log(JSON.stringify(collection, null, 2));
 
-            file.collectionid = collection.result.collection_id
+                file.collectionid = collection.result.collection_id
 
-            fs.writeFile(fileName, JSON.stringify(file, null, 2), function writeJSON(err) {
-                if (err) return console.log(err);
-                console.log(JSON.stringify(file));
-                console.log('writing to ' + fileName);
+                fs.writeFile(fileName, JSON.stringify(file, null, 2), function writeJSON(err) {
+                    if (err) return console.log(err);
+                    console.log(JSON.stringify(file));
+                    console.log('writing to ' + fileName);
+                });
+
+                add_documents()
+
+            })
+            .catch(err => {
+                console.log('error:', err);
             });
-
-        })
-        .catch(err => {
-            console.log('error:', err);
-        });
     }
 }
 
 module.exports = {
-    query
+    query, refresh_collection, add_documents, check_status
 }
 
 // add_documents()
 // query()
+// get_docs_id()
+// check_status()

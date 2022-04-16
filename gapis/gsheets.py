@@ -25,18 +25,18 @@ def main():
     # The file token.json stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
     # time.
-    if os.path.exists('tokenSheets.json'):
-        creds = Credentials.from_authorized_user_file('tokenSheets.json', SCOPES)
+    if os.path.exists('./gapis/tokenSheets.json'):
+        creds = Credentials.from_authorized_user_file('./gapis/tokenSheets.json', SCOPES)
     # If there are no (valid) credentials available, let the user log in.
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
             flow = InstalledAppFlow.from_client_secrets_file(
-                'credentials.json', SCOPES)
+                './gapis/credentials.json', SCOPES)
             creds = flow.run_local_server(port=0)
         # Save the credentials for the next run
-        with open('tokenSheets.json', 'w') as token:
+        with open('./gapis/tokenSheets.json', 'w') as token:
             token.write(creds.to_json())
 
     try:
@@ -47,8 +47,8 @@ def main():
 
 
     rng = 2
-    for filename in os.listdir("../data/query_result/"):
-        with open(os.path.join("../data/query_result/", filename), 'r') as f:
+    for filename in os.listdir("./data/query_result/"):
+        with open(os.path.join("./data/query_result/", filename), 'r', encoding="utf8") as f:
             jf = json.load(f)
 
             cell_range = ("A{}:G{}").format(rng, rng); rng+=1
@@ -56,7 +56,7 @@ def main():
             #id, name, text, sentiment, concepts, keyword, categories
             values = [
                 [
-                    jf['id'], jf['name'], jf['text'].replace('*nl*', '\n'), "placeholder", "placeholder", "placeholder", "placeholder"
+                    jf['t_id'], jf['name'], jf['text'].replace('*nl*', '\n'), "placeholder", "placeholder", "placeholder", "placeholder"
                 ]
             ]
 

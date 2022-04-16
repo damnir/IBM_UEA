@@ -22,18 +22,18 @@ def main():
     # The file token.json stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
     # time.
-    if os.path.exists('token.json'):
-        creds = Credentials.from_authorized_user_file('token.json', SCOPES)
+    if os.path.exists('./gapis/token.json'):
+        creds = Credentials.from_authorized_user_file('./gapis/token.json', SCOPES)
     # If there are no (valid) credentials available, let the user log in.
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
             flow = InstalledAppFlow.from_client_secrets_file(
-                'credentials.json', SCOPES)
+                './gapis/credentials.json', SCOPES)
             creds = flow.run_local_server(port=0)
         # Save the credentials for the next run
-        with open('token.json', 'w') as token:
+        with open('./gapis/token.json', 'w') as token:
             token.write(creds.to_json())
 
     try:
@@ -69,8 +69,8 @@ def main():
     next_slide = response.get('replies')[0]['duplicateObject']['objectId']
     requests = []
 
-    for filename in os.listdir("../data/query_result/"):
-        with open(os.path.join("../data/query_result/", filename), 'r') as f:
+    for filename in os.listdir("./data/query_result/"):
+        with open(os.path.join("./data/query_result/", filename), 'r', encoding="utf8") as f:
             jf = json.load(f)
             image = False
 
@@ -112,7 +112,7 @@ def main():
                 }
                 requests.append({
                 'createImage': {
-                    'objectId': "img1esgreg4wg42sdstg",
+                    'objectId': jf['t_id'] + "img",
                     'url': jf['url'],
                     'elementProperties': {
                         'pageObjectId': next_slide,
