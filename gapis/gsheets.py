@@ -42,39 +42,9 @@ def main():
     try:
         service = build('sheets', 'v4', credentials=creds)
 
-        # Call the Sheets API
-        sheet = service.spreadsheets()
-        result = sheet.values().get(spreadsheetId=SAMPLE_SPREADSHEET_ID,
-                                    range=SAMPLE_RANGE_NAME).execute()
-        values = result.get('values', [])
-
-        if not values:
-            print('No data found.')
-            return
-
-        print('Name, Major:')
-        # for row in values:
-        #     # Print columns A and E, which correspond to indices 0 and 4.
-        #     print('%s, %s' % (row[0], row[4]))
-        print(values)
     except HttpError as err:
         print(err)
 
-    # values = [
-    #     [
-    #         "poo1", "poo2", "poo3", "poo4", "poo5", "poo6", "poo7"
-    #     ]
-    # ]
-
-    # body = {
-    #     'values':values
-    # }
-
-    # result = service.spreadsheets().values().update(
-    # spreadsheetId=SAMPLE_SPREADSHEET_ID, range=SAMPLE_RANGE_NAME,
-    # valueInputOption='RAW', body=body).execute()
-
-    # print('{0} cells updated.'.format(result.get('updatedCells')))
 
     rng = 2
     for filename in os.listdir("../data/query_result/"):
