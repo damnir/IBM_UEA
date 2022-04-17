@@ -14,19 +14,19 @@
     "content-type": "application/json;charset=utf-8",
     "content-length": "5859",
     "strict-transport-security": "max-age=31536000; includeSubDomains;",
-    "x-dp-watson-tran-id": "1cb426f4-22c9-47b3-a2c1-a124c2e85786",
-    "x-request-id": "1cb426f4-22c9-47b3-a2c1-a124c2e85786",
-    "x-global-transaction-id": "1cb426f4-22c9-47b3-a2c1-a124c2e85786",
+    "x-dp-watson-tran-id": "dab336bc-e16a-4a53-8d97-cda2505868c0",
+    "x-request-id": "dab336bc-e16a-4a53-8d97-cda2505868c0",
+    "x-global-transaction-id": "dab336bc-e16a-4a53-8d97-cda2505868c0",
     "server": "watson-gateway",
     "x-edgeconnect-midmile-rtt": "90",
-    "x-edgeconnect-origin-mex-latency": "385",
-    "date": "Sun, 17 Apr 2022 01:15:08 GMT",
+    "x-edgeconnect-origin-mex-latency": "430",
+    "date": "Sun, 17 Apr 2022 18:58:28 GMT",
     "connection": "close",
     "vary": "Accept-Encoding"
   },
   "result": {
     "matching_results": 14,
-    "session_token": "1_nfp5lJzp1W9nNUi0oO6zaR6sbi",
+    "session_token": "1_nfp5lJzp1W9G3CC4oO6zaR6sbi",
     "results": [
       {
         "id": "c799f866-5b5b-4be5-a1da-35b427f5a99c",
@@ -1598,6 +1598,6 @@
       "document_retrieval_strategy": "untrained"
     }
   },
-  "_id": "a_1650158108081",
+  "_id": "a_1650221908504",
   "query_type": "all"
 }

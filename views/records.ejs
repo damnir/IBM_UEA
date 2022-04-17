@@ -38,7 +38,7 @@
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container mt-4">
         <div class="row w-100">
             <div class="col">
 
@@ -63,7 +63,7 @@
 
             </div>
             <% if(id != null) { %>
-            <div class="col">
+            <div class="col-4">
                 <h3>Query Feeed</h3>
                 <div id="tweet_container" class="w-100 ms-2 mt-2" style="overflow-y:scroll; height:800px;">
                     <div id="tweet" style="max-width: 95%; margin:auto"> </div>
@@ -72,14 +72,24 @@
           
                   <script>bundle.load("records/")</script>
             </div>
-            <div class="col">
+            <div class="col-5">
                 <h3>Analysis</h3>
+                <h5>Entities:</h5>
+                <div id='my_canvas' class="canvas" style="width: 300px; height: 300px; background-color: rgb(255, 224, 224); position: relative;">
+  
+                </div>
             </div>
             <%}%>
 
 
 
     </div>
+
+    <script src="../wordcloud2.js"></script>
+
+    <script>WordCloud(document.getElementById('my_canvas'), { list: [['IBM', 90], ['#DataScienceDay2022', 30], ['#datascience', 30], ['Microsoft', 20], ['#AI', 30], ['IBM Research', 30], ['Sriram Raghavan', 30]  ] } ); </script>
+
+    <script>console.log("POOOO"+WordCloud.isSupported)</script>
 
     <script src="../bundle.js"></script>
 
