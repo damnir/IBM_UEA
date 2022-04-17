@@ -12,6 +12,7 @@ const { resolve } = require("path")
 app.use(express.static('public'))
 
 var accounts
+var doc
 
 // console.log(dbclient.query_id("all_accounts", "data"))
 // var twttr = require("./twitter_widgets")
@@ -35,7 +36,8 @@ app.get("/records", async (req, res) => {
 
     res.render("records", {
         recs: docs,
-        query: null
+        query: null,
+        id: null
     })
 })
 
@@ -46,9 +48,29 @@ app.get("/records/:id", async (req, res) => {
 
     res.render("records", {
         recs: docs,
-        query: doc
+        query: doc,
+        id: req.params['id']
     })
-    console.log(doc)
+    // console.log(doc)
+})
+
+app.post('/records/:id', async (req, res) => {
+    data = []
+    doc = await dbclient.query_one(req.params)
+
+    doc['results']['result'].array.forEach(element => {
+        data.push(data, element['t_id'])
+    });
+
+    // console.log(req.params)
+    // console.log(data)
+
+    res.status(200).send({
+        message: data,
+        id: req.params['id']
+    })
+
+    console.log(message)
 })
 
 app.post('/', (req, res) => {
@@ -77,31 +99,31 @@ app.post("/new_query", (req, res) => {
 })
 
 app.post('/submit-form', (req, res) => {
-    const query = req.body.query
-    console.log(query)
+    // const query = req.body.query
+    // console.log(query)
 
-    //query - ibm university until:2022-04-10 since:2021-04-01
-    var process = spawn("go", ["run", "scraper.go", query]);
-    // var process = spawn("go", ["run", "scraper.go", "a"]);
+    // //query - ibm university until:2022-04-10 since:2021-04-01
+    // var process = spawn("go", ["run", "scraper.go", query]);
+    // // var process = spawn("go", ["run", "scraper.go", "a"]);
 
-    process.on('exit', function () {
-        console.log("query finished")
-        watsonclient.refresh_collection()
-        wait()
+    // process.on('exit', function () {
+    //     console.log("query finished")
+    //     watsonclient.refresh_collection()
+    //     wait()
 
-    })
+    // })
 
-    async function wait() {
-        if (!watsonclient.check_status) {
-            console.log("false")
-            await sleep(2000)
-            wait()
-        }
-        else {
-            res.redirect("/")
-        }
+    // async function wait() {
+    //     if (!watsonclient.check_status) {
+    //         console.log("false")
+    //         await sleep(2000)
+    //         wait()
+    //     }
+    //     else {
+    //         res.redirect("/")
+    //     }
 
-    }
+    // }
 
 })
 

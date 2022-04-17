@@ -16,7 +16,7 @@ function load_tweets() {
 
 const axios = require('axios')
 
-function load(path){
+function load(path, id){
     axios
     .post('http://localhost:8080/' + path)
     .then(res => {

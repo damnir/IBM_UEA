@@ -38,30 +38,54 @@
         </div>
     </nav>
 
-    <div style="width: 15%;" class="mt-2 ms-2">
-        <h3 class=" ">Recent Records</h3>
+    <div class="container">
+        <div class="row w-100">
+            <div class="col">
 
+                    <h3 class=" ">Recent Records</h3>
 
-        <h5>All accounts:</h5>
-        <div class="list-group mt-2">
+                    <div class="list-group mt-2">
 
-            <% for (var i=0; i < recs.length; i+=1) { %>
+                        <% for (var i=0; i < recs.length; i+=1) { %>
 
-                <a href="/records/<%=  recs[i]['_id']%> " class="list-group-item list-group-item-action">
-                    <%= recs[i]['_id'] %>
-                </a>
+                            <a href="/records/<%=  recs[i]['_id']%> " class="list-group-item list-group-item-action">
+                                <%= recs[i]['_id'] %>
+                            </a>
 
-                <% } %>
-        </div>
+                            <% } %>
+                    </div>
+                    <!-- 
+                    <% if(query!=null) { for (var i=0; i < query['result']['results'].length; i+=1) {%>
+                        <h1>
+                            <%= query['result']['results'][i]['t_id'] %>
+                        </h1>
+                        <% }} %> -->
 
-        <% if(query!=null) { for (var i=0; i < query['result']['results'].length; i+=1) {%>
-            <h1>
-                <%= query['result']['results'][i]['t_id'] %>
-            </h1>
-            <% }} %>
+            </div>
+            <% if(id != null) { %>
+            <div class="col">
+                <h3>Query Feeed</h3>
+                <div id="tweet_container" class="w-100 ms-2 mt-2" style="overflow-y:scroll; height:800px;">
+                    <div id="tweet" style="max-width: 95%; margin:auto"> </div>
+                  </div>
+                  <script src="../bundle.js"></script>
+          
+                  <script>bundle.load("records/")</script>
+            </div>
+            <div class="col">
+                <h3>Analysis</h3>
+            </div>
+            <%}%>
+
 
 
     </div>
+
+    <script src="../bundle.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
