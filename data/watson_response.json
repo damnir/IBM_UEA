@@ -12,34 +12,36 @@
     "content-security-policy": "default-src 'none'",
     "access-control-allow-headers": "Origin, Content-Type, Content-Length, Accept, X-Watson-Authorization-Token, X-WDC-PL-OPT-OUT, X-Watson-UserInfo, X-Watson-Learning-Opt-Out, X-Watson-Metadata",
     "content-type": "application/json;charset=utf-8",
-    "content-length": "7393",
+    "content-length": "5859",
     "strict-transport-security": "max-age=31536000; includeSubDomains;",
-    "x-dp-watson-tran-id": "b5b24b6c-2856-4b36-a744-03f3d543757f",
-    "x-request-id": "b5b24b6c-2856-4b36-a744-03f3d543757f",
-    "x-global-transaction-id": "b5b24b6c-2856-4b36-a744-03f3d543757f",
+    "x-dp-watson-tran-id": "1cb426f4-22c9-47b3-a2c1-a124c2e85786",
+    "x-request-id": "1cb426f4-22c9-47b3-a2c1-a124c2e85786",
+    "x-global-transaction-id": "1cb426f4-22c9-47b3-a2c1-a124c2e85786",
     "server": "watson-gateway",
-    "x-edgeconnect-midmile-rtt": "91",
-    "x-edgeconnect-origin-mex-latency": "365",
-    "date": "Thu, 14 Apr 2022 16:32:13 GMT",
+    "x-edgeconnect-midmile-rtt": "90",
+    "x-edgeconnect-origin-mex-latency": "385",
+    "date": "Sun, 17 Apr 2022 01:15:08 GMT",
     "connection": "close",
     "vary": "Accept-Encoding"
   },
   "result": {
-    "matching_results": 25,
-    "session_token": "1_nfp5lJzp1W9qqN14oO6zaR6sbi",
+    "matching_results": 14,
+    "session_token": "1_nfp5lJzp1W9nNUi0oO6zaR6sbi",
     "results": [
       {
-        "id": "ac263316-8914-4b59-bd3f-b0412b46ac88",
+        "id": "c799f866-5b5b-4be5-a1da-35b427f5a99c",
         "result_metadata": {
           "confidence": 0,
           "score": 1
         },
-        "text": "43% of organisations have accelerated their rollout of AI since the start of the COVID-19 pandemic, according to @IBM. *nl*  *nl* Learn the three principles every AI-driven organisation must adopt.  *nl* https://t.co/qjeW9LCcft  *nl*  *nl* #intelligentautomation #AI",
+        "name": "UniOfHull",
+        "url": "",
+        "text": "Computer Science students starting in September are guaranteed a paid year in industry. 💰 *nl*  *nl* Students have previously worked at the likes of Microsoft, IBM and BT. 🖥️ *nl*  *nl* They will spend 3 months at @Lampada_DS, before heading on to other companies. *nl*  *nl* More 👇 *nl*  *nl* https://t.co/3k65OPpe6h",
         "enriched_text": {
           "sentiment": {
             "document": {
-              "score": -0.255101,
-              "label": "negative"
+              "score": 0.782156,
+              "label": "positive"
             }
           },
           "entities": [
@@ -48,1403 +50,9 @@
               "sentiment": {
                 "score": 0,
                 "label": "neutral"
-              },
-              "text": "IBM",
-              "relevance": 0.900581,
-              "type": "Company"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#intelligentautomation",
-              "relevance": 0.900581,
-              "type": "Hashtag"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@IBM",
-              "relevance": 0.900581,
-              "type": "TwitterHandle"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#AI",
-              "relevance": 0.900581,
-              "type": "Hashtag"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "43%",
-              "relevance": 0.900581,
-              "type": "Quantity"
-            }
-          ],
-          "concepts": [],
-          "categories": [
-            {
-              "score": 0.76887,
-              "label": "/health and fitness/disease/cold and flu"
-            },
-            {
-              "score": 0.622634,
-              "label": "/health and fitness/disease/epidemic"
-            },
-            {
-              "score": 0.603237,
-              "label": "/law, govt and politics"
-            }
-          ]
-        },
-        "extracted_metadata": {
-          "sha1": "a998f9c8dbe58ba1fd150ddd7292f20a9a06a002",
-          "filename": "1512093843268775937.json",
-          "file_type": "json"
-        },
-        "tweet_id": "1512093843268775937"
-      },
-      {
-        "id": "97fe6754-4b4e-4301-be28-a868d1168618",
-        "result_metadata": {
-          "confidence": 0,
-          "score": 1
-        },
-        "text": "IoT Wide Area Networks (WAN) Technology Market- increasing demand with Industry Professionals: LoRa Alliance, IBM, Cisco, Huawei, Ericsson, etc #Sigfox #covid via https://t.co/97SS1vityX https://t.co/gNQw2sO28m",
-        "enriched_text": {
-          "sentiment": {
-            "document": {
-              "score": 0,
-              "label": "neutral"
-            }
-          },
-          "entities": [
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "LoRa Alliance",
-              "relevance": 0.33,
-              "type": "Person"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "IBM",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "SoftwareLicense",
-                  "OperatingSystemDeveloper",
-                  "ProcessorManufacturer",
-                  "SoftwareDeveloper",
-                  "CompanyFounder",
-                  "ProgrammingLanguageDesigner",
-                  "ProgrammingLanguageDeveloper"
-                ],
-                "name": "IBM",
-                "dbpedia_resource": "http://dbpedia.org/resource/IBM"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Cisco",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [],
-                "name": "Cisco Systems",
-                "dbpedia_resource": "http://dbpedia.org/resource/Cisco_Systems"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Huawei",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [],
-                "name": "Huawei",
-                "dbpedia_resource": "http://dbpedia.org/resource/Huawei"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Ericsson",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "ProgrammingLanguageDesigner",
-                  "ProgrammingLanguageDeveloper"
-                ],
-                "name": "Ericsson",
-                "dbpedia_resource": "http://dbpedia.org/resource/Ericsson"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#Sigfox",
-              "relevance": 0.33,
-              "type": "Hashtag"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#covid",
-              "relevance": 0.33,
-              "type": "Hashtag"
-            }
-          ],
-          "concepts": [
-            {
-              "text": "Wide area network",
-              "relevance": 0.915043,
-              "dbpedia_resource": "http://dbpedia.org/resource/Wide_area_network"
-            },
-            {
-              "text": "Ericsson",
-              "relevance": 0.615825,
-              "dbpedia_resource": "http://dbpedia.org/resource/Ericsson"
-            }
-          ],
-          "categories": [
-            {
-              "score": 0.870033,
-              "label": "/technology and computing/hardware/computer networking/wireless technology"
-            },
-            {
-              "score": 0.854713,
-              "label": "/technology and computing/networking"
-            },
-            {
-              "score": 0.851449,
-              "label": "/technology and computing/hardware/computer networking/router"
-            }
-          ]
-        },
-        "extracted_metadata": {
-          "sha1": "4c5a2d5412bf7dbfef46e6b50134474b3eb04c13",
-          "filename": "1514285317104312328.json",
-          "file_type": "json"
-        },
-        "tweet_id": "1514285317104312328"
-      },
-      {
-        "id": "ba7c91d7-2bed-404d-bc35-d4ee8e532124",
-        "result_metadata": {
-          "confidence": 0,
-          "score": 1
-        },
-        "text": "Welding Consumables Market Outlook: Post Covid-19 Scenario by 2029 | Oracle, Salesforce, IBM – Blackswan Real Estate - Blackswan Real Estate https://t.co/Se0kS5eeOt",
-        "enriched_text": {
-          "sentiment": {
-            "document": {
-              "score": 0,
-              "label": "neutral"
-            }
-          },
-          "entities": [
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Oracle",
-              "relevance": 0.33,
-              "type": "Company"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Salesforce",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "VentureFundedCompany"
-                ],
-                "name": "Salesforce.com",
-                "dbpedia_resource": "http://dbpedia.org/resource/Salesforce.com"
-              }
-            },
-            {
-              "count": 2,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Blackswan Real Estate",
-              "relevance": 0.33,
-              "type": "Company"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "IBM",
-              "relevance": 0.33,
-              "type": "Company"
-            }
-          ],
-          "concepts": [
-            {
-              "text": "Software companies of the United States",
-              "relevance": 0.881174,
-              "dbpedia_resource": "http://dbpedia.org/resource/Software_companies_of_the_United_States"
-            }
-          ],
-          "categories": [
-            {
-              "score": 0.999924,
-              "label": "/real estate"
-            }
-          ]
-        },
-        "extracted_metadata": {
-          "sha1": "6243ab999963f2f14babb9cb5a7aee8282df1502",
-          "filename": "1514256861813358594.json",
-          "file_type": "json"
-        },
-        "tweet_id": "1514256861813358594"
-      },
-      {
-        "id": "a0bc08e5-e3d3-4969-8053-6731c03e758f",
-        "result_metadata": {
-          "confidence": 0,
-          "score": 1
-        },
-        "text": "IoT Wide Area Networks (WAN) Technology Market- increasing demand with Industry Professionals: LoRa Alliance, IBM, Cisco, Huawei, Ericsson, etc #Sigfox #covid via https://t.co/fFmI3UGyt9 https://t.co/XiOpuKczTX",
-        "enriched_text": {
-          "sentiment": {
-            "document": {
-              "score": 0,
-              "label": "neutral"
-            }
-          },
-          "entities": [
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "LoRa Alliance",
-              "relevance": 0.33,
-              "type": "Person"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "IBM",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "SoftwareLicense",
-                  "OperatingSystemDeveloper",
-                  "ProcessorManufacturer",
-                  "SoftwareDeveloper",
-                  "CompanyFounder",
-                  "ProgrammingLanguageDesigner",
-                  "ProgrammingLanguageDeveloper"
-                ],
-                "name": "IBM",
-                "dbpedia_resource": "http://dbpedia.org/resource/IBM"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Cisco",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [],
-                "name": "Cisco Systems",
-                "dbpedia_resource": "http://dbpedia.org/resource/Cisco_Systems"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Huawei",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [],
-                "name": "Huawei",
-                "dbpedia_resource": "http://dbpedia.org/resource/Huawei"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Ericsson",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "ProgrammingLanguageDesigner",
-                  "ProgrammingLanguageDeveloper"
-                ],
-                "name": "Ericsson",
-                "dbpedia_resource": "http://dbpedia.org/resource/Ericsson"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#Sigfox",
-              "relevance": 0.33,
-              "type": "Hashtag"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#covid",
-              "relevance": 0.33,
-              "type": "Hashtag"
-            }
-          ],
-          "concepts": [
-            {
-              "text": "Wide area network",
-              "relevance": 0.915043,
-              "dbpedia_resource": "http://dbpedia.org/resource/Wide_area_network"
-            },
-            {
-              "text": "Ericsson",
-              "relevance": 0.615825,
-              "dbpedia_resource": "http://dbpedia.org/resource/Ericsson"
-            }
-          ],
-          "categories": [
-            {
-              "score": 0.870033,
-              "label": "/technology and computing/hardware/computer networking/wireless technology"
-            },
-            {
-              "score": 0.854713,
-              "label": "/technology and computing/networking"
-            },
-            {
-              "score": 0.851449,
-              "label": "/technology and computing/hardware/computer networking/router"
-            }
-          ]
-        },
-        "extracted_metadata": {
-          "sha1": "29f50492d608765497e6c13a15724836ef2f555c",
-          "filename": "1514276197731082250.json",
-          "file_type": "json"
-        },
-        "tweet_id": "1514276197731082250"
-      },
-      {
-        "id": "8acdb3d9-4182-468a-be3b-0d6fa60751a7",
-        "result_metadata": {
-          "confidence": 0,
-          "score": 1
-        },
-        "text": "IoT Wide Area Networks (WAN) Technology Market- increasing demand with Industry Professionals: LoRa Alliance, IBM, Cisco, Huawei, Ericsson, etc #Sigfox #covid via https://t.co/yvcbJx4uwh https://t.co/D0ORIcR3NL",
-        "enriched_text": {
-          "sentiment": {
-            "document": {
-              "score": 0,
-              "label": "neutral"
-            }
-          },
-          "entities": [
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "LoRa Alliance",
-              "relevance": 0.33,
-              "type": "Person"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "IBM",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "SoftwareLicense",
-                  "OperatingSystemDeveloper",
-                  "ProcessorManufacturer",
-                  "SoftwareDeveloper",
-                  "CompanyFounder",
-                  "ProgrammingLanguageDesigner",
-                  "ProgrammingLanguageDeveloper"
-                ],
-                "name": "IBM",
-                "dbpedia_resource": "http://dbpedia.org/resource/IBM"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Cisco",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [],
-                "name": "Cisco Systems",
-                "dbpedia_resource": "http://dbpedia.org/resource/Cisco_Systems"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Huawei",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [],
-                "name": "Huawei",
-                "dbpedia_resource": "http://dbpedia.org/resource/Huawei"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Ericsson",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "ProgrammingLanguageDesigner",
-                  "ProgrammingLanguageDeveloper"
-                ],
-                "name": "Ericsson",
-                "dbpedia_resource": "http://dbpedia.org/resource/Ericsson"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#Sigfox",
-              "relevance": 0.33,
-              "type": "Hashtag"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#covid",
-              "relevance": 0.33,
-              "type": "Hashtag"
-            }
-          ],
-          "concepts": [
-            {
-              "text": "Wide area network",
-              "relevance": 0.915043,
-              "dbpedia_resource": "http://dbpedia.org/resource/Wide_area_network"
-            },
-            {
-              "text": "Ericsson",
-              "relevance": 0.615825,
-              "dbpedia_resource": "http://dbpedia.org/resource/Ericsson"
-            }
-          ],
-          "categories": [
-            {
-              "score": 0.870033,
-              "label": "/technology and computing/hardware/computer networking/wireless technology"
-            },
-            {
-              "score": 0.854713,
-              "label": "/technology and computing/networking"
-            },
-            {
-              "score": 0.851449,
-              "label": "/technology and computing/hardware/computer networking/router"
-            }
-          ]
-        },
-        "extracted_metadata": {
-          "sha1": "052dc914daee6a8c82ab8bd7e12b4f4fc75dfbd0",
-          "filename": "1514284818581893120.json",
-          "file_type": "json"
-        },
-        "tweet_id": "1514284818581893120"
-      },
-      {
-        "id": "c8dc629c-18cc-463c-815c-9c35135411e1",
-        "result_metadata": {
-          "confidence": 0,
-          "score": 1
-        },
-        "text": "Looking for IBM Technical Architect – North Bergen, NJ – Remote till covid https://t.co/VGYgewEVpb",
-        "enriched_text": {
-          "sentiment": {
-            "document": {
-              "score": 0,
-              "label": "neutral"
-            }
-          },
-          "entities": [
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "IBM Technical Architect",
-              "relevance": 0.33,
-              "type": "Company"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "North Bergen",
-              "relevance": 0.33,
-              "type": "Location",
-              "disambiguation": {
-                "subtype": [
-                  "City"
-                ],
-                "name": "North Bergen, New Jersey",
-                "dbpedia_resource": "http://dbpedia.org/resource/North_Bergen,_New_Jersey"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": -0.321985,
-                "label": "negative"
-              },
-              "text": "NJ",
-              "relevance": 0.33,
-              "type": "Location",
-              "disambiguation": {
-                "subtype": [
-                  "PoliticalDistrict",
-                  "AdministrativeDivision",
-                  "GovernmentalJurisdiction",
-                  "USState",
-                  "StateOrCounty"
-                ],
-                "name": "New Jersey",
-                "dbpedia_resource": "http://dbpedia.org/resource/New_Jersey"
-              }
-            }
-          ],
-          "concepts": [
-            {
-              "text": "New Jersey",
-              "relevance": 0.922906,
-              "dbpedia_resource": "http://dbpedia.org/resource/New_Jersey"
-            },
-            {
-              "text": "Hudson County, New Jersey",
-              "relevance": 0.834519,
-              "dbpedia_resource": "http://dbpedia.org/resource/Hudson_County,_New_Jersey"
-            },
-            {
-              "text": "Jersey City, New Jersey",
-              "relevance": 0.816815,
-              "dbpedia_resource": "http://dbpedia.org/resource/Jersey_City,_New_Jersey"
-            },
-            {
-              "text": "Hoboken, New Jersey",
-              "relevance": 0.804292,
-              "dbpedia_resource": "http://dbpedia.org/resource/Hoboken,_New_Jersey"
-            },
-            {
-              "text": "North Bergen, New Jersey",
-              "relevance": 0.772712,
-              "dbpedia_resource": "http://dbpedia.org/resource/North_Bergen,_New_Jersey"
-            },
-            {
-              "text": "Union City, New Jersey",
-              "relevance": 0.751916,
-              "dbpedia_resource": "http://dbpedia.org/resource/Union_City,_New_Jersey"
-            },
-            {
-              "text": "U.S. Route 1/9",
-              "relevance": 0.742432,
-              "dbpedia_resource": "http://dbpedia.org/resource/U.S._Route_1/9"
-            }
-          ],
-          "categories": [
-            {
-              "score": 0.903818,
-              "label": "/technology and computing/operating systems"
-            },
-            {
-              "score": 0.838929,
-              "label": "/technology and computing/hardware/computer"
-            },
-            {
-              "score": 0.814696,
-              "label": "/technology and computing/hardware/computer peripherals"
-            }
-          ]
-        },
-        "extracted_metadata": {
-          "sha1": "c87e518b0073c5a4b16f986e151be7291e06dc92",
-          "filename": "1514609077489266690.json",
-          "file_type": "json"
-        },
-        "tweet_id": "1514609077489266690"
-      },
-      {
-        "id": "a14f4764-7a1e-42e6-9772-c9098b89a699",
-        "result_metadata": {
-          "confidence": 0,
-          "score": 1
-        },
-        "text": "IoT Wide Area Networks (WAN) Technology Market- increasing demand with Industry Professionals: LoRa Alliance, IBM, Cisco, Huawei, Ericsson, etc #Sigfox #covid via https://t.co/r3U9icZG0d https://t.co/fBXTirZ5u8",
-        "enriched_text": {
-          "sentiment": {
-            "document": {
-              "score": 0,
-              "label": "neutral"
-            }
-          },
-          "entities": [
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "LoRa Alliance",
-              "relevance": 0.33,
-              "type": "Person"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "IBM",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "SoftwareLicense",
-                  "OperatingSystemDeveloper",
-                  "ProcessorManufacturer",
-                  "SoftwareDeveloper",
-                  "CompanyFounder",
-                  "ProgrammingLanguageDesigner",
-                  "ProgrammingLanguageDeveloper"
-                ],
-                "name": "IBM",
-                "dbpedia_resource": "http://dbpedia.org/resource/IBM"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Cisco",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [],
-                "name": "Cisco Systems",
-                "dbpedia_resource": "http://dbpedia.org/resource/Cisco_Systems"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Huawei",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [],
-                "name": "Huawei",
-                "dbpedia_resource": "http://dbpedia.org/resource/Huawei"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Ericsson",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "ProgrammingLanguageDesigner",
-                  "ProgrammingLanguageDeveloper"
-                ],
-                "name": "Ericsson",
-                "dbpedia_resource": "http://dbpedia.org/resource/Ericsson"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#Sigfox",
-              "relevance": 0.33,
-              "type": "Hashtag"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#covid",
-              "relevance": 0.33,
-              "type": "Hashtag"
-            }
-          ],
-          "concepts": [
-            {
-              "text": "Wide area network",
-              "relevance": 0.915043,
-              "dbpedia_resource": "http://dbpedia.org/resource/Wide_area_network"
-            },
-            {
-              "text": "Ericsson",
-              "relevance": 0.615825,
-              "dbpedia_resource": "http://dbpedia.org/resource/Ericsson"
-            }
-          ],
-          "categories": [
-            {
-              "score": 0.870033,
-              "label": "/technology and computing/hardware/computer networking/wireless technology"
-            },
-            {
-              "score": 0.854713,
-              "label": "/technology and computing/networking"
-            },
-            {
-              "score": 0.851449,
-              "label": "/technology and computing/hardware/computer networking/router"
-            }
-          ]
-        },
-        "extracted_metadata": {
-          "sha1": "771e0bf21de4619291369cb790bc1f713a9edffd",
-          "filename": "1514321909302931458.json",
-          "file_type": "json"
-        },
-        "tweet_id": "1514321909302931458"
-      },
-      {
-        "id": "b492ae63-20a6-4def-8cc2-fc6383dd322c",
-        "result_metadata": {
-          "confidence": 0,
-          "score": 1
-        },
-        "text": "IoT Wide Area Networks (WAN) Technology Market- increasing demand with Industry Professionals: LoRa Alliance, IBM, Cisco, Huawei, Ericsson, etc #Sigfox #covid via https://t.co/J8WAVitxGc https://t.co/WPw2UvGLsl",
-        "enriched_text": {
-          "sentiment": {
-            "document": {
-              "score": 0,
-              "label": "neutral"
-            }
-          },
-          "entities": [
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "LoRa Alliance",
-              "relevance": 0.33,
-              "type": "Person"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "IBM",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "SoftwareLicense",
-                  "OperatingSystemDeveloper",
-                  "ProcessorManufacturer",
-                  "SoftwareDeveloper",
-                  "CompanyFounder",
-                  "ProgrammingLanguageDesigner",
-                  "ProgrammingLanguageDeveloper"
-                ],
-                "name": "IBM",
-                "dbpedia_resource": "http://dbpedia.org/resource/IBM"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Cisco",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [],
-                "name": "Cisco Systems",
-                "dbpedia_resource": "http://dbpedia.org/resource/Cisco_Systems"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Huawei",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [],
-                "name": "Huawei",
-                "dbpedia_resource": "http://dbpedia.org/resource/Huawei"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Ericsson",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "ProgrammingLanguageDesigner",
-                  "ProgrammingLanguageDeveloper"
-                ],
-                "name": "Ericsson",
-                "dbpedia_resource": "http://dbpedia.org/resource/Ericsson"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#Sigfox",
-              "relevance": 0.33,
-              "type": "Hashtag"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#covid",
-              "relevance": 0.33,
-              "type": "Hashtag"
-            }
-          ],
-          "concepts": [
-            {
-              "text": "Wide area network",
-              "relevance": 0.915043,
-              "dbpedia_resource": "http://dbpedia.org/resource/Wide_area_network"
-            },
-            {
-              "text": "Ericsson",
-              "relevance": 0.615825,
-              "dbpedia_resource": "http://dbpedia.org/resource/Ericsson"
-            }
-          ],
-          "categories": [
-            {
-              "score": 0.870033,
-              "label": "/technology and computing/hardware/computer networking/wireless technology"
-            },
-            {
-              "score": 0.854713,
-              "label": "/technology and computing/networking"
-            },
-            {
-              "score": 0.851449,
-              "label": "/technology and computing/hardware/computer networking/router"
-            }
-          ]
-        },
-        "extracted_metadata": {
-          "sha1": "05745f015c2aa4d2477907d2970a6be0acca5d25",
-          "filename": "1514288241117126668.json",
-          "file_type": "json"
-        },
-        "tweet_id": "1514288241117126668"
-      },
-      {
-        "id": "8158d82c-5668-45cc-b202-c05669e8882d",
-        "result_metadata": {
-          "confidence": 0,
-          "score": 1
-        },
-        "text": "Cloud Object Storage Market Forecast 2022 – Explains COVID-19 Impact, Size, Share, Future Growth, Dynamic Analysis, Development Suggestions, Forecasts to 2028 | IBM, Dell, Hewlett-Packard Enterprise https://t.co/TFafmdPKdP",
-        "enriched_text": {
-          "sentiment": {
-            "document": {
-              "score": 0,
-              "label": "neutral"
-            }
-          },
-          "entities": [
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "IBM",
-              "relevance": 0.33,
-              "type": "Company"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": -0.219698,
-                "label": "negative"
-              },
-              "text": "Dell",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [],
-                "name": "Dell",
-                "dbpedia_resource": "http://dbpedia.org/resource/Dell"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Hewlett-Packard",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "OperatingSystemDeveloper",
-                  "ProcessorManufacturer",
-                  "SoftwareDeveloper",
-                  "AcademicInstitution"
-                ],
-                "name": "Hewlett-Packard",
-                "dbpedia_resource": "http://dbpedia.org/resource/Hewlett-Packard"
-              }
-            }
-          ],
-          "concepts": [
-            {
-              "text": "Forecasting",
-              "relevance": 0.938227,
-              "dbpedia_resource": "http://dbpedia.org/resource/Forecasting"
-            },
-            {
-              "text": "Future",
-              "relevance": 0.909247,
-              "dbpedia_resource": "http://dbpedia.org/resource/Future"
-            },
-            {
-              "text": "Prediction",
-              "relevance": 0.864827,
-              "dbpedia_resource": "http://dbpedia.org/resource/Prediction"
-            },
-            {
-              "text": "Futurology",
-              "relevance": 0.745886,
-              "dbpedia_resource": "http://dbpedia.org/resource/Futurology"
-            },
-            {
-              "text": "Stock market",
-              "relevance": 0.676962,
-              "dbpedia_resource": "http://dbpedia.org/resource/Stock_market"
-            }
-          ],
-          "categories": [
-            {
-              "score": 0.912091,
-              "label": "/technology and computing/enterprise technology"
-            },
-            {
-              "score": 0.852901,
-              "label": "/technology and computing/operating systems"
-            },
-            {
-              "score": 0.805677,
-              "label": "/technology and computing/hardware/computer"
-            }
-          ]
-        },
-        "extracted_metadata": {
-          "sha1": "9b37480460363dcce7e66fc76403c66430ba15bb",
-          "filename": "1513561534055788550.json",
-          "file_type": "json"
-        },
-        "tweet_id": "1513561534055788550"
-      },
-      {
-        "id": "2995e956-942f-43b1-829f-ba26dc1e40ce",
-        "result_metadata": {
-          "confidence": 0,
-          "score": 1
-        },
-        "text": "Oh I forgot, here’s a talk someone gave that provides a fuller telling of the CVS/IBM COVID vaccine chatbot story. If you Google “Watson Assistant CVS COVID” you’ll find others. *nl*  *nl* https://t.co/dOGHttls7a",
-        "enriched_text": {
-          "sentiment": {
-            "document": {
-              "score": -0.41526,
-              "label": "negative"
-            }
-          },
-          "entities": [
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Watson Assistant CVS COVID",
-              "relevance": 0.98375,
-              "type": "JobTitle"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Google",
-              "relevance": 0.336353,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "AcademicInstitution",
-                  "AwardPresentingOrganization",
-                  "OperatingSystemDeveloper",
-                  "ProgrammingLanguageDeveloper",
-                  "SoftwareDeveloper",
-                  "VentureFundedCompany"
-                ],
-                "name": "Google",
-                "dbpedia_resource": "http://dbpedia.org/resource/Google"
-              }
-            }
-          ],
-          "concepts": [
-            {
-              "text": "Google Talk",
-              "relevance": 0.851354,
-              "dbpedia_resource": "http://dbpedia.org/resource/Google_Talk"
-            },
-            {
-              "text": "Google Apps",
-              "relevance": 0.703481,
-              "dbpedia_resource": "http://dbpedia.org/resource/Google_Apps"
-            }
-          ],
-          "categories": [
-            {
-              "score": 0.772516,
-              "label": "/technology and computing/operating systems"
-            },
-            {
-              "score": 0.676533,
-              "label": "/health and fitness/disease/cold and flu"
-            },
-            {
-              "score": 0.667435,
-              "label": "/technology and computing/internet technology/web search"
-            }
-          ]
-        },
-        "extracted_metadata": {
-          "sha1": "3c3390ab2e32ddc7bb65fc6ae36a2d071fcc9192",
-          "filename": "1512255109895446529.json",
-          "file_type": "json"
-        },
-        "tweet_id": "1512255109895446529"
-      },
-      {
-        "id": "aa3da83b-fa1b-4e58-9cb3-106f9eceb364",
-        "result_metadata": {
-          "confidence": 0,
-          "score": 1
-        },
-        "text": "IoT Wide Area Networks (WAN) Technology Market- increasing demand with Industry Professionals: LoRa Alliance, IBM, Cisco, Huawei, Ericsson, etc #Sigfox #covid  https://t.co/oQdeMSFZ2F",
-        "enriched_text": {
-          "sentiment": {
-            "document": {
-              "score": 0,
-              "label": "neutral"
-            }
-          },
-          "entities": [
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "LoRa Alliance",
-              "relevance": 0.33,
-              "type": "Person"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "IBM",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "SoftwareLicense",
-                  "OperatingSystemDeveloper",
-                  "ProcessorManufacturer",
-                  "SoftwareDeveloper",
-                  "CompanyFounder",
-                  "ProgrammingLanguageDesigner",
-                  "ProgrammingLanguageDeveloper"
-                ],
-                "name": "IBM",
-                "dbpedia_resource": "http://dbpedia.org/resource/IBM"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Cisco",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [],
-                "name": "Cisco Systems",
-                "dbpedia_resource": "http://dbpedia.org/resource/Cisco_Systems"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Huawei",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [],
-                "name": "Huawei",
-                "dbpedia_resource": "http://dbpedia.org/resource/Huawei"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Ericsson",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "ProgrammingLanguageDesigner",
-                  "ProgrammingLanguageDeveloper"
-                ],
-                "name": "Ericsson",
-                "dbpedia_resource": "http://dbpedia.org/resource/Ericsson"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#Sigfox",
-              "relevance": 0.33,
-              "type": "Hashtag"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#covid",
-              "relevance": 0.33,
-              "type": "Hashtag"
-            }
-          ],
-          "concepts": [
-            {
-              "text": "Wide area network",
-              "relevance": 0.915043,
-              "dbpedia_resource": "http://dbpedia.org/resource/Wide_area_network"
-            },
-            {
-              "text": "Ericsson",
-              "relevance": 0.615825,
-              "dbpedia_resource": "http://dbpedia.org/resource/Ericsson"
-            }
-          ],
-          "categories": [
-            {
-              "score": 0.867566,
-              "label": "/technology and computing/hardware/computer networking/wireless technology"
-            },
-            {
-              "score": 0.853095,
-              "label": "/technology and computing/networking"
-            },
-            {
-              "score": 0.85156,
-              "label": "/technology and computing/hardware/computer networking/router"
-            }
-          ]
-        },
-        "extracted_metadata": {
-          "sha1": "5a27ebf3a2cb97d472c515f926869b6536b00956",
-          "filename": "1514312740181094405.json",
-          "file_type": "json"
-        },
-        "tweet_id": "1514312740181094405"
-      },
-      {
-        "id": "1b1fe9c8-1c84-42a1-b5db-b2979d996686",
-        "result_metadata": {
-          "confidence": 0,
-          "score": 1
-        },
-        "text": "Potential Impact of COVID-19 Pandemic on Global Artificial Intelligence Platform Market Report 2022-2029 | Microsoft, Google, IBM, Intel, Infosys – Bloomingprairieonline - Bloomingprairieonline: Potential Impact of… https://t.co/hB6poJPiwD #AI #artificialintelligence #Finperform https://t.co/mOHUtkAkiT",
-        "enriched_text": {
-          "sentiment": {
-            "document": {
-              "score": 0,
-              "label": "neutral"
-            }
-          },
-          "entities": [
-            {
-              "count": 1,
-              "sentiment": {
-                "score": -0.34367,
-                "label": "negative"
               },
               "text": "Microsoft",
-              "relevance": 0.33,
+              "relevance": 0.547779,
               "type": "Company",
               "disambiguation": {
                 "subtype": [
@@ -1466,30 +74,8 @@
                 "score": 0,
                 "label": "neutral"
               },
-              "text": "Google",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "AcademicInstitution",
-                  "AwardPresentingOrganization",
-                  "OperatingSystemDeveloper",
-                  "ProgrammingLanguageDeveloper",
-                  "SoftwareDeveloper",
-                  "VentureFundedCompany"
-                ],
-                "name": "Google",
-                "dbpedia_resource": "http://dbpedia.org/resource/Google"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
               "text": "IBM",
-              "relevance": 0.33,
+              "relevance": 0.524706,
               "type": "Company",
               "disambiguation": {
                 "subtype": [
@@ -1511,18 +97,9 @@
                 "score": 0,
                 "label": "neutral"
               },
-              "text": "Intel",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "OperatingSystemDeveloper",
-                  "ProcessorManufacturer",
-                  "SoftwareDeveloper"
-                ],
-                "name": "Intel",
-                "dbpedia_resource": "http://dbpedia.org/resource/Intel"
-              }
+              "text": "BT.",
+              "relevance": 0.301643,
+              "type": "Company"
             },
             {
               "count": 1,
@@ -1530,14 +107,9 @@
                 "score": 0,
                 "label": "neutral"
               },
-              "text": "Infosys",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [],
-                "name": "Infosys",
-                "dbpedia_resource": "http://dbpedia.org/resource/Infosys"
-              }
+              "text": "@Lampada_DS",
+              "relevance": 0.301643,
+              "type": "TwitterHandle"
             },
             {
               "count": 1,
@@ -1545,92 +117,64 @@
                 "score": 0,
                 "label": "neutral"
               },
-              "text": "#artificialintelligence",
-              "relevance": 0.33,
-              "type": "Hashtag"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#Finperform",
-              "relevance": 0.33,
-              "type": "Hashtag"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#AI",
-              "relevance": 0.33,
-              "type": "Hashtag"
+              "text": "3 months",
+              "relevance": 0.301643,
+              "type": "Quantity"
             }
           ],
           "concepts": [
             {
-              "text": "Linux",
-              "relevance": 0.880566,
-              "dbpedia_resource": "http://dbpedia.org/resource/Linux"
-            },
-            {
-              "text": "Intelligent agent",
-              "relevance": 0.815559,
-              "dbpedia_resource": "http://dbpedia.org/resource/Intelligent_agent"
-            },
-            {
-              "text": "Artificial intelligence",
-              "relevance": 0.7832,
-              "dbpedia_resource": "http://dbpedia.org/resource/Artificial_intelligence"
-            },
-            {
-              "text": "Business intelligence",
-              "relevance": 0.748916,
-              "dbpedia_resource": "http://dbpedia.org/resource/Business_intelligence"
-            },
-            {
               "text": "Computer",
-              "relevance": 0.743804,
+              "relevance": 0.914754,
               "dbpedia_resource": "http://dbpedia.org/resource/Computer"
             },
             {
-              "text": "Semiconductor sales leaders by year",
-              "relevance": 0.7128,
-              "dbpedia_resource": "http://dbpedia.org/resource/Semiconductor_sales_leaders_by_year"
+              "text": "Computer science",
+              "relevance": 0.911116,
+              "dbpedia_resource": "http://dbpedia.org/resource/Computer_science"
+            },
+            {
+              "text": "Computational science",
+              "relevance": 0.832372,
+              "dbpedia_resource": "http://dbpedia.org/resource/Computational_science"
+            },
+            {
+              "text": "Industry",
+              "relevance": 0.714,
+              "dbpedia_resource": "http://dbpedia.org/resource/Industry"
             }
           ],
           "categories": [
             {
-              "score": 0.969631,
+              "score": 0.961504,
+              "label": "/sports/baseball"
+            },
+            {
+              "score": 0.924394,
+              "label": "/science/computer science"
+            },
+            {
+              "score": 0.856842,
               "label": "/technology and computing/operating systems"
-            },
-            {
-              "score": 0.955792,
-              "label": "/technology and computing/hardware/computer components/chips and processors"
-            },
-            {
-              "score": 0.907845,
-              "label": "/technology and computing/hardware/computer"
             }
           ]
         },
         "extracted_metadata": {
-          "sha1": "daec5e8c6a1451c3caa0aaa3379945786b6c4182",
-          "filename": "1513622691944620033.json",
+          "sha1": "ef4b22ab8620df3d3aefa12551a27dc96df94ec8",
+          "filename": "1483840596582223876.json",
           "file_type": "json"
         },
-        "tweet_id": "1513622691944620033"
+        "t_id": "1483840596582223876"
       },
       {
-        "id": "d2c88818-70d0-4975-8e1c-c37ef73c3160",
+        "id": "fdd9ac14-d03d-48b1-90b3-7839a0129ed0",
         "result_metadata": {
           "confidence": 0,
           "score": 1
         },
-        "text": "IoT Wide Area Networks (WAN) Technology Market- increasing demand with Industry Professionals: LoRa Alliance, IBM, Cisco, Huawei, Ericsson, etc #Sigfox #covid via https://t.co/aPd14AOUQU https://t.co/sYAh7qP58v",
+        "name": "OxfordPhysics",
+        "url": "https://pbs.twimg.com/media/FJFFryvXIAInwCZ.jpg",
+        "text": "Quantum physics @maria__violaris, DPhil student at @UniofOxford, is creating a video series about #quantum paradoxes using @qiskit with @IBM Quantum. Her 1st video is about playing a game of quantum #minesweeper based on the quantum bomb paradox, watch ▶️ https://t.co/O9Bmmj2yQk https://t.co/5cQY45Szye",
         "enriched_text": {
           "sentiment": {
             "document": {
@@ -1642,12 +186,12 @@
             {
               "count": 1,
               "sentiment": {
-                "score": 0,
-                "label": "neutral"
+                "score": -0.426294,
+                "label": "negative"
               },
-              "text": "LoRa Alliance",
-              "relevance": 0.33,
-              "type": "Person"
+              "text": "IBM Quantum",
+              "relevance": 0.961762,
+              "type": "Company"
             },
             {
               "count": 1,
@@ -1655,22 +199,9 @@
                 "score": 0,
                 "label": "neutral"
               },
-              "text": "IBM",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "SoftwareLicense",
-                  "OperatingSystemDeveloper",
-                  "ProcessorManufacturer",
-                  "SoftwareDeveloper",
-                  "CompanyFounder",
-                  "ProgrammingLanguageDesigner",
-                  "ProgrammingLanguageDeveloper"
-                ],
-                "name": "IBM",
-                "dbpedia_resource": "http://dbpedia.org/resource/IBM"
-              }
+              "text": "@maria__violaris",
+              "relevance": 0.961762,
+              "type": "TwitterHandle"
             },
             {
               "count": 1,
@@ -1678,56 +209,8 @@
                 "score": 0,
                 "label": "neutral"
               },
-              "text": "Cisco",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [],
-                "name": "Cisco Systems",
-                "dbpedia_resource": "http://dbpedia.org/resource/Cisco_Systems"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Huawei",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [],
-                "name": "Huawei",
-                "dbpedia_resource": "http://dbpedia.org/resource/Huawei"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Ericsson",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "ProgrammingLanguageDesigner",
-                  "ProgrammingLanguageDeveloper"
-                ],
-                "name": "Ericsson",
-                "dbpedia_resource": "http://dbpedia.org/resource/Ericsson"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#Sigfox",
-              "relevance": 0.33,
+              "text": "#minesweeper",
+              "relevance": 0.961762,
               "type": "Hashtag"
             },
             {
@@ -1736,358 +219,110 @@
                 "score": 0,
                 "label": "neutral"
               },
-              "text": "#covid",
-              "relevance": 0.33,
+              "text": "@UniofOxford",
+              "relevance": 0.961762,
+              "type": "TwitterHandle"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "#quantum",
+              "relevance": 0.961762,
               "type": "Hashtag"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@qiskit",
+              "relevance": 0.961762,
+              "type": "TwitterHandle"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@IBM",
+              "relevance": 0.961762,
+              "type": "TwitterHandle"
             }
           ],
           "concepts": [
             {
-              "text": "Wide area network",
-              "relevance": 0.915043,
-              "dbpedia_resource": "http://dbpedia.org/resource/Wide_area_network"
+              "text": "Game",
+              "relevance": 0.938227,
+              "dbpedia_resource": "http://dbpedia.org/resource/Game"
             },
             {
-              "text": "Ericsson",
-              "relevance": 0.615825,
-              "dbpedia_resource": "http://dbpedia.org/resource/Ericsson"
+              "text": "Quantum mechanics",
+              "relevance": 0.91666,
+              "dbpedia_resource": "http://dbpedia.org/resource/Quantum_mechanics"
+            },
+            {
+              "text": "Play",
+              "relevance": 0.872093,
+              "dbpedia_resource": "http://dbpedia.org/resource/Play_(activity)"
+            },
+            {
+              "text": "Physics",
+              "relevance": 0.824769,
+              "dbpedia_resource": "http://dbpedia.org/resource/Physics"
+            },
+            {
+              "text": "Toy",
+              "relevance": 0.76665,
+              "dbpedia_resource": "http://dbpedia.org/resource/Toy"
+            },
+            {
+              "text": "Photon",
+              "relevance": 0.762717,
+              "dbpedia_resource": "http://dbpedia.org/resource/Photon"
+            },
+            {
+              "text": "Quantum",
+              "relevance": 0.727297,
+              "dbpedia_resource": "http://dbpedia.org/resource/Quantum"
+            },
+            {
+              "text": "Chemistry",
+              "relevance": 0.722441,
+              "dbpedia_resource": "http://dbpedia.org/resource/Chemistry"
             }
           ],
           "categories": [
             {
-              "score": 0.870033,
-              "label": "/technology and computing/hardware/computer networking/wireless technology"
-            },
-            {
-              "score": 0.854713,
-              "label": "/technology and computing/networking"
-            },
-            {
-              "score": 0.851449,
-              "label": "/technology and computing/hardware/computer networking/router"
+              "score": 0.998935,
+              "label": "/science/physics/atomic physics"
             }
           ]
         },
         "extracted_metadata": {
-          "sha1": "8ca4de2a44dbf0fd3331828799aada41340db370",
-          "filename": "1514298605733093390.json",
+          "sha1": "926a3b0252ca653c6e24f50aa236b78a91fb9a36",
+          "filename": "1482044046868627457.json",
           "file_type": "json"
         },
-        "tweet_id": "1514298605733093390"
+        "t_id": "1482044046868627457"
       },
       {
-        "id": "f70dcc74-8e26-4865-a23e-952dbad1600c",
+        "id": "405306e1-4267-408b-913f-e4b3fd94b723",
         "result_metadata": {
           "confidence": 0,
           "score": 1
         },
-        "text": "IoT Wide Area Networks (WAN) Technology Market- increasing demand with Industry Professionals: LoRa Alliance, IBM, Cisco, Huawei, Ericsson, etc #Sigfox #covid via https://t.co/u14WxAYdRI https://t.co/N4k5mXntRo",
+        "name": "DataSciColumbia",
+        "url": "https://pbs.twimg.com/media/FOdlAH9X0Ao4VuM.jpg",
+        "text": "Announcing #DataScienceDay2022's Industry Keynote Speaker &gt;&gt; Sriram Raghavan! @sriramragh is VP at @IBM Research for AI. He leads a worldwide team of 600+ research scientists &amp; engineers to advance the field of #AI. Learn more &amp; register today https://t.co/koUESHvgsj *nl* #datascience https://t.co/BYyJ5CTcXG",
         "enriched_text": {
           "sentiment": {
             "document": {
-              "score": 0,
-              "label": "neutral"
-            }
-          },
-          "entities": [
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "LoRa Alliance",
-              "relevance": 0.33,
-              "type": "Person"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "IBM",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "SoftwareLicense",
-                  "OperatingSystemDeveloper",
-                  "ProcessorManufacturer",
-                  "SoftwareDeveloper",
-                  "CompanyFounder",
-                  "ProgrammingLanguageDesigner",
-                  "ProgrammingLanguageDeveloper"
-                ],
-                "name": "IBM",
-                "dbpedia_resource": "http://dbpedia.org/resource/IBM"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Cisco",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [],
-                "name": "Cisco Systems",
-                "dbpedia_resource": "http://dbpedia.org/resource/Cisco_Systems"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Huawei",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [],
-                "name": "Huawei",
-                "dbpedia_resource": "http://dbpedia.org/resource/Huawei"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Ericsson",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "ProgrammingLanguageDesigner",
-                  "ProgrammingLanguageDeveloper"
-                ],
-                "name": "Ericsson",
-                "dbpedia_resource": "http://dbpedia.org/resource/Ericsson"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#Sigfox",
-              "relevance": 0.33,
-              "type": "Hashtag"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#covid",
-              "relevance": 0.33,
-              "type": "Hashtag"
-            }
-          ],
-          "concepts": [
-            {
-              "text": "Wide area network",
-              "relevance": 0.915043,
-              "dbpedia_resource": "http://dbpedia.org/resource/Wide_area_network"
-            },
-            {
-              "text": "Ericsson",
-              "relevance": 0.615825,
-              "dbpedia_resource": "http://dbpedia.org/resource/Ericsson"
-            }
-          ],
-          "categories": [
-            {
-              "score": 0.870033,
-              "label": "/technology and computing/hardware/computer networking/wireless technology"
-            },
-            {
-              "score": 0.854713,
-              "label": "/technology and computing/networking"
-            },
-            {
-              "score": 0.851449,
-              "label": "/technology and computing/hardware/computer networking/router"
-            }
-          ]
-        },
-        "extracted_metadata": {
-          "sha1": "0d1455578a4f01bdedd2e44c96f73640f8499fae",
-          "filename": "1514303272961642501.json",
-          "file_type": "json"
-        },
-        "tweet_id": "1514303272961642501"
-      },
-      {
-        "id": "33c5bd62-14c2-48ff-b4ba-e4d3440ed0fa",
-        "result_metadata": {
-          "confidence": 0,
-          "score": 1
-        },
-        "text": "IoT Wide Area Networks (WAN) Technology Market- increasing demand with Industry Professionals: LoRa Alliance, IBM, Cisco, Huawei, Ericsson, etc #Sigfox #covid via https://t.co/DMhm8sfd7e https://t.co/w0wYygSsaY",
-        "enriched_text": {
-          "sentiment": {
-            "document": {
-              "score": 0,
-              "label": "neutral"
-            }
-          },
-          "entities": [
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "LoRa Alliance",
-              "relevance": 0.33,
-              "type": "Person"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "IBM",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "SoftwareLicense",
-                  "OperatingSystemDeveloper",
-                  "ProcessorManufacturer",
-                  "SoftwareDeveloper",
-                  "CompanyFounder",
-                  "ProgrammingLanguageDesigner",
-                  "ProgrammingLanguageDeveloper"
-                ],
-                "name": "IBM",
-                "dbpedia_resource": "http://dbpedia.org/resource/IBM"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Cisco",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [],
-                "name": "Cisco Systems",
-                "dbpedia_resource": "http://dbpedia.org/resource/Cisco_Systems"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Huawei",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [],
-                "name": "Huawei",
-                "dbpedia_resource": "http://dbpedia.org/resource/Huawei"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Ericsson",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "ProgrammingLanguageDesigner",
-                  "ProgrammingLanguageDeveloper"
-                ],
-                "name": "Ericsson",
-                "dbpedia_resource": "http://dbpedia.org/resource/Ericsson"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#Sigfox",
-              "relevance": 0.33,
-              "type": "Hashtag"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#covid",
-              "relevance": 0.33,
-              "type": "Hashtag"
-            }
-          ],
-          "concepts": [
-            {
-              "text": "Wide area network",
-              "relevance": 0.915043,
-              "dbpedia_resource": "http://dbpedia.org/resource/Wide_area_network"
-            },
-            {
-              "text": "Ericsson",
-              "relevance": 0.615825,
-              "dbpedia_resource": "http://dbpedia.org/resource/Ericsson"
-            }
-          ],
-          "categories": [
-            {
-              "score": 0.870033,
-              "label": "/technology and computing/hardware/computer networking/wireless technology"
-            },
-            {
-              "score": 0.854713,
-              "label": "/technology and computing/networking"
-            },
-            {
-              "score": 0.851449,
-              "label": "/technology and computing/hardware/computer networking/router"
-            }
-          ]
-        },
-        "extracted_metadata": {
-          "sha1": "0226c2b7053eb634f90b068508f18db9ae030094",
-          "filename": "1514306961541513221.json",
-          "file_type": "json"
-        },
-        "tweet_id": "1514306961541513221"
-      },
-      {
-        "id": "b287fe7d-aee3-4256-8392-25a76ef71897",
-        "result_metadata": {
-          "confidence": 0,
-          "score": 1
-        },
-        "text": "🙌🏽 After such a crazy Covid-19 season, in-person events are finally back for good and we couldn't be happier! 🥳 *nl*  *nl* 🙏🏽  Thank you to everyone that attended our #DataProtection Event. We hope you enjoyed it as much as we did! *nl*  *nl* #BTI #IBM #CyberSecurity #CyberAttack https://t.co/8IHrvPe3SV",
-        "enriched_text": {
-          "sentiment": {
-            "document": {
-              "score": 0.967449,
+              "score": 0.658101,
               "label": "positive"
             }
           },
@@ -2098,8 +333,56 @@
                 "score": 0,
                 "label": "neutral"
               },
-              "text": "#DataProtection",
-              "relevance": 0.01,
+              "text": "Sriram Raghavan",
+              "relevance": 0.866746,
+              "type": "Person",
+              "disambiguation": {
+                "subtype": [
+                  "FilmDirector",
+                  "FilmWriter"
+                ],
+                "name": "Sriram Raghavan",
+                "dbpedia_resource": "http://dbpedia.org/resource/Sriram_Raghavan"
+              }
+            },
+            {
+              "count": 2,
+              "sentiment": {
+                "score": 0.345674,
+                "label": "positive"
+              },
+              "text": "AI",
+              "relevance": 0.512806,
+              "type": "Organization"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0.345674,
+                "label": "positive"
+              },
+              "text": "VP",
+              "relevance": 0.457793,
+              "type": "JobTitle"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0.345674,
+                "label": "positive"
+              },
+              "text": "IBM Research",
+              "relevance": 0.388482,
+              "type": "Company"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "#DataScienceDay2022",
+              "relevance": 0.388482,
               "type": "Hashtag"
             },
             {
@@ -2108,8 +391,8 @@
                 "score": 0,
                 "label": "neutral"
               },
-              "text": "#CyberSecurity",
-              "relevance": 0.01,
+              "text": "#datascience",
+              "relevance": 0.388482,
               "type": "Hashtag"
             },
             {
@@ -2118,8 +401,138 @@
                 "score": 0,
                 "label": "neutral"
               },
-              "text": "#CyberAttack",
-              "relevance": 0.01,
+              "text": "@sriramragh",
+              "relevance": 0.388482,
+              "type": "TwitterHandle"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@IBM",
+              "relevance": 0.388482,
+              "type": "TwitterHandle"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "#AI",
+              "relevance": 0.388482,
+              "type": "Hashtag"
+            }
+          ],
+          "concepts": [
+            {
+              "text": "Sriram Raghavan",
+              "relevance": 0.949819,
+              "dbpedia_resource": "http://dbpedia.org/resource/Sriram_Raghavan"
+            },
+            {
+              "text": "Science",
+              "relevance": 0.745821,
+              "dbpedia_resource": "http://dbpedia.org/resource/Science"
+            },
+            {
+              "text": "Scientist",
+              "relevance": 0.644805,
+              "dbpedia_resource": "http://dbpedia.org/resource/Scientist"
+            },
+            {
+              "text": "Keynote",
+              "relevance": 0.627417,
+              "dbpedia_resource": "http://dbpedia.org/resource/Keynote"
+            },
+            {
+              "text": "Scientists",
+              "relevance": 0.615825,
+              "dbpedia_resource": "http://dbpedia.org/resource/Scientists"
+            },
+            {
+              "text": "Johnny Gaddaar",
+              "relevance": 0.598437,
+              "dbpedia_resource": "http://dbpedia.org/resource/Johnny_Gaddaar"
+            }
+          ],
+          "categories": [
+            {
+              "score": 0.878676,
+              "label": "/automotive and vehicles/cars/performance vehicles"
+            },
+            {
+              "score": 0.764334,
+              "label": "/automotive and vehicles/cars/coupe"
+            },
+            {
+              "score": 0.726695,
+              "label": "/automotive and vehicles/motor shows"
+            }
+          ]
+        },
+        "extracted_metadata": {
+          "sha1": "e8e5238fb2c33527a44a1e0ecc6dbc19d9ffd360",
+          "filename": "1506284486031458305.json",
+          "file_type": "json"
+        },
+        "t_id": "1506284486031458305"
+      },
+      {
+        "id": "416370cb-2e7e-4044-bba7-62363ddd809c",
+        "result_metadata": {
+          "confidence": 0,
+          "score": 1
+        },
+        "name": "DataSciColumbia",
+        "url": "https://pbs.twimg.com/media/FPqtCHXXIAQgxX0.jpg",
+        "text": "STARTING NOW ----&gt; Industry Keynote: Sriram Raghavan, IBM Research AI #DataScienceDay2022 #datascience #IBM #AI https://t.co/nXnrVFZKxw",
+        "enriched_text": {
+          "sentiment": {
+            "document": {
+              "score": 0,
+              "label": "neutral"
+            }
+          },
+          "entities": [
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "Sriram Raghavan",
+              "relevance": 0.33,
+              "type": "Person",
+              "disambiguation": {
+                "subtype": [
+                  "FilmDirector",
+                  "FilmWriter"
+                ],
+                "name": "Sriram Raghavan",
+                "dbpedia_resource": "http://dbpedia.org/resource/Sriram_Raghavan"
+              }
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "IBM Research",
+              "relevance": 0.33,
+              "type": "Company"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "#DataScienceDay2022",
+              "relevance": 0.33,
               "type": "Hashtag"
             },
             {
@@ -2128,8 +541,8 @@
                 "score": 0,
                 "label": "neutral"
               },
-              "text": "#BTI",
-              "relevance": 0.01,
+              "text": "#datascience",
+              "relevance": 0.33,
               "type": "Hashtag"
             },
             {
@@ -2139,48 +552,140 @@
                 "label": "neutral"
               },
               "text": "#IBM",
-              "relevance": 0.01,
+              "relevance": 0.33,
+              "type": "Hashtag"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "#AI",
+              "relevance": 0.33,
               "type": "Hashtag"
             }
           ],
           "concepts": [
             {
-              "text": "Positive psychology",
-              "relevance": 0.877274,
-              "dbpedia_resource": "http://dbpedia.org/resource/Positive_psychology"
+              "text": "Sriram Raghavan",
+              "relevance": 0.949819,
+              "dbpedia_resource": "http://dbpedia.org/resource/Sriram_Raghavan"
             },
             {
-              "text": "Positive mental attitude",
-              "relevance": 0.663326,
-              "dbpedia_resource": "http://dbpedia.org/resource/Positive_mental_attitude"
+              "text": "Johnny Gaddaar",
+              "relevance": 0.598437,
+              "dbpedia_resource": "http://dbpedia.org/resource/Johnny_Gaddaar"
+            },
+            {
+              "text": "Ek Hasina Thi",
+              "relevance": 0.586845,
+              "dbpedia_resource": "http://dbpedia.org/resource/Ek_Hasina_Thi"
             }
           ],
           "categories": [
             {
-              "score": 0.981367,
-              "label": "/sports/baseball"
+              "score": 0.78515,
+              "label": "/automotive and vehicles/cars/performance vehicles"
+            },
+            {
+              "score": 0.761875,
+              "label": "/technology and computing/hardware/computer"
+            },
+            {
+              "score": 0.739536,
+              "label": "/technology and computing/operating systems"
             }
           ]
         },
         "extracted_metadata": {
-          "sha1": "e89ee5b1dcf95a0ad21b7abd7725a53c8517d998",
-          "filename": "1512450898051665930.json",
+          "sha1": "6cbdef94f77718b630afdfff495a00fe2b447d5d",
+          "filename": "1511711023652352001.json",
           "file_type": "json"
         },
-        "tweet_id": "1512450898051665930"
+        "t_id": "1511711023652352001"
       },
       {
-        "id": "86b825b4-8fbf-4334-b8b6-defc0f932599",
+        "id": "f075c7b3-e397-4bb0-a3bd-f570df6b7e27",
         "result_metadata": {
           "confidence": 0,
           "score": 1
         },
-        "text": "IoT Wide Area Networks (WAN) Technology Market- increasing demand with Industry Professionals: LoRa Alliance, IBM, Cisco, Huawei, Ericsson, etc #Sigfox #covid via https://t.co/V7FfW08zbr https://t.co/wQyUQns25u",
+        "name": "CGIU",
+        "url": "",
+        "text": "We're excited to welcome them into the CGI U Class of 2022 and collaborate with them and IBM’s @CallforCode to develop their project in the months ahead.",
         "enriched_text": {
           "sentiment": {
             "document": {
-              "score": 0,
-              "label": "neutral"
+              "score": 0.951837,
+              "label": "positive"
+            }
+          },
+          "entities": [
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0.932193,
+                "label": "positive"
+              },
+              "text": "IBM",
+              "relevance": 0.33,
+              "type": "Company"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@CallforCode",
+              "relevance": 0.33,
+              "type": "TwitterHandle"
+            }
+          ],
+          "concepts": [
+            {
+              "text": "Linux",
+              "relevance": 0.9072,
+              "dbpedia_resource": "http://dbpedia.org/resource/Linux"
+            }
+          ],
+          "categories": [
+            {
+              "score": 0.880308,
+              "label": "/technology and computing/operating systems"
+            },
+            {
+              "score": 0.843321,
+              "label": "/technology and computing/hardware/computer"
+            },
+            {
+              "score": 0.809213,
+              "label": "/technology and computing/hardware/computer peripherals"
+            }
+          ]
+        },
+        "extracted_metadata": {
+          "sha1": "b35d270e886ead7ce35fb3ccf6c1802bf73d5813",
+          "filename": "1515065074276130818.json",
+          "file_type": "json"
+        },
+        "t_id": "1515065074276130818"
+      },
+      {
+        "id": "ccd02b9f-654a-4f31-bc51-ddcbfb541b71",
+        "result_metadata": {
+          "confidence": 0,
+          "score": 1
+        },
+        "name": "_UoW",
+        "url": "",
+        "text": "Read Louisa’s blog on studying as a degree apprentice whilst working at IBM. *nl* “Apprenticeships exist in all forms &amp; you’ll meet some great people along the way.” *nl* 👉 https://t.co/MXQuyaHPoq",
+        "enriched_text": {
+          "sentiment": {
+            "document": {
+              "score": 0.667456,
+              "label": "positive"
             }
           },
           "entities": [
@@ -2190,298 +695,63 @@
                 "score": 0,
                 "label": "neutral"
               },
-              "text": "LoRa Alliance",
-              "relevance": 0.33,
-              "type": "Person"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
               "text": "IBM",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "SoftwareLicense",
-                  "OperatingSystemDeveloper",
-                  "ProcessorManufacturer",
-                  "SoftwareDeveloper",
-                  "CompanyFounder",
-                  "ProgrammingLanguageDesigner",
-                  "ProgrammingLanguageDeveloper"
-                ],
-                "name": "IBM",
-                "dbpedia_resource": "http://dbpedia.org/resource/IBM"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Cisco",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [],
-                "name": "Cisco Systems",
-                "dbpedia_resource": "http://dbpedia.org/resource/Cisco_Systems"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Huawei",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [],
-                "name": "Huawei",
-                "dbpedia_resource": "http://dbpedia.org/resource/Huawei"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Ericsson",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "ProgrammingLanguageDesigner",
-                  "ProgrammingLanguageDeveloper"
-                ],
-                "name": "Ericsson",
-                "dbpedia_resource": "http://dbpedia.org/resource/Ericsson"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#Sigfox",
-              "relevance": 0.33,
-              "type": "Hashtag"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#covid",
-              "relevance": 0.33,
-              "type": "Hashtag"
+              "relevance": 0.938974,
+              "type": "Company"
             }
           ],
           "concepts": [
             {
-              "text": "Wide area network",
-              "relevance": 0.915043,
-              "dbpedia_resource": "http://dbpedia.org/resource/Wide_area_network"
+              "text": "Doctorate",
+              "relevance": 0.94727,
+              "dbpedia_resource": "http://dbpedia.org/resource/Doctorate"
             },
             {
-              "text": "Ericsson",
-              "relevance": 0.615825,
-              "dbpedia_resource": "http://dbpedia.org/resource/Ericsson"
+              "text": "Apprenticeship",
+              "relevance": 0.5874,
+              "dbpedia_resource": "http://dbpedia.org/resource/Apprenticeship"
+            },
+            {
+              "text": "Academic degree",
+              "relevance": 0.57156,
+              "dbpedia_resource": "http://dbpedia.org/resource/Academic_degree"
             }
           ],
           "categories": [
             {
-              "score": 0.870033,
-              "label": "/technology and computing/hardware/computer networking/wireless technology"
+              "score": 0.792923,
+              "label": "/technology and computing/operating systems"
             },
             {
-              "score": 0.854713,
-              "label": "/technology and computing/networking"
+              "score": 0.747243,
+              "label": "/technology and computing/hardware/computer"
             },
             {
-              "score": 0.851449,
-              "label": "/technology and computing/hardware/computer networking/router"
+              "score": 0.718825,
+              "label": "/technology and computing/hardware/computer peripherals"
             }
           ]
         },
         "extracted_metadata": {
-          "sha1": "da21c7628be695bb7cc3c0a7b86f8ed3f706f411",
-          "filename": "1514285255934496774.json",
+          "sha1": "67f43b84a3bb4eeeccad4c238b0cb4ea5aec8ebe",
+          "filename": "1490987758189707271.json",
           "file_type": "json"
         },
-        "tweet_id": "1514285255934496774"
+        "t_id": "1490987758189707271"
       },
       {
-        "id": "c0fa06ce-eb29-407d-aa4b-634b885f0465",
+        "id": "96583933-61fc-4893-a048-ab0bc1618c86",
         "result_metadata": {
           "confidence": 0,
           "score": 1
         },
-        "text": "IoT Wide Area Networks (WAN) Technology Market- increasing demand with Industry Professionals: LoRa Alliance, IBM, Cisco, Huawei, Ericsson, etc #Sigfox #covid via https://t.co/IpwvZJYjo6 https://t.co/P7x066Gg2r",
+        "name": "SUNY",
+        "url": "",
+        "text": "A partnership between @ualbany and @IBM is growing, and it will bring more #SUNYResearch into the correlation between climate change and weather impacts. Learn more about what's to come in this @WAMCRadio conversation: https://t.co/mt85nsg4T1",
         "enriched_text": {
           "sentiment": {
             "document": {
-              "score": 0,
-              "label": "neutral"
-            }
-          },
-          "entities": [
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "LoRa Alliance",
-              "relevance": 0.33,
-              "type": "Person"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "IBM",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "SoftwareLicense",
-                  "OperatingSystemDeveloper",
-                  "ProcessorManufacturer",
-                  "SoftwareDeveloper",
-                  "CompanyFounder",
-                  "ProgrammingLanguageDesigner",
-                  "ProgrammingLanguageDeveloper"
-                ],
-                "name": "IBM",
-                "dbpedia_resource": "http://dbpedia.org/resource/IBM"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Cisco",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [],
-                "name": "Cisco Systems",
-                "dbpedia_resource": "http://dbpedia.org/resource/Cisco_Systems"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Huawei",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [],
-                "name": "Huawei",
-                "dbpedia_resource": "http://dbpedia.org/resource/Huawei"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Ericsson",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "ProgrammingLanguageDesigner",
-                  "ProgrammingLanguageDeveloper"
-                ],
-                "name": "Ericsson",
-                "dbpedia_resource": "http://dbpedia.org/resource/Ericsson"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#Sigfox",
-              "relevance": 0.33,
-              "type": "Hashtag"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#covid",
-              "relevance": 0.33,
-              "type": "Hashtag"
-            }
-          ],
-          "concepts": [
-            {
-              "text": "Wide area network",
-              "relevance": 0.915043,
-              "dbpedia_resource": "http://dbpedia.org/resource/Wide_area_network"
-            },
-            {
-              "text": "Ericsson",
-              "relevance": 0.615825,
-              "dbpedia_resource": "http://dbpedia.org/resource/Ericsson"
-            }
-          ],
-          "categories": [
-            {
-              "score": 0.870033,
-              "label": "/technology and computing/hardware/computer networking/wireless technology"
-            },
-            {
-              "score": 0.854713,
-              "label": "/technology and computing/networking"
-            },
-            {
-              "score": 0.851449,
-              "label": "/technology and computing/hardware/computer networking/router"
-            }
-          ]
-        },
-        "extracted_metadata": {
-          "sha1": "d91e8896c24447364a0902f3e214a192075f27ac",
-          "filename": "1514276096124067846.json",
-          "file_type": "json"
-        },
-        "tweet_id": "1514276096124067846"
-      },
-      {
-        "id": "054ebc5a-e2ba-4c8a-93bc-5fcc2d11663b",
-        "result_metadata": {
-          "confidence": 0,
-          "score": 1
-        },
-        "text": "The major factors fueling the #blockchainasaservice market include increasing demand for #BaaS due to COVID-19 outbreak, growing need for #supplychain transparency across verticals... *nl* More Info - https://t.co/bXkwGfX0jq *nl* Key Players - @IBM @Microsoft @SAP @awscloud @Oracle ... https://t.co/1bzEHXxxgS",
-        "enriched_text": {
-          "sentiment": {
-            "document": {
-              "score": -0.715586,
+              "score": -0.330708,
               "label": "negative"
             }
           },
@@ -2492,8 +762,792 @@
                 "score": 0,
                 "label": "neutral"
               },
+              "text": "IBM",
+              "relevance": 0.259048,
+              "type": "Company"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "#SUNYResearch",
+              "relevance": 0.259048,
+              "type": "Hashtag"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@WAMCRadio",
+              "relevance": 0.259048,
+              "type": "TwitterHandle"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@ualbany",
+              "relevance": 0.259048,
+              "type": "TwitterHandle"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@IBM",
+              "relevance": 0.259048,
+              "type": "TwitterHandle"
+            }
+          ],
+          "concepts": [
+            {
+              "text": "Weather",
+              "relevance": 0.909247,
+              "dbpedia_resource": "http://dbpedia.org/resource/Weather"
+            },
+            {
+              "text": "Climate change",
+              "relevance": 0.898816,
+              "dbpedia_resource": "http://dbpedia.org/resource/Climate_change"
+            },
+            {
+              "text": "Climate",
+              "relevance": 0.882206,
+              "dbpedia_resource": "http://dbpedia.org/resource/Climate"
+            },
+            {
+              "text": "Meteorology",
+              "relevance": 0.586845,
+              "dbpedia_resource": "http://dbpedia.org/resource/Meteorology"
+            }
+          ],
+          "categories": [
+            {
+              "score": 0.963823,
+              "label": "/science/weather"
+            },
+            {
+              "score": 0.805648,
+              "label": "/science/ecology/environmental disaster"
+            },
+            {
+              "score": 0.766555,
+              "label": "/business and industrial/energy/renewable energy"
+            }
+          ]
+        },
+        "extracted_metadata": {
+          "sha1": "3857c6765d9f72032c0f1f762379ace23f59b07d",
+          "filename": "1501934662783946753.json",
+          "file_type": "json"
+        },
+        "t_id": "1501934662783946753"
+      },
+      {
+        "id": "0a737ecf-806a-4be5-a67f-77ce47c05bdd",
+        "result_metadata": {
+          "confidence": 0,
+          "score": 1
+        },
+        "name": "unisouthampton",
+        "url": "https://pbs.twimg.com/media/FKcniY4XoAQAfPN.jpg",
+        "text": "\"We all learned a lot from the project and how to better ourselves.\" *nl*  *nl* @UoS_Careers offers students opportunities to develop skills and gain industry experience. One is The Student Innovation Challenge. *nl*  *nl* Business student Rahul tells us about his experience of working with @IBM. https://t.co/pEOL3PDbHU",
+        "enriched_text": {
+          "sentiment": {
+            "document": {
+              "score": 0.570437,
+              "label": "positive"
+            }
+          },
+          "entities": [
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "Rahul",
+              "relevance": 0.919292,
+              "type": "Person"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "IBM.",
+              "relevance": 0.395926,
+              "type": "Company"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@UoS_Careers",
+              "relevance": 0.395926,
+              "type": "TwitterHandle"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@IBM",
+              "relevance": 0.395926,
+              "type": "TwitterHandle"
+            }
+          ],
+          "concepts": [
+            {
+              "text": "Education",
+              "relevance": 0.887158,
+              "dbpedia_resource": "http://dbpedia.org/resource/Education"
+            },
+            {
+              "text": "Student",
+              "relevance": 0.7832,
+              "dbpedia_resource": "http://dbpedia.org/resource/Student"
+            }
+          ],
+          "categories": [
+            {
+              "score": 0.929966,
+              "label": "/sports/baseball"
+            },
+            {
+              "score": 0.888888,
+              "label": "/education/homework and study tips"
+            },
+            {
+              "score": 0.734528,
+              "label": "/education/studying business"
+            }
+          ]
+        },
+        "extracted_metadata": {
+          "sha1": "eca9084ac535e1e2c39de53207cf723935b01c22",
+          "filename": "1489547026803019776.json",
+          "file_type": "json"
+        },
+        "t_id": "1489547026803019776"
+      },
+      {
+        "id": "f08c9f9d-ac83-495a-9dac-0d34d938ce88",
+        "result_metadata": {
+          "confidence": 0,
+          "score": 1
+        },
+        "name": "RoehamptonUni",
+        "url": "",
+        "text": "#ICYMI: We spoke to Rafa, a third year BSc Human Resource Management student who completed a one-year placement at IBM, about his top tips to make the most of the opportunity of a placement year. *nl*  *nl* Read more on the Roehampton Blog: *nl* https://t.co/e1c946DbSw",
+        "enriched_text": {
+          "sentiment": {
+            "document": {
+              "score": 0.930425,
+              "label": "positive"
+            }
+          },
+          "entities": [
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "Roehampton Blog",
+              "relevance": 0.937511,
+              "type": "PrintMedia"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": -0.333328,
+                "label": "negative"
+              },
+              "text": "Rafa",
+              "relevance": 0.811578,
+              "type": "Person"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "IBM",
+              "relevance": 0.54222,
+              "type": "Company"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "one-year",
+              "relevance": 0.54222,
+              "type": "Quantity"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "#ICYMI",
+              "relevance": 0.54222,
+              "type": "Hashtag"
+            }
+          ],
+          "concepts": [
+            {
+              "text": "The Opportunity",
+              "relevance": 0.91136,
+              "dbpedia_resource": "http://dbpedia.org/resource/The_Opportunity"
+            },
+            {
+              "text": "Human resource management",
+              "relevance": 0.886784,
+              "dbpedia_resource": "http://dbpedia.org/resource/Human_resource_management"
+            }
+          ],
+          "categories": [
+            {
+              "score": 0.721964,
+              "label": "/technology and computing/operating systems"
+            },
+            {
+              "score": 0.677602,
+              "label": "/technology and computing/hardware/computer"
+            },
+            {
+              "score": 0.654513,
+              "label": "/technology and computing/hardware/computer peripherals"
+            }
+          ]
+        },
+        "extracted_metadata": {
+          "sha1": "3333ec6c095c625f2c5b8186bf529b17176fc772",
+          "filename": "1511645000232284164.json",
+          "file_type": "json"
+        },
+        "t_id": "1511645000232284164"
+      },
+      {
+        "id": "4ea27ff9-efa4-443f-af52-10ac61165566",
+        "result_metadata": {
+          "confidence": 0,
+          "score": 1
+        },
+        "name": "WidenerUniv",
+        "url": "",
+        "text": "An international biz major &amp; poli sci minor, his résumé includes experiences w/ @IBM, @GoldmanSachs &amp; interning with @RepMGS *nl*  *nl* \"Widener has done a really good job preparing me for what hands-on work was going to look like, how I can use my major, and what options I have.\" —Brandon",
+        "enriched_text": {
+          "sentiment": {
+            "document": {
+              "score": 0.812849,
+              "label": "positive"
+            }
+          },
+          "entities": [
+            {
+              "count": 2,
+              "sentiment": {
+                "score": 0.550897,
+                "label": "positive"
+              },
+              "text": "Widener",
+              "relevance": 0.880229,
+              "type": "Person"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "IBM",
+              "relevance": 0.352212,
+              "type": "Company"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@GoldmanSachs",
+              "relevance": 0.352212,
+              "type": "TwitterHandle"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@RepMGS",
+              "relevance": 0.352212,
+              "type": "TwitterHandle"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@IBM",
+              "relevance": 0.352212,
+              "type": "TwitterHandle"
+            }
+          ],
+          "concepts": [
+            {
+              "text": "Minor scale",
+              "relevance": 0.851642,
+              "dbpedia_resource": "http://dbpedia.org/resource/Minor_scale"
+            },
+            {
+              "text": "Minor third",
+              "relevance": 0.831516,
+              "dbpedia_resource": "http://dbpedia.org/resource/Minor_third"
+            },
+            {
+              "text": "Implied volatility",
+              "relevance": 0.827123,
+              "dbpedia_resource": "http://dbpedia.org/resource/Implied_volatility"
+            },
+            {
+              "text": "Minor chord",
+              "relevance": 0.822978,
+              "dbpedia_resource": "http://dbpedia.org/resource/Minor_chord"
+            }
+          ],
+          "categories": [
+            {
+              "score": 0.898183,
+              "label": "/sports/baseball"
+            }
+          ]
+        },
+        "extracted_metadata": {
+          "sha1": "98f87de70edcadfd9c23741f324542ee8f8fa096",
+          "filename": "1498749907007680521.json",
+          "file_type": "json"
+        },
+        "t_id": "1498749907007680521"
+      },
+      {
+        "id": "78c9364f-4c44-47c9-8617-f3c2586e294f",
+        "result_metadata": {
+          "confidence": 0,
+          "score": 1
+        },
+        "name": "DataSciColumbia",
+        "url": "https://pbs.twimg.com/media/FPqt7BOXsAU7wkW.jpg",
+        "text": "HAPPENING NOW ----&gt; \"Representations have shaped entire fields of science &amp; technology\" Industry Keynote: Sriram Raghavan, IBM Research AI #DataScienceDay2022 #datascience #IBM #AI https://t.co/64cgS45Mxk",
+        "enriched_text": {
+          "sentiment": {
+            "document": {
+              "score": 0,
+              "label": "neutral"
+            }
+          },
+          "entities": [
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "Sriram Raghavan",
+              "relevance": 0.33,
+              "type": "Person",
+              "disambiguation": {
+                "subtype": [
+                  "FilmDirector",
+                  "FilmWriter"
+                ],
+                "name": "Sriram Raghavan",
+                "dbpedia_resource": "http://dbpedia.org/resource/Sriram_Raghavan"
+              }
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "IBM Research",
+              "relevance": 0.33,
+              "type": "Company"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "#DataScienceDay2022",
+              "relevance": 0.33,
+              "type": "Hashtag"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "#datascience",
+              "relevance": 0.33,
+              "type": "Hashtag"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "#IBM",
+              "relevance": 0.33,
+              "type": "Hashtag"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "#AI",
+              "relevance": 0.33,
+              "type": "Hashtag"
+            }
+          ],
+          "concepts": [
+            {
+              "text": "Science",
+              "relevance": 0.935413,
+              "dbpedia_resource": "http://dbpedia.org/resource/Science"
+            },
+            {
+              "text": "Sriram Raghavan",
+              "relevance": 0.82593,
+              "dbpedia_resource": "http://dbpedia.org/resource/Sriram_Raghavan"
+            },
+            {
+              "text": "Scientific method",
+              "relevance": 0.666041,
+              "dbpedia_resource": "http://dbpedia.org/resource/Scientific_method"
+            },
+            {
+              "text": "Fields of science",
+              "relevance": 0.527997,
+              "dbpedia_resource": "http://dbpedia.org/resource/Fields_of_science"
+            },
+            {
+              "text": "Johnny Gaddaar",
+              "relevance": 0.52038,
+              "dbpedia_resource": "http://dbpedia.org/resource/Johnny_Gaddaar"
+            },
+            {
+              "text": "Ek Hasina Thi",
+              "relevance": 0.5103,
+              "dbpedia_resource": "http://dbpedia.org/resource/Ek_Hasina_Thi"
+            }
+          ],
+          "categories": [
+            {
+              "score": 0.757695,
+              "label": "/technology and computing/hardware/computer"
+            },
+            {
+              "score": 0.74036,
+              "label": "/automotive and vehicles/cars/performance vehicles"
+            },
+            {
+              "score": 0.702683,
+              "label": "/technology and computing/operating systems"
+            }
+          ]
+        },
+        "extracted_metadata": {
+          "sha1": "1ba1c1cfc5cb408a046c0be3eac2f64fb8f8802f",
+          "filename": "1511712215342190592.json",
+          "file_type": "json"
+        },
+        "t_id": "1511712215342190592"
+      },
+      {
+        "id": "6ba0e230-2f32-41c9-a952-41531673967f",
+        "result_metadata": {
+          "confidence": 0,
+          "score": 1
+        },
+        "name": "cardiffmet",
+        "url": "https://pbs.twimg.com/media/FMXBHriWUAoEqwK.jpg",
+        "text": "Work placements while studying Software Engineering at Cardiff Met led to a career with computing household name IBM for Cameron: https://t.co/bWvPi6jhnt https://t.co/TG4lFpitWg",
+        "enriched_text": {
+          "sentiment": {
+            "document": {
+              "score": 0,
+              "label": "neutral"
+            }
+          },
+          "entities": [
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "IBM",
+              "relevance": 0.33,
+              "type": "Company",
+              "disambiguation": {
+                "subtype": [
+                  "SoftwareLicense",
+                  "OperatingSystemDeveloper",
+                  "ProcessorManufacturer",
+                  "SoftwareDeveloper",
+                  "CompanyFounder",
+                  "ProgrammingLanguageDesigner",
+                  "ProgrammingLanguageDeveloper"
+                ],
+                "name": "IBM",
+                "dbpedia_resource": "http://dbpedia.org/resource/IBM"
+              }
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "Cameron",
+              "relevance": 0.33,
+              "type": "Person"
+            }
+          ],
+          "concepts": [
+            {
+              "text": "Computer",
+              "relevance": 0.920326,
+              "dbpedia_resource": "http://dbpedia.org/resource/Computer"
+            },
+            {
+              "text": "Software engineering",
+              "relevance": 0.752026,
+              "dbpedia_resource": "http://dbpedia.org/resource/Software_engineering"
+            },
+            {
+              "text": "Computer science",
+              "relevance": 0.5346,
+              "dbpedia_resource": "http://dbpedia.org/resource/Computer_science"
+            }
+          ],
+          "categories": [
+            {
+              "score": 0.99989,
+              "label": "/technology and computing"
+            },
+            {
+              "score": 0.985646,
+              "label": "/science/computer science/software engineering"
+            }
+          ]
+        },
+        "extracted_metadata": {
+          "sha1": "7c2088d537d5340d74d64e9cc8ef06308a922c97",
+          "filename": "1496815435857244161.json",
+          "file_type": "json"
+        },
+        "t_id": "1496815435857244161"
+      },
+      {
+        "id": "d73063ef-18da-4248-a82d-3559d345ee22",
+        "result_metadata": {
+          "confidence": 0,
+          "score": 1
+        },
+        "name": "imperialcollege",
+        "url": "https://pbs.twimg.com/media/FPuDtxpXwAMTJQL.jpg",
+        "text": "#OnThisDay 1964: The IBM System/360 mainframe computer system family was announced https://t.co/OFV4Q80N9v",
+        "enriched_text": {
+          "sentiment": {
+            "document": {
+              "score": 0,
+              "label": "neutral"
+            }
+          },
+          "entities": [
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "IBM",
+              "relevance": 0.33,
+              "type": "Company",
+              "disambiguation": {
+                "subtype": [
+                  "SoftwareLicense",
+                  "OperatingSystemDeveloper",
+                  "ProcessorManufacturer",
+                  "SoftwareDeveloper",
+                  "CompanyFounder",
+                  "ProgrammingLanguageDesigner",
+                  "ProgrammingLanguageDeveloper"
+                ],
+                "name": "IBM",
+                "dbpedia_resource": "http://dbpedia.org/resource/IBM"
+              }
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "#OnThisDay",
+              "relevance": 0.33,
+              "type": "Hashtag"
+            }
+          ],
+          "concepts": [
+            {
+              "text": "IBM",
+              "relevance": 0.966547,
+              "dbpedia_resource": "http://dbpedia.org/resource/IBM"
+            },
+            {
+              "text": "Computer",
+              "relevance": 0.745876,
+              "dbpedia_resource": "http://dbpedia.org/resource/Computer"
+            },
+            {
+              "text": "Mainframe computer",
+              "relevance": 0.697239,
+              "dbpedia_resource": "http://dbpedia.org/resource/Mainframe_computer"
+            },
+            {
+              "text": "Personal computer",
+              "relevance": 0.621672,
+              "dbpedia_resource": "http://dbpedia.org/resource/Personal_computer"
+            },
+            {
+              "text": "Operating system",
+              "relevance": 0.561232,
+              "dbpedia_resource": "http://dbpedia.org/resource/Operating_system"
+            },
+            {
+              "text": "Minicomputer",
+              "relevance": 0.525309,
+              "dbpedia_resource": "http://dbpedia.org/resource/Minicomputer"
+            },
+            {
+              "text": "Server",
+              "relevance": 0.502893,
+              "dbpedia_resource": "http://dbpedia.org/resource/Server_(computing)"
+            },
+            {
+              "text": "IBM System/360",
+              "relevance": 0.479663,
+              "dbpedia_resource": "http://dbpedia.org/resource/IBM_System/360"
+            }
+          ],
+          "categories": [
+            {
+              "score": 0.984439,
+              "label": "/technology and computing/hardware/computer"
+            },
+            {
+              "score": 0.972964,
+              "label": "/technology and computing/hardware/computer peripherals"
+            },
+            {
+              "score": 0.959749,
+              "label": "/technology and computing/operating systems"
+            }
+          ]
+        },
+        "extracted_metadata": {
+          "sha1": "b76da29c04e5018f694ce29fcb30d445eba52bbe",
+          "filename": "1511946923665674243.json",
+          "file_type": "json"
+        },
+        "t_id": "1511946923665674243"
+      },
+      {
+        "id": "8940b057-1b9f-4080-a96d-517d245553f0",
+        "result_metadata": {
+          "confidence": 0,
+          "score": 1
+        },
+        "name": "UniOfHull",
+        "url": "",
+        "text": "Students have previously worked at industry giants like IBM, Microsoft and BT but wherever you end up, you’ll be paid a salary during your year in industry. *nl*  *nl* Our placement team set up everything, plus they'll stay in touch throughout the year to give you any support you need.",
+        "enriched_text": {
+          "sentiment": {
+            "document": {
+              "score": 0.781639,
+              "label": "positive"
+            }
+          },
+          "entities": [
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "BT",
+              "relevance": 0.88045,
+              "type": "Company"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "IBM",
+              "relevance": 0.807489,
+              "type": "Company",
+              "disambiguation": {
+                "subtype": [
+                  "SoftwareLicense",
+                  "OperatingSystemDeveloper",
+                  "ProcessorManufacturer",
+                  "SoftwareDeveloper",
+                  "CompanyFounder",
+                  "ProgrammingLanguageDesigner",
+                  "ProgrammingLanguageDeveloper"
+                ],
+                "name": "IBM",
+                "dbpedia_resource": "http://dbpedia.org/resource/IBM"
+              }
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
               "text": "Microsoft",
-              "relevance": 0.884184,
+              "relevance": 0.699275,
               "type": "Company",
               "disambiguation": {
                 "subtype": [
@@ -2508,896 +1562,42 @@
                 "name": "Microsoft",
                 "dbpedia_resource": "http://dbpedia.org/resource/Microsoft"
               }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#blockchainasaservice",
-              "relevance": 0.884184,
-              "type": "Hashtag"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#supplychain",
-              "relevance": 0.884184,
-              "type": "Hashtag"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@Microsoft",
-              "relevance": 0.884184,
-              "type": "TwitterHandle"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@awscloud",
-              "relevance": 0.884184,
-              "type": "TwitterHandle"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@Oracle",
-              "relevance": 0.884184,
-              "type": "TwitterHandle"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#BaaS",
-              "relevance": 0.884184,
-              "type": "Hashtag"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@IBM",
-              "relevance": 0.884184,
-              "type": "TwitterHandle"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@SAP",
-              "relevance": 0.884184,
-              "type": "TwitterHandle"
             }
           ],
           "concepts": [
             {
-              "text": "Major",
-              "relevance": 0.91136,
-              "dbpedia_resource": "http://dbpedia.org/resource/Major"
-            },
-            {
-              "text": "Supply and demand",
-              "relevance": 0.839166,
-              "dbpedia_resource": "http://dbpedia.org/resource/Supply_and_demand"
+              "text": "Industry",
+              "relevance": 0.9044,
+              "dbpedia_resource": "http://dbpedia.org/resource/Industry"
             }
           ],
           "categories": [
             {
-              "score": 0.749797,
-              "label": "/health and fitness/disease/epidemic"
+              "score": 0.911033,
+              "label": "/technology and computing/operating systems"
             },
             {
-              "score": 0.599364,
-              "label": "/health and fitness/disease/cold and flu"
+              "score": 0.757218,
+              "label": "/technology and computing/hardware/computer"
             },
             {
-              "score": 0.586477,
-              "label": "/finance/financial news"
+              "score": 0.715399,
+              "label": "/technology and computing/hardware/computer/servers"
             }
           ]
         },
         "extracted_metadata": {
-          "sha1": "324a09de445e9bd068b4ffae9662b4abc4f6c913",
-          "filename": "1513786893074595842.json",
+          "sha1": "846c7bb3ad56ad41586aca2f84de22b7e99c48bb",
+          "filename": "1479403797902512138.json",
           "file_type": "json"
         },
-        "tweet_id": "1513786893074595842"
-      },
-      {
-        "id": "2fa0ca0a-4353-4e7d-b397-58cbf1d11dee",
-        "result_metadata": {
-          "confidence": 0,
-          "score": 1
-        },
-        "text": "The impact of Covid-19 on data center market insights in containers 2022 Analysis by Keyplayers | , IBM Corporation, Emerson Electric. , Cisco Systems https://t.co/iZIJ33xqy4",
-        "enriched_text": {
-          "sentiment": {
-            "document": {
-              "score": 0,
-              "label": "neutral"
-            }
-          },
-          "entities": [
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Keyplayers",
-              "relevance": 0.33,
-              "type": "Company"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "IBM Corporation",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "SoftwareLicense",
-                  "OperatingSystemDeveloper",
-                  "ProcessorManufacturer",
-                  "SoftwareDeveloper",
-                  "CompanyFounder",
-                  "ProgrammingLanguageDesigner",
-                  "ProgrammingLanguageDeveloper"
-                ],
-                "name": "IBM",
-                "dbpedia_resource": "http://dbpedia.org/resource/IBM"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0.389305,
-                "label": "positive"
-              },
-              "text": "Emerson Electric.",
-              "relevance": 0.33,
-              "type": "Company"
-            }
-          ],
-          "concepts": [
-            {
-              "text": "Electronics companies of the United States",
-              "relevance": 0.891354,
-              "dbpedia_resource": "http://dbpedia.org/resource/Electronics_companies_of_the_United_States"
-            },
-            {
-              "text": "Emerson Electric Company",
-              "relevance": 0.7476,
-              "dbpedia_resource": "http://dbpedia.org/resource/Emerson_Electric_Company"
-            },
-            {
-              "text": "Computer",
-              "relevance": 0.736129,
-              "dbpedia_resource": "http://dbpedia.org/resource/Computer"
-            },
-            {
-              "text": "IBM",
-              "relevance": 0.72744,
-              "dbpedia_resource": "http://dbpedia.org/resource/IBM"
-            }
-          ],
-          "categories": [
-            {
-              "score": 0.99947,
-              "label": "/technology and computing/data centers"
-            }
-          ]
-        },
-        "extracted_metadata": {
-          "sha1": "9c98cf8468e69ccf7e518c92059e4c89be4a0577",
-          "filename": "1512598145284276225.json",
-          "file_type": "json"
-        },
-        "tweet_id": "1512598145284276225"
-      },
-      {
-        "id": "59b0014c-15ae-4dfa-a3e3-5037cca3ec72",
-        "result_metadata": {
-          "confidence": 0,
-          "score": 1
-        },
-        "text": "IoT Wide Area Networks (WAN) Technology Market- increasing demand with Industry Professionals: LoRa Alliance, IBM, Cisco, Huawei, Ericsson, etc #Sigfox #covid via https://t.co/609RCkF6zD https://t.co/nI5gFlB5pY",
-        "enriched_text": {
-          "sentiment": {
-            "document": {
-              "score": 0,
-              "label": "neutral"
-            }
-          },
-          "entities": [
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "LoRa Alliance",
-              "relevance": 0.33,
-              "type": "Person"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "IBM",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "SoftwareLicense",
-                  "OperatingSystemDeveloper",
-                  "ProcessorManufacturer",
-                  "SoftwareDeveloper",
-                  "CompanyFounder",
-                  "ProgrammingLanguageDesigner",
-                  "ProgrammingLanguageDeveloper"
-                ],
-                "name": "IBM",
-                "dbpedia_resource": "http://dbpedia.org/resource/IBM"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Cisco",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [],
-                "name": "Cisco Systems",
-                "dbpedia_resource": "http://dbpedia.org/resource/Cisco_Systems"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Huawei",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [],
-                "name": "Huawei",
-                "dbpedia_resource": "http://dbpedia.org/resource/Huawei"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Ericsson",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "ProgrammingLanguageDesigner",
-                  "ProgrammingLanguageDeveloper"
-                ],
-                "name": "Ericsson",
-                "dbpedia_resource": "http://dbpedia.org/resource/Ericsson"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#Sigfox",
-              "relevance": 0.33,
-              "type": "Hashtag"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#covid",
-              "relevance": 0.33,
-              "type": "Hashtag"
-            }
-          ],
-          "concepts": [
-            {
-              "text": "Wide area network",
-              "relevance": 0.915043,
-              "dbpedia_resource": "http://dbpedia.org/resource/Wide_area_network"
-            },
-            {
-              "text": "Ericsson",
-              "relevance": 0.615825,
-              "dbpedia_resource": "http://dbpedia.org/resource/Ericsson"
-            }
-          ],
-          "categories": [
-            {
-              "score": 0.870033,
-              "label": "/technology and computing/hardware/computer networking/wireless technology"
-            },
-            {
-              "score": 0.854713,
-              "label": "/technology and computing/networking"
-            },
-            {
-              "score": 0.851449,
-              "label": "/technology and computing/hardware/computer networking/router"
-            }
-          ]
-        },
-        "extracted_metadata": {
-          "sha1": "d7effc0d585c5f8722c540d28c9e6f7e9579c973",
-          "filename": "1514281180950106119.json",
-          "file_type": "json"
-        },
-        "tweet_id": "1514281180950106119"
-      },
-      {
-        "id": "4cfa6ae2-9724-4f70-b528-22a1011c0d84",
-        "result_metadata": {
-          "confidence": 0,
-          "score": 1
-        },
-        "text": "approaching COVID-19. Undoubtedly, serious conflicts in this endeavor include prior research funding from the Bill and Melinda Gates Foundation, Merck, Moderna, Pfizer, Roche, Janssen, IBM, Bionet, the NIH, CDC, and several other vaccine-related entities. Still, the authors",
-        "enriched_text": {
-          "sentiment": {
-            "document": {
-              "score": 0,
-              "label": "neutral"
-            }
-          },
-          "entities": [
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Melinda Gates Foundation",
-              "relevance": 0.913695,
-              "type": "Organization"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Bionet",
-              "relevance": 0.53898,
-              "type": "Company"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Pfizer",
-              "relevance": 0.538013,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [],
-                "name": "Pfizer",
-                "dbpedia_resource": "http://dbpedia.org/resource/Pfizer"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Roche",
-              "relevance": 0.518403,
-              "type": "Person"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "NIH",
-              "relevance": 0.499457,
-              "type": "Organization",
-              "disambiguation": {
-                "subtype": [
-                  "GovernmentAgency",
-                  "SoftwareDeveloper"
-                ],
-                "name": "National Institutes of Health",
-                "dbpedia_resource": "http://dbpedia.org/resource/National_Institutes_of_Health"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Janssen",
-              "relevance": 0.492927,
-              "type": "Company"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Merck",
-              "relevance": 0.477821,
-              "type": "Company"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "CDC",
-              "relevance": 0.435046,
-              "type": "Organization"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "IBM",
-              "relevance": 0.37137,
-              "type": "Company"
-            }
-          ],
-          "concepts": [
-            {
-              "text": "Bill & Melinda Gates Foundation",
-              "relevance": 0.945151,
-              "dbpedia_resource": "http://dbpedia.org/resource/Bill_&_Melinda_Gates_Foundation"
-            },
-            {
-              "text": "Melinda Gates",
-              "relevance": 0.931745,
-              "dbpedia_resource": "http://dbpedia.org/resource/Melinda_Gates"
-            },
-            {
-              "text": "Bill Gates",
-              "relevance": 0.91387,
-              "dbpedia_resource": "http://dbpedia.org/resource/Bill_Gates"
-            },
-            {
-              "text": "Duke University",
-              "relevance": 0.588167,
-              "dbpedia_resource": "http://dbpedia.org/resource/Duke_University"
-            },
-            {
-              "text": "Multinational companies",
-              "relevance": 0.576468,
-              "dbpedia_resource": "http://dbpedia.org/resource/Multinational_companies"
-            },
-            {
-              "text": "The Bill",
-              "relevance": 0.497154,
-              "dbpedia_resource": "http://dbpedia.org/resource/The_Bill"
-            },
-            {
-              "text": "Research",
-              "relevance": 0.47481,
-              "dbpedia_resource": "http://dbpedia.org/resource/Research"
-            },
-            {
-              "text": "Research funding",
-              "relevance": 0.470341,
-              "dbpedia_resource": "http://dbpedia.org/resource/Research_funding"
-            }
-          ],
-          "categories": [
-            {
-              "score": 0.664608,
-              "label": "/family and parenting/motherhood"
-            }
-          ]
-        },
-        "extracted_metadata": {
-          "sha1": "3368ff597536e7d7dfbc35eddc41adff13b258e8",
-          "filename": "1514399521861689346.json",
-          "file_type": "json"
-        },
-        "tweet_id": "1514399521861689346"
-      },
-      {
-        "id": "a9f2b03b-7fdf-4c69-949e-3f1e5909e636",
-        "result_metadata": {
-          "confidence": 0,
-          "score": 1
-        },
-        "text": "Many of us were stuck working from home during the COVID-19 pandemic, thinking the only way to advance our careers was through vertical promotions. While that’s logical, Chief Diversity Officer at @IBM, Carla Grant-Pickens found it is not always the case.  *nl* https://t.co/UD5u5ksGHG https://t.co/6Ob87pfOOx",
-        "enriched_text": {
-          "sentiment": {
-            "document": {
-              "score": -0.901198,
-              "label": "negative"
-            }
-          },
-          "entities": [
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Chief Diversity Officer",
-              "relevance": 0.932246,
-              "type": "JobTitle"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": -0.492092,
-                "label": "negative"
-              },
-              "text": "Carla Grant-Pickens",
-              "relevance": 0.610879,
-              "type": "Person"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "IBM",
-              "relevance": 0.234202,
-              "type": "Company"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@IBM",
-              "relevance": 0.234202,
-              "type": "TwitterHandle"
-            }
-          ],
-          "concepts": [
-            {
-              "text": "Critical thinking",
-              "relevance": 0.852718,
-              "dbpedia_resource": "http://dbpedia.org/resource/Critical_thinking"
-            },
-            {
-              "text": "Reasoning",
-              "relevance": 0.84499,
-              "dbpedia_resource": "http://dbpedia.org/resource/Reasoning"
-            },
-            {
-              "text": "Logic",
-              "relevance": 0.813563,
-              "dbpedia_resource": "http://dbpedia.org/resource/Logic"
-            },
-            {
-              "text": "Non-commissioned officer",
-              "relevance": 0.79344,
-              "dbpedia_resource": "http://dbpedia.org/resource/Non-commissioned_officer"
-            },
-            {
-              "text": "Wang Hongwei",
-              "relevance": 0.790614,
-              "dbpedia_resource": "http://dbpedia.org/resource/Wang_Hongwei"
-            },
-            {
-              "text": "Heraldry",
-              "relevance": 0.776535,
-              "dbpedia_resource": "http://dbpedia.org/resource/Heraldry"
-            },
-            {
-              "text": "Sergeant",
-              "relevance": 0.77256,
-              "dbpedia_resource": "http://dbpedia.org/resource/Sergeant"
-            },
-            {
-              "text": "The Park",
-              "relevance": 0.771854,
-              "dbpedia_resource": "http://dbpedia.org/resource/The_Park_(2007_film)"
-            }
-          ],
-          "categories": [
-            {
-              "score": 0.85195,
-              "label": "/health and fitness/disease/cold and flu"
-            },
-            {
-              "score": 0.842645,
-              "label": "/sports/baseball"
-            },
-            {
-              "score": 0.684665,
-              "label": "/health and fitness/disease/epidemic"
-            }
-          ]
-        },
-        "extracted_metadata": {
-          "sha1": "45f6addee62a8038330672347bd18b2ad52062c7",
-          "filename": "1513565443398811651.json",
-          "file_type": "json"
-        },
-        "tweet_id": "1513565443398811651"
-      },
-      {
-        "id": "1bdaffea-18cf-40e1-aa89-bf9dfc28c75e",
-        "result_metadata": {
-          "confidence": 0,
-          "score": 1
-        },
-        "text": "Thanks for helping make us more efficient in less time.  How has Covid catalyzed efficiency in your business?   #intelligentautomation thanks @IBM for sponsoring",
-        "enriched_text": {
-          "sentiment": {
-            "document": {
-              "score": 0.938425,
-              "label": "positive"
-            }
-          },
-          "entities": [
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0.777448,
-                "label": "positive"
-              },
-              "text": "Covid",
-              "relevance": 0.954778,
-              "type": "Company"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0.79574,
-                "label": "positive"
-              },
-              "text": "IBM",
-              "relevance": 0.201389,
-              "type": "Company"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#intelligentautomation",
-              "relevance": 0.201389,
-              "type": "Hashtag"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@IBM",
-              "relevance": 0.201389,
-              "type": "TwitterHandle"
-            }
-          ],
-          "concepts": [],
-          "categories": [
-            {
-              "score": 0.873437,
-              "label": "/business and industrial/energy"
-            },
-            {
-              "score": 0.864628,
-              "label": "/business and industrial/business operations/management/business process"
-            },
-            {
-              "score": 0.798796,
-              "label": "/business and industrial/green solutions"
-            }
-          ]
-        },
-        "extracted_metadata": {
-          "sha1": "5858b2997fe95d3863ec85376d9ca045771395cf",
-          "filename": "1514243780848885760.json",
-          "file_type": "json"
-        },
-        "tweet_id": "1514243780848885760"
-      },
-      {
-        "id": "d958ba9f-2508-4989-a1f5-d19cffae66e6",
-        "result_metadata": {
-          "confidence": 0,
-          "score": 1
-        },
-        "text": "IoT Wide Area Networks (WAN) Technology Market- increasing demand with Industry Professionals: LoRa Alliance, IBM, Cisco, Huawei, Ericsson, etc #Sigfox #covid via https://t.co/Wu6krrpZxr https://t.co/CnBre3ERQM",
-        "enriched_text": {
-          "sentiment": {
-            "document": {
-              "score": 0,
-              "label": "neutral"
-            }
-          },
-          "entities": [
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "LoRa Alliance",
-              "relevance": 0.33,
-              "type": "Person"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "IBM",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "SoftwareLicense",
-                  "OperatingSystemDeveloper",
-                  "ProcessorManufacturer",
-                  "SoftwareDeveloper",
-                  "CompanyFounder",
-                  "ProgrammingLanguageDesigner",
-                  "ProgrammingLanguageDeveloper"
-                ],
-                "name": "IBM",
-                "dbpedia_resource": "http://dbpedia.org/resource/IBM"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Cisco",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [],
-                "name": "Cisco Systems",
-                "dbpedia_resource": "http://dbpedia.org/resource/Cisco_Systems"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Huawei",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [],
-                "name": "Huawei",
-                "dbpedia_resource": "http://dbpedia.org/resource/Huawei"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Ericsson",
-              "relevance": 0.33,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "ProgrammingLanguageDesigner",
-                  "ProgrammingLanguageDeveloper"
-                ],
-                "name": "Ericsson",
-                "dbpedia_resource": "http://dbpedia.org/resource/Ericsson"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#Sigfox",
-              "relevance": 0.33,
-              "type": "Hashtag"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#covid",
-              "relevance": 0.33,
-              "type": "Hashtag"
-            }
-          ],
-          "concepts": [
-            {
-              "text": "Wide area network",
-              "relevance": 0.915043,
-              "dbpedia_resource": "http://dbpedia.org/resource/Wide_area_network"
-            },
-            {
-              "text": "Ericsson",
-              "relevance": 0.615825,
-              "dbpedia_resource": "http://dbpedia.org/resource/Ericsson"
-            }
-          ],
-          "categories": [
-            {
-              "score": 0.870033,
-              "label": "/technology and computing/hardware/computer networking/wireless technology"
-            },
-            {
-              "score": 0.854713,
-              "label": "/technology and computing/networking"
-            },
-            {
-              "score": 0.851449,
-              "label": "/technology and computing/hardware/computer networking/router"
-            }
-          ]
-        },
-        "extracted_metadata": {
-          "sha1": "46d96721221792fc23eb50d7aa4befccd136f94d",
-          "filename": "1514362600057974795.json",
-          "file_type": "json"
-        },
-        "tweet_id": "1514362600057974795"
+        "t_id": "1479403797902512138"
       }
     ],
     "retrieval_details": {
       "document_retrieval_strategy": "untrained"
     }
-  }
+  },
+  "_id": "a_1650158108081",
+  "query_type": "all"
 }

@@ -1,6 +1,6 @@
 
-accsFile = open("accounts_new.txt" ,"r")
-queryFile = open("query.txt", "w")
+accsFile = open("../data/accounts-russel-group.txt" ,"r")
+queryFile = open("query2.txt", "w")
 
 accounts = accsFile.readlines()
 

@@ -16,8 +16,9 @@ function load_tweets() {
 
 const axios = require('axios')
 
-axios
-    .post('http://localhost:8080/')
+function load(path){
+    axios
+    .post('http://localhost:8080/' + path)
     .then(res => {
         console.log("yes")
 
@@ -31,5 +32,9 @@ axios
     .catch(error => {
         console.error(error)
     })
+}
+
+module.exports = { load }
+
 
 TwitterWidgetsLoader.load();

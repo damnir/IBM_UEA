@@ -31,6 +31,10 @@ function query() {
     var db = require('./dbclient')
     discovery.query(queryParams)
         .then(queryResponse => {
+            queryResponse["_id"] = "a_"+Date.now()
+            queryResponse["query_type"] = "all"
+
+
             response = JSON.stringify(queryResponse, null, 2)
             console.log(response);
 
@@ -41,6 +45,7 @@ function query() {
                 }
                 //file written successfully
             })
+
 
             db.pushNewWatson(JSON.parse(response))
         })
@@ -172,3 +177,4 @@ module.exports = {
 // query()
 // get_docs_id()
 // check_status()
+// refresh_collection()

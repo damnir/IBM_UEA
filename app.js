@@ -11,14 +11,44 @@ const { resolve } = require("path")
 
 app.use(express.static('public'))
 
-var accounts = read_accounts()
+var accounts
+
+// console.log(dbclient.query_id("all_accounts", "data"))
+// var twttr = require("./twitter_widgets")
 
 
 app.set('view engine', 'ejs')
 app.use(body_parser.urlencoded({ extended: true }))
 
-app.get("/", (req, res) => {
-    res.render("main", { accounts: accounts })
+app.get("/", async (req, res) => {
+
+    accounts = await dbclient.query_id("all_accounts", "data")
+
+    res.render("main", {
+        accounts: accounts
+    })
+})
+
+app.get("/records", async (req, res) => {
+
+    docs = await dbclient.query_all()
+
+    res.render("records", {
+        recs: docs,
+        query: null
+    })
+})
+
+app.get("/records/:id", async (req, res) => {
+
+    doc = await dbclient.query_one(req.params)
+    docs = await dbclient.query_all()
+
+    res.render("records", {
+        recs: docs,
+        query: doc
+    })
+    console.log(doc)
 })
 
 app.post('/', (req, res) => {
@@ -27,11 +57,17 @@ app.post('/', (req, res) => {
     })
 });
 
+app.post('/records', (req, res) => {
+    res.status(200).send({
+        message: read_result()
+    })
+});
+
 app.post("/new_query", (req, res) => {
     var tweets = read_result()
 
-    if(tweets) {
-        res.status(200).send({ message:tweets })
+    if (tweets) {
+        res.status(200).send({ message: tweets })
     }
     else {
         res.status(418)
@@ -56,13 +92,12 @@ app.post('/submit-form', (req, res) => {
     })
 
     async function wait() {
-        if(!watsonclient.check_status)
-        {
+        if (!watsonclient.check_status) {
             console.log("false")
             await sleep(2000)
             wait()
         }
-        else{
+        else {
             res.redirect("/")
         }
 
@@ -94,7 +129,7 @@ function read_result() {
 function read_accounts() {
 
     var accounts = ""
-    
+
     try {
         accounts = fs.readFileSync('data/accounts.txt', 'utf8')
     } catch (err) {
