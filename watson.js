@@ -31,7 +31,7 @@ function query() {
     var db = require('./dbclient')
     discovery.query(queryParams)
         .then(queryResponse => {
-            queryResponse["_id"] = "a_"+Date.now()
+            queryResponse["_id"] = "a_" + Date.now()
             queryResponse["query_type"] = "all"
 
             // queryResponse['summary'] = summarise(queryResponse)
@@ -66,87 +66,69 @@ function summarise(data) {
     var categories = ""
 
     data['result']['results'].forEach(tweet => {
-        
+
         sentiment.push(tweet['enriched_text']['sentiment']['document']['label'])
-        
+
         tweet['enriched_text']['entities'].forEach(entity => {
             entities.push(entity['text'])
         })
 
         tweet['enriched_text']['concepts'].forEach(concept => {
-            // if(concept['relevance'] > 0.8) {
-                concepts.push(concept['text'])
-            // }
+            concepts.push(concept['text'])
         })
 
         tweet['enriched_text']['categories'].forEach(category => {
-            categories+=category['label']
+            categories += category['label']
         })
-
     })
 
-    console.log(sentiment)
-    console.log(sentiment.length)
-
-
-    // console.log(entities)
-    // console.log(entities.length)
-
     uniqEntities = [...new Set(entities)]
-    console.log("\n\nENTITIES:")
-    // console.log(uniqEntities)
 
     var counts = [{}];
     entities.forEach(function (x) { counts[x] = (counts[x] || 0) + 1; });
-    // console.log(counts)
-    // console.log(typeof(count))
-    // console.log(counts['IBM'])
-
     var top_entities = []
 
     uniqEntities.forEach(entity => {
-        // if (counts[entity] > 1) {
-            // console.log(entity + " " + counts[entity])
-            top_entities.push([entity, counts[entity]*10])
-        // }
+        top_entities.push([entity, counts[entity] * 10])
     })
 
-    console.log(top_entities)
-
-    // counts.forEach(count => {
-    //     if (count > 1) {
-    //         console.log(count)
-    //     }
-    // })
-
-    // console.log(concepts)
-    // console.log(concepts.length)
     uniqConcepts = [...new Set(concepts)]
-    console.log("\n\nConcepts:")
-    // console.log(uniqConcepts)
-
     counts = [{}];
     concepts.forEach(function (x) { counts[x] = (counts[x] || 0) + 1; });
-    console.log(counts)
 
     var top_concepts = []
 
     uniqConcepts.forEach(concept => {
-        top_concepts.push([concept, counts[concept]*10])
+        top_concepts.push([concept, counts[concept] * 10])
     })
 
-    console.log(top_concepts)
+    categories = categories.split('/')
+    uniqCategories = [...new Set(categories)]
 
-    console.log("\n\nCategories:")
-    // console.log(categories)
-    // // console.log(categories.length)
-    uniqCategories = [...new Set(categories.split('/'))]
-    // console.log("\n\nCategories:")
-    console.log(uniqCategories)
+    counts = [{}];
+    categories.forEach(function (x) { counts[x] = (counts[x] || 0) + 1; });
+    var top_categories = []
 
-    return {'concepts':top_concepts, 'entities':top_entities}
+    uniqCategories.forEach(category => {
+        top_categories.push([category, counts[category] * 10])
+    })
+
+    top_categories.sort(function (a, b) {
+        return b[1] - a[1];
+    });
 
 
+    counts = [];
+    sentiment.forEach(function (x) { counts[x] = (counts[x] || 0) + 1; });
+    // f_sentiment = []
+    // counts.forEach(element => f_sentiment.push([element]))
+    // counts.forEach(element => console.log(element))
+    // console.log(counts)
+    sentiment = {'positive':counts['positive'], 'neutral':counts['neutral'], 'negative':counts['negative']}
+    console.log(sentiment)
+
+
+    return { 'concepts': top_concepts, 'entities': top_entities, 'categories': top_categories, 'sentiment': sentiment }
 }
 
 function get_docs_id() {

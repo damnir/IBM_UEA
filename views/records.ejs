@@ -112,18 +112,26 @@
 
                     <div class="row" style="height: 43.8%;">
                         <h3>Sentiment:</h3>
+
+                        <div>
+                            <h5>Positive: <%= Math.round(query['summary']['sentiment']['positive'] * 100 /  query['result']['matching_results'])%>%
+                            | Neutral: <%= Math.round(query['summary']['sentiment']['neutral'] * 100 /  query['result']['matching_results'])%>%
+                            | Negative: <%= Math.round(query['summary']['sentiment']['negative'] * 100 /  query['result']['matching_results'])%>%</h5>
+                        </div>
+
+                        
                
                     </div>
                     <hr class="rounded">
 
                     <div class="row" style="height: 43.8%;">
 
-                        <h3>Categories:</h3>
-                        <h4>1. placeholder</h4>
-                        <h4 style="padding-left:20px">2. placeholder</h4>
-                        <h4 style="padding-left:40px">3. placeholder</h4>
-                        <h4 style="padding-left:60px">4. placeholder</h4>
-                        <h4 style="padding-left:80px">5. placeholder</h4>
+                        <h3>Top Categories:</h3>
+                        <h4>1. <%= query['summary']["categories"][0][0]%></h4>
+                        <h4 style="padding-left:25px">2. <%= query['summary']["categories"][1][0]%></h4>
+                        <h4 style="padding-left:50px">3. <%= query['summary']["categories"][2][0]%></h4>
+                        <h4 style="padding-left:75px">4. <%= query['summary']["categories"][3][0]%></h4>
+                        <h4 style="padding-left:100px">5. <%= query['summary']["categories"][4][0]%></h4>
 
                     </div>
 
