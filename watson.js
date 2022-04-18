@@ -35,7 +35,7 @@ function query() {
             queryResponse["query_type"] = "all"
 
             // queryResponse['summary'] = summarise(queryResponse)
-            summarise(queryResponse)
+            queryResponse['summary'] = summarise(queryResponse)
 
             response = JSON.stringify(queryResponse, null, 2)
             // console.log(response);
@@ -49,7 +49,7 @@ function query() {
             })
 
 
-            // db.pushNewWatson(JSON.parse(response))
+            db.pushNewWatson(JSON.parse(response))
         })
         .catch(err => {
             console.log('error:', err);
@@ -63,7 +63,7 @@ function summarise(data) {
     var sentiment = []
     var entities = []
     var concepts = []
-    var categories = []
+    var categories = ""
 
     data['result']['results'].forEach(tweet => {
         
@@ -74,12 +74,14 @@ function summarise(data) {
         })
 
         tweet['enriched_text']['concepts'].forEach(concept => {
-            if(concept['relevance'] > 0.7) {
-                concepts.push({'label':concept['text'], 'url':concept['dbpedia_resource']})
-            }
+            // if(concept['relevance'] > 0.8) {
+                concepts.push(concept['text'])
+            // }
         })
 
-        categories.push(tweet['enriched_text']['categories'][0]['label'])
+        tweet['enriched_text']['categories'].forEach(category => {
+            categories+=category['label']
+        })
 
     })
 
@@ -91,24 +93,25 @@ function summarise(data) {
     // console.log(entities.length)
 
     uniqEntities = [...new Set(entities)]
+    console.log("\n\nENTITIES:")
     // console.log(uniqEntities)
 
-    const counts = [{}];
+    var counts = [{}];
     entities.forEach(function (x) { counts[x] = (counts[x] || 0) + 1; });
-    console.log(counts)
+    // console.log(counts)
     // console.log(typeof(count))
     // console.log(counts['IBM'])
 
     var top_entities = []
 
     uniqEntities.forEach(entity => {
-        if (counts[entity] > 1) {
+        // if (counts[entity] > 1) {
             // console.log(entity + " " + counts[entity])
-            top_entities.push({'label':entity, 'count':counts[entity]})
-        }
+            top_entities.push([entity, counts[entity]*10])
+        // }
     })
 
-    // console.log(top_entities)
+    console.log(top_entities)
 
     // counts.forEach(count => {
     //     if (count > 1) {
@@ -119,12 +122,29 @@ function summarise(data) {
     // console.log(concepts)
     // console.log(concepts.length)
     uniqConcepts = [...new Set(concepts)]
-    // console.log(uniqConcepts.length)
+    console.log("\n\nConcepts:")
+    // console.log(uniqConcepts)
 
-    // // console.log(categories)
+    counts = [{}];
+    concepts.forEach(function (x) { counts[x] = (counts[x] || 0) + 1; });
+    console.log(counts)
+
+    var top_concepts = []
+
+    uniqConcepts.forEach(concept => {
+        top_concepts.push([concept, counts[concept]*10])
+    })
+
+    console.log(top_concepts)
+
+    console.log("\n\nCategories:")
+    // console.log(categories)
     // // console.log(categories.length)
-    uniqCategories = [...new Set(categories)]
-    // console.log(uniqCategories)
+    uniqCategories = [...new Set(categories.split('/'))]
+    // console.log("\n\nCategories:")
+    console.log(uniqCategories)
+
+    return {'concepts':top_concepts, 'entities':top_entities}
 
 
 }

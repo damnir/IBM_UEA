@@ -49,7 +49,8 @@ app.get("/records/:id", async (req, res) => {
     res.render("records", {
         recs: docs,
         query: doc,
-        id: req.params['id']
+        id: req.params['id'],
+        entities: doc['summary']['entities']
     })
     // console.log(doc)
 })

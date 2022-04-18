@@ -11,6 +11,14 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <title>IBM Engagement</title>
+
+    <style>
+        /* Rounded border */
+        hr.rounded {
+            border-top: 8px solid #bbb;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 
 <body>
@@ -38,23 +46,23 @@
         </div>
     </nav>
 
-    <div class="container mt-4">
+    <div class="mt-4 w-100 ms-5">
         <div class="row w-100">
-            <div class="col">
+            <div class="col-2">
 
-                    <h3 class=" ">Recent Records</h3>
+                <h3 class=" ">Records:</h3>
 
-                    <div class="list-group mt-2">
+                <div class="list-group mt-2">
 
-                        <% for (var i=0; i < recs.length; i+=1) { %>
+                    <% for (var i=0; i < recs.length; i+=1) { %>
 
-                            <a href="/records/<%=  recs[i]['_id']%> " class="list-group-item list-group-item-action">
-                                <%= recs[i]['_id'] %>
-                            </a>
+                        <a href="/records/<%=  recs[i]['_id']%> " class="list-group-item list-group-item-action">
+                            <%= recs[i]['_id'] %>
+                        </a>
 
-                            <% } %>
-                    </div>
-                    <!-- 
+                        <% } %>
+                </div>
+                <!-- 
                     <% if(query!=null) { for (var i=0; i < query['result']['results'].length; i+=1) {%>
                         <h1>
                             <%= query['result']['results'][i]['t_id'] %>
@@ -62,40 +70,108 @@
                         <% }} %> -->
 
             </div>
-            <% if(id != null) { %>
-            <div class="col-4">
-                <h3>Query Feeed</h3>
-                <div id="tweet_container" class="w-100 ms-2 mt-2" style="overflow-y:scroll; height:800px;">
-                    <div id="tweet" style="max-width: 95%; margin:auto"> </div>
-                  </div>
-                  <script src="../bundle.js"></script>
-          
-                  <script>bundle.load("records/")</script>
-            </div>
-            <div class="col-5">
-                <h3>Analysis</h3>
-                <h5>Entities:</h5>
-                <div id='my_canvas' class="canvas" style="width: 300px; height: 300px; background-color: rgb(255, 224, 224); position: relative;">
-  
+            <% if(id !=null) { %>
+                <div class="col-3">
+                    <h3>Query Feeed</h3>
+                    <div id="tweet_container" class="w-100 ms-2 mt-2" style="overflow-y:scroll; height:800px;">
+                        <div id="tweet" style="max-width: 95%; margin:auto"> </div>
+                    </div>
+                    <script src="../bundle.js"></script>
+
+                    <script>bundle.load("records/")</script>
                 </div>
-            </div>
-            <%}%>
+
+                <div class="col-3" >
+                    <h2>Analysis Summary</h2>
+
+                    <div class="row" style="height: 41.7%;">
+                        <h3>Entities:</h3>
+                        <div id='my_canvas' class="canvas"
+                            style="width: 450px; height: 300px; background-color: rgb(255, 224, 224); position: relative;">
+
+                        </div>
+                    </div>
+                    <hr class="rounded">
+
+                    <div class="row" style="height: 40%;">
+
+                        <h3>Concepts:</h3>
+                        <div id='my_canvas2' class="canvas mb-2 mt-1"
+                            style="width: 450px; height: 300px; background-color: rgb(255, 224, 224); position: relative;">
+
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-warning mt-4 w-100">Export to Google Slides</button>
 
 
 
-    </div>
+                </div>
+                
 
-    <script src="../wordcloud2.js"></script>
+                <div class="col-3 mt-5">
 
-    <script>WordCloud(document.getElementById('my_canvas'), { list: [['IBM', 90], ['#DataScienceDay2022', 30], ['#datascience', 30], ['Microsoft', 20], ['#AI', 30], ['IBM Research', 30], ['Sriram Raghavan', 30]  ] } ); </script>
+                    <div class="row" style="height: 43.8%;">
+                        <h3>Sentiment:</h3>
+               
+                    </div>
+                    <hr class="rounded">
 
-    <script>console.log("POOOO"+WordCloud.isSupported)</script>
+                    <div class="row" style="height: 43.8%;">
 
-    <script src="../bundle.js"></script>
+                        <h3>Categories:</h3>
+                        <h4>1. placeholder</h4>
+                        <h4 style="padding-left:20px">2. placeholder</h4>
+                        <h4 style="padding-left:40px">3. placeholder</h4>
+                        <h4 style="padding-left:60px">4. placeholder</h4>
+                        <h4 style="padding-left:80px">5. placeholder</h4>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+                    </div>
+
+                    <button type="button" class="btn btn-success mt-3 w-100">Export to Google Sheets</button>
+
+
+                </div>
+                <%}%>
+
+
+
+
+        </div>
+
+        <script src="../wordcloud2.js"></script>
+
+        <!-- <script>WordCloud(document.getElementById('my_canvas'), { list: [['IBM', 90], ['#DataScienceDay2022', 30], ['#datascience', 30], ['Microsoft', 20], ['#AI', 30], ['IBM Research', 30], ['Sriram Raghavan', 30]  ] } ); </script> -->
+
+        <!-- <% if(query != null) { %>
+
+    <script>WordCloud(document.getElementById('my_canvas'), { list: "<% query['summary']['entities']%>" } ); </script>
+
+    <% } %> -->
+
+
+        <% if (query!=null) { %>
+            <script>
+
+                arr = "<%=entities%>".split(',')
+                const pairs = Array.from({ length: arr.length / 2 }, (_, i) => arr.slice(i * 2, i * 2 + 2))
+
+                WordCloud(document.getElementById('my_canvas'), { list: pairs, weightFactor: 1.3, shrinkToFit: true, drawOutOfBound: false });
+
+                console.log("<%=query['summary']['concepts']%>")
+
+                arr2 = "<%=query['summary']['concepts']%>".split(',')
+                const pairs2 = Array.from({ length: arr2.length / 2 }, (_, i) => arr2.slice(i * 2, i * 2 + 2))
+
+                WordCloud(document.getElementById('my_canvas2'), { list: pairs2, weightFactor: 1.3, shrinkToFit: true, drawOutOfBound: false});
+                console.log(pairs)
+            </script>
+            <% } %>
+
+                <script src="../bundle.js"></script>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                    crossorigin="anonymous"></script>
 </body>
 
 </html>
