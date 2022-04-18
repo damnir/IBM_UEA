@@ -81,10 +81,48 @@
                     <script>bundle.load("records/")</script>
                 </div>
 
-                <div class="col-3" >
-                    <h2>Analysis Summary</h2>
+                <div class="col-3">
 
-                    <div class="row" style="height: 41.7%;">
+                    <div class="row" style="height: 46.5%;">
+
+                        <h2>Analysis Summary</h2>
+
+
+                        <h3>Sentiment:</h3>
+
+                        <div>
+                            <h5>Positive: <%= Math.round(query['summary']['sentiment']['positive'] * 100 /
+                                    query['result']['matching_results'])%>%
+                                    | Neutral: <%= Math.round(query['summary']['sentiment']['neutral'] * 100 /
+                                        query['result']['matching_results'])%>%
+                                        | Negative: <%= Math.round(query['summary']['sentiment']['negative'] * 100 /
+                                            query['result']['matching_results'])%>%</h5>
+                        </div>
+                        <div style="width: 450px; height: 280px; position: relative;">
+                            <canvas id="myChart"></canvas>
+                        </div>
+
+                    </div>
+                    <hr class="rounded">
+
+                    <div class="row" style="height: 43.8%;">
+
+                        <h3>Top Categories:</h3>
+
+                        <div style="width: 450px; height: 310px; position: relative;">
+                            <canvas id="categoryChart"></canvas>
+                        </div>
+
+                    </div>
+
+                    <button type="button" class="btn btn-success mt-3 w-100">Export to Google Sheets</button>
+
+
+                </div>
+
+                <div class="col-3  mt-5">
+
+                    <div class="row" style="height: 43.25%;">
                         <h3>Entities:</h3>
                         <div id='my_canvas' class="canvas"
                             style="width: 450px; height: 300px; background-color: rgb(255, 224, 224); position: relative;">
@@ -93,7 +131,7 @@
                     </div>
                     <hr class="rounded">
 
-                    <div class="row" style="height: 40%;">
+                    <div class="row" style="height: 48.5%;">
 
                         <h3>Concepts:</h3>
                         <div id='my_canvas2' class="canvas mb-2 mt-1"
@@ -101,85 +139,127 @@
 
                         </div>
                     </div>
-                    <button type="button" class="btn btn-warning mt-4 w-100">Export to Google Slides</button>
-
-
-
-                </div>
-                
-
-                <div class="col-3 mt-5">
-
-                    <div class="row" style="height: 43.8%;">
-                        <h3>Sentiment:</h3>
-
-                        <div>
-                            <h5>Positive: <%= Math.round(query['summary']['sentiment']['positive'] * 100 /  query['result']['matching_results'])%>%
-                            | Neutral: <%= Math.round(query['summary']['sentiment']['neutral'] * 100 /  query['result']['matching_results'])%>%
-                            | Negative: <%= Math.round(query['summary']['sentiment']['negative'] * 100 /  query['result']['matching_results'])%>%</h5>
-                        </div>
-
-                        
-               
-                    </div>
-                    <hr class="rounded">
-
-                    <div class="row" style="height: 43.8%;">
-
-                        <h3>Top Categories:</h3>
-                        <h4>1. <%= query['summary']["categories"][0][0]%></h4>
-                        <h4 style="padding-left:25px">2. <%= query['summary']["categories"][1][0]%></h4>
-                        <h4 style="padding-left:50px">3. <%= query['summary']["categories"][2][0]%></h4>
-                        <h4 style="padding-left:75px">4. <%= query['summary']["categories"][3][0]%></h4>
-                        <h4 style="padding-left:100px">5. <%= query['summary']["categories"][4][0]%></h4>
-
+                    <div class="row">
+                        <button type="button" class="btn btn-warning w-100">Export to Google Slides</button>
                     </div>
 
-                    <button type="button" class="btn btn-success mt-3 w-100">Export to Google Sheets</button>
-
-
                 </div>
-                <%}%>
-
-
-
 
         </div>
 
         <script src="../wordcloud2.js"></script>
 
-        <!-- <script>WordCloud(document.getElementById('my_canvas'), { list: [['IBM', 90], ['#DataScienceDay2022', 30], ['#datascience', 30], ['Microsoft', 20], ['#AI', 30], ['IBM Research', 30], ['Sriram Raghavan', 30]  ] } ); </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-        <!-- <% if(query != null) { %>
+        <script>
+            const labels = [
+                'Positive',
+                'Neutral',
+                'Negative'
+            ];
 
-    <script>WordCloud(document.getElementById('my_canvas'), { list: "<% query['summary']['entities']%>" } ); </script>
+            const data = {
+                labels: labels,
+                datasets: [{
+                    label: 'My First dataset',
+                    data: ["<%=query['summary']['sentiment']['positive']%>", "<%=query['summary']['sentiment']['neutral']%>",
+                        "<%=query['summary']['sentiment']['negative']%>"],
+                    backgroundColor: [
+                        'rgb(80, 200, 130)',
+                        'rgb(54, 162, 235)',
+                        'rgb(255, 99, 132)'
+                    ],
+                    hoverOffset: 4
+                }]
+            };
 
-    <% } %> -->
+            const config = {
+                type: 'doughnut',
+                data: data,
+                options: {
+                    maintainAspectRatio: false,
+                }
+            };
+        </script>
+
+        <script>
+            const myChart = new Chart(
+                document.getElementById('myChart'),
+                config
+            );
+        </script>
+
+        <script>
+            const labels2 = [
+                "<%= query['summary']['categories'][0][0]%>",
+                "<%= query['summary']['categories'][1][0]%>",
+                "<%= query['summary']['categories'][2][0]%>",
+                "<%= query['summary']['categories'][3][0]%>",
+                "<%= query['summary']['categories'][4][0]%>",
+            ];
+
+            const data2 = {
+                labels: labels2,
+                datasets: [{
+                    label: 'My First dataset',
+                    data: ["<%= query['summary']['categories'][0][1]%>",
+                        "<%= query['summary']['categories'][1][1]%>",
+                        "<%= query['summary']['categories'][2][1]%>",
+                        "<%= query['summary']['categories'][3][1]%>",
+                        "<%= query['summary']['categories'][4][1]%>",],
+                    backgroundColor: [
+                        'rgba(255, 99, 132)',
+                        'rgba(255, 159, 64)',
+                        'rgba(75, 192, 192)',
+                        'rgba(54, 162, 235)',
+                        'rgba(153, 102, 255)',
+                    ],
+                    hoverOffset: 4
+                }]
+            };
+
+            const config2 = {
+                type: 'doughnut',
+                data: data2,
+                options: {
+                    maintainAspectRatio: false,
+                }
+            };
+        </script>
+
+        <script>
+            const myChart2 = new Chart(
+                document.getElementById('categoryChart'),
+                config2
+            );
+        </script>
 
 
-        <% if (query!=null) { %>
-            <script>
+        <%}%>
 
-                arr = "<%=entities%>".split(',')
-                const pairs = Array.from({ length: arr.length / 2 }, (_, i) => arr.slice(i * 2, i * 2 + 2))
+            <% if (query!=null) { %>
+                <script>
 
-                WordCloud(document.getElementById('my_canvas'), { list: pairs, weightFactor: 1.3, shrinkToFit: true, drawOutOfBound: false });
+                    arr = "<%=entities%>".split(',')
+                    const pairs = Array.from({ length: arr.length / 2 }, (_, i) => arr.slice(i * 2, i * 2 + 2))
 
-                console.log("<%=query['summary']['concepts']%>")
+                    WordCloud(document.getElementById('my_canvas'), { list: pairs, weightFactor: 1.3, shrinkToFit: true, drawOutOfBound: false });
 
-                arr2 = "<%=query['summary']['concepts']%>".split(',')
-                const pairs2 = Array.from({ length: arr2.length / 2 }, (_, i) => arr2.slice(i * 2, i * 2 + 2))
+                    console.log("<%=query['summary']['concepts']%>")
 
-                WordCloud(document.getElementById('my_canvas2'), { list: pairs2, weightFactor: 1.3, shrinkToFit: true, drawOutOfBound: false});
-                console.log(pairs)
-            </script>
-            <% } %>
+                    arr2 = "<%=query['summary']['concepts']%>".split(',')
+                    const pairs2 = Array.from({ length: arr2.length / 2 }, (_, i) => arr2.slice(i * 2, i * 2 + 2))
 
-                <script src="../bundle.js"></script>
+                    WordCloud(document.getElementById('my_canvas2'), { list: pairs2, weightFactor: 1.3, shrinkToFit: true, drawOutOfBound: false });
+                    console.log(pairs)
+                </script>
+                <% } %>
 
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-                    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-                    crossorigin="anonymous"></script>
+                    <script src="../bundle.js"></script>
+
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                        crossorigin="anonymous"></script>
 </body>
 
 </html>
