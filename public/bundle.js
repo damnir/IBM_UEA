@@ -196,14 +196,14 @@ function load_tweets() {
             return;
         }
         console.log("load tweets called")
-        console.log(response = response.split('\n'))
+        // console.log(response = response.split('\n'))
         response.forEach(tweet => twttr.widgets.createTweet(tweet, document.getElementById('tweet')));
     });
 }
 
 const axios = require('axios')
 
-function load(path){
+function load(path, id){
     axios
     .post('http://localhost:8080/' + path)
     .then(res => {

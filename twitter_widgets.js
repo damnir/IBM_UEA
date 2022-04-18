@@ -9,7 +9,7 @@ function load_tweets() {
             return;
         }
         console.log("load tweets called")
-        console.log(response = response.split('\n'))
+        // console.log(response = response.split('\n'))
         response.forEach(tweet => twttr.widgets.createTweet(tweet, document.getElementById('tweet')));
     });
 }

@@ -14,65 +14,44 @@ import (
 	twitterscraper "github.com/n0madic/twitter-scraper"
 )
 
-func run_search(query string, retweets bool) {
+func run_search(query string, retweets bool, replies bool, until string, since string) {
 
 	if retweets {
-		query += " include:nativeretweets include:retweets include:replies until:2023-01-02 since:2022-01-01"
-		// query += " include:nativeretweets include:retweets until:2022-04-10 since:2021-01-01"
-		println(query + "\n")
+		query += " include:nativeretweets include:retweets"
 	}
-
-	var tweets []string
-
-	f, err := os.OpenFile("data/query_result.txt",
-		os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
-	if err != nil {
-		log.Println(err)
+	if replies {
+		query += " include:replies"
 	}
-	defer f.Close()
+	query += (" until:" + until + " since:" + since)
 
-	// f2.WriteString(" { \"tweets\": {\n")
+	fmt.Println(query)
+	// var tweets []string
 
-	scraper := twitterscraper.New()
-	scraper.SetSearchMode(twitterscraper.SearchLatest)
-	// fmt.Printf("here...")
-	// fmt.Printf("sending... %s\n\n", query)
+	// f, err := os.OpenFile("data/query_result.txt",
+	// 	os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	// if err != nil {
+	// 	log.Println(err)
+	// }
+	// defer f.Close()
 
-	for tweet := range scraper.WithDelay(1).SearchTweets(context.Background(),
-		query, 15) { //50 limit
-		if tweet.Error != nil {
-			panic(tweet.Error)
-		}
-		// tweet.
+	// scraper := twitterscraper.New()
+	// scraper.SetSearchMode(twitterscraper.SearchLatest)
 
-		// unixTimeUTC := time.Unix(tweet.Timestamp, 0) //gives unix time stamp in utc
+	// for tweet := range scraper.WithDelay(1).SearchTweets(context.Background(),
+	// 	query, 15) { //50 limit
+	// 	if tweet.Error != nil {
+	// 		panic(tweet.Error)
+	// 	}
 
-		// unitTimeInRFC3339 := unixTimeUTC.Format(time.RFC3339) //
+	// 	tweets = append(tweets, tweet.ID)
 
-		// fmt.Printf("\nRT: %t Created at: %s\nName: %s\nText: %s\n\n\n", tweet.IsRetweet, unitTimeInRFC3339, tweet.Username, tweet.Text)
-		// fmt.Println(tweet.IsRetweet)
-		tweets = append(tweets, tweet.ID)
+	// 	if _, err := f.WriteString(tweet.ID + "\n"); err != nil {
+	// 		log.Println(err)
+	// 	}
 
-		// if _, err := f.WriteString("ID: " + tweet.ID + " Text: " + tweet.Text + "\n"); err != nil {
-		// 	log.Println(err)
-		// }
+	// 	toJson(tweet.Tweet)
 
-		if _, err := f.WriteString(tweet.ID + "\n"); err != nil {
-			log.Println(err)
-		}
-
-		// f2, err := os.Create("data/query_result/" + tweet.ID + ".json")
-
-		// if err != nil {
-		// 	log.Fatal(err)
-		// }
-
-		// defer f2.Close()
-
-		// toJson(tweet.Tweet, f2)
-		toJson(tweet.Tweet)
-
-	}
+	// }
 
 }
 
@@ -148,7 +127,7 @@ func test_users(locations []string) {
 	}
 }
 
-func query_all() {
+func query_all(qt string, retweets bool, replies bool, until string, since string) {
 
 	file, err := os.Open("data/query.txt")
 
@@ -167,7 +146,7 @@ func query_all() {
 
 	for _, query := range queries {
 		// fmt.Println(query)
-		run_search(query, true)
+		run_search(query, true, true, until, since)
 	}
 
 	file.Close()
@@ -222,12 +201,6 @@ func toJson(tweet twitterscraper.Tweet) {
 
 func main() {
 
-	// switch os.Args[1] {
-	// case "custom":
-	// 	run_search(os.Args[2], false)
-	// case "all":
-	// 	query_all()
-	// }
 	err := os.RemoveAll("data/query_result")
 	if err != nil {
 		log.Fatal(err)
@@ -243,10 +216,28 @@ func main() {
 
 	defer f.Close()
 
-	if os.Args[1] == "a" {
-		query_all()
-	} else {
-		run_search(os.Args[1], false)
+	until := os.Args[3]
+	since := os.Args[4]
+
+	replies := false
+	retweets := false
+
+	if strings.Contains(os.Args[2], "r") {
+		retweets = true
+	}
+	if strings.Contains(os.Args[2], "p") {
+		replies = true
+	}
+
+	switch os.Args[1] {
+	case "russel":
+		query_all("russel", retweets, replies, until, since)
+		break
+	case "all":
+		query_all("all", retweets, replies, until, since)
+		break
+	default:
+		run_search("ibm from:"+os.Args[1], retweets, replies, until, since)
 	}
 
 }

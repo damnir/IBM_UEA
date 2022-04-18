@@ -21,13 +21,18 @@ const listCollectionsParams = {
 };
 
 //tweet test 2
-const queryParams = {
+var queryParams = {
     environmentId: '44c46920-a956-4d4a-b37e-3120a33f7216',
     collectionId: file.collectionid,
     count: '25'
 };
 
 function query() {
+    queryParams = {
+        environmentId: '44c46920-a956-4d4a-b37e-3120a33f7216',
+        collectionId: file.collectionid,
+        count: '25'
+    };
     var db = require('./dbclient')
     discovery.query(queryParams)
         .then(queryResponse => {
@@ -124,7 +129,7 @@ function summarise(data) {
     // counts.forEach(element => f_sentiment.push([element]))
     // counts.forEach(element => console.log(element))
     // console.log(counts)
-    sentiment = {'positive':counts['positive'], 'neutral':counts['neutral'], 'negative':counts['negative']}
+    sentiment = { 'positive': counts['positive'], 'neutral': counts['neutral'], 'negative': counts['negative'] }
     console.log(sentiment)
 
 
@@ -166,7 +171,7 @@ function add_documents() {
 
     function addRequest(params) {
         discovery.addDocument(params)
-            .then(documentAccepted => {
+            .then(async documentAccepted => {
                 const resnponse = documentAccepted.result;
                 console.log(JSON.stringify(resnponse, null, 2));
             })
@@ -174,9 +179,22 @@ function add_documents() {
                 console.log('error:', err);
             })
     }
+
+    async function test() {
+        var stop = false
+        while (!stop) {
+            await sleep(1500)
+            if (await check_status() === true) {
+                stop = true
+            }
+        }
+        query()
+    }
+
+    test()
 }
 
-function check_status() {
+async function check_status() {
 
     var finished = false
 
@@ -185,20 +203,33 @@ function check_status() {
         collectionId: file.collectionid
     }
 
-    discovery.getCollection(getCollectionParams)
-        .then(collection => {
-            console.log(collection['result']['document_counts'])
-            if (collection['result']['document_counts']['processing'] == 0 &&
-                collection['result']['document_counts']['pending'] == 0) {
-                finished = true
-            }
-            // console.log(JSON.stringify(collection, null, 2));
-        })
-        .catch(err => {
-            console.log('error:', err);
-        })
+    try {
+        await discovery.getCollection(getCollectionParams)
+            .then(collection => {
+                console.log(collection['result']['document_counts'])
+                if (collection['result']['document_counts']['processing'] == 0 &&
+                    collection['result']['document_counts']['pending'] == 0) {
+                    // console.log(true)
+                    finished = true
+                }
 
-    return finished
+            })
+            .catch(err => {
+                console.log('error:', err);
+            })
+    }finally {
+        // console.log(res['accounts'])
+
+        return finished
+
+    }
+
+}
+
+function sleep(ms) {
+    return new Promise((resolve) => {
+        setTimeout(resolve, ms);
+    });
 }
 
 function refresh_collection() {
@@ -249,8 +280,31 @@ module.exports = {
     query, refresh_collection, add_documents, check_status
 }
 
+function read_result() {
+
+    var data = ""
+
+    try {
+        data = fs.readFileSync('data/query_result.txt', 'utf8')
+        // fs.unlink("data/query_result.txt", () => {})
+        console.log(data)
+    } catch (err) {
+        console.error(err)
+    }
+
+    if (data === ""){
+        console.log("poo")
+    }
+
+    return data
+}
+
+// console.log(read_result())
+
 // add_documents()
 // query()
 // get_docs_id()
-// check_status()
 // refresh_collection()
+// test()
+
+// test()

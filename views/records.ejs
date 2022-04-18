@@ -53,7 +53,7 @@
                 <h3 class=" ">Records:</h3>
 
                 <div class="list-group mt-2">
-
+                    All (extended)
                     <% for (var i=0; i < recs.length; i+=1) { %>
 
                         <a href="/records/<%=  recs[i]['_id']%> " class="list-group-item list-group-item-action">
@@ -62,12 +62,6 @@
 
                         <% } %>
                 </div>
-                <!-- 
-                    <% if(query!=null) { for (var i=0; i < query['result']['results'].length; i+=1) {%>
-                        <h1>
-                            <%= query['result']['results'][i]['t_id'] %>
-                        </h1>
-                        <% }} %> -->
 
             </div>
             <% if(id !=null) { %>
@@ -78,7 +72,7 @@
                     </div>
                     <script src="../bundle.js"></script>
 
-                    <script>bundle.load("records/")</script>
+                    <script>bundle.load("records/" + "<%= id %>")</script>
                 </div>
 
                 <div class="col-3">
@@ -86,7 +80,6 @@
                     <div class="row" style="height: 46.5%;">
 
                         <h2>Analysis Summary</h2>
-
 
                         <h3>Sentiment:</h3>
 

@@ -12,306 +12,24 @@
     "content-security-policy": "default-src 'none'",
     "access-control-allow-headers": "Origin, Content-Type, Content-Length, Accept, X-Watson-Authorization-Token, X-WDC-PL-OPT-OUT, X-Watson-UserInfo, X-Watson-Learning-Opt-Out, X-Watson-Metadata",
     "content-type": "application/json;charset=utf-8",
-    "content-length": "5859",
+    "content-length": "5848",
     "strict-transport-security": "max-age=31536000; includeSubDomains;",
-    "x-dp-watson-tran-id": "166dc2ed-c94e-4472-b2cb-41b14ed3d546",
-    "x-request-id": "166dc2ed-c94e-4472-b2cb-41b14ed3d546",
-    "x-global-transaction-id": "166dc2ed-c94e-4472-b2cb-41b14ed3d546",
+    "x-dp-watson-tran-id": "30d0bb7a-f6fb-41ab-9a99-3a008412b17e",
+    "x-request-id": "30d0bb7a-f6fb-41ab-9a99-3a008412b17e",
+    "x-global-transaction-id": "30d0bb7a-f6fb-41ab-9a99-3a008412b17e",
     "server": "watson-gateway",
-    "x-edgeconnect-midmile-rtt": "89",
-    "x-edgeconnect-origin-mex-latency": "369",
-    "date": "Mon, 18 Apr 2022 01:23:15 GMT",
+    "x-edgeconnect-midmile-rtt": "91",
+    "x-edgeconnect-origin-mex-latency": "439",
+    "date": "Mon, 18 Apr 2022 14:18:41 GMT",
     "connection": "close",
     "vary": "Accept-Encoding"
   },
   "result": {
     "matching_results": 14,
-    "session_token": "1_nfp5lJzp1W9GrXk0oO6zaR6sbi",
+    "session_token": "1_nfp5lJzp1W9ZWau3oO6zaR6sbi",
     "results": [
       {
-        "id": "c799f866-5b5b-4be5-a1da-35b427f5a99c",
-        "result_metadata": {
-          "confidence": 0,
-          "score": 1
-        },
-        "name": "UniOfHull",
-        "url": "",
-        "text": "Computer Science students starting in September are guaranteed a paid year in industry. 💰 *nl*  *nl* Students have previously worked at the likes of Microsoft, IBM and BT. 🖥️ *nl*  *nl* They will spend 3 months at @Lampada_DS, before heading on to other companies. *nl*  *nl* More 👇 *nl*  *nl* https://t.co/3k65OPpe6h",
-        "enriched_text": {
-          "sentiment": {
-            "document": {
-              "score": 0.782156,
-              "label": "positive"
-            }
-          },
-          "entities": [
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Microsoft",
-              "relevance": 0.547779,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "OperatingSystemDeveloper",
-                  "ProcessorManufacturer",
-                  "SoftwareDeveloper",
-                  "VentureFundedCompany",
-                  "VideoGameDeveloper",
-                  "VideoGamePublisher",
-                  "ProgrammingLanguageDesigner"
-                ],
-                "name": "Microsoft",
-                "dbpedia_resource": "http://dbpedia.org/resource/Microsoft"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "IBM",
-              "relevance": 0.524706,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "SoftwareLicense",
-                  "OperatingSystemDeveloper",
-                  "ProcessorManufacturer",
-                  "SoftwareDeveloper",
-                  "CompanyFounder",
-                  "ProgrammingLanguageDesigner",
-                  "ProgrammingLanguageDeveloper"
-                ],
-                "name": "IBM",
-                "dbpedia_resource": "http://dbpedia.org/resource/IBM"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "BT.",
-              "relevance": 0.301643,
-              "type": "Company"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@Lampada_DS",
-              "relevance": 0.301643,
-              "type": "TwitterHandle"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "3 months",
-              "relevance": 0.301643,
-              "type": "Quantity"
-            }
-          ],
-          "concepts": [
-            {
-              "text": "Computer",
-              "relevance": 0.914754,
-              "dbpedia_resource": "http://dbpedia.org/resource/Computer"
-            },
-            {
-              "text": "Computer science",
-              "relevance": 0.911116,
-              "dbpedia_resource": "http://dbpedia.org/resource/Computer_science"
-            },
-            {
-              "text": "Computational science",
-              "relevance": 0.832372,
-              "dbpedia_resource": "http://dbpedia.org/resource/Computational_science"
-            },
-            {
-              "text": "Industry",
-              "relevance": 0.714,
-              "dbpedia_resource": "http://dbpedia.org/resource/Industry"
-            }
-          ],
-          "categories": [
-            {
-              "score": 0.961504,
-              "label": "/sports/baseball"
-            },
-            {
-              "score": 0.924394,
-              "label": "/science/computer science"
-            },
-            {
-              "score": 0.856842,
-              "label": "/technology and computing/operating systems"
-            }
-          ]
-        },
-        "extracted_metadata": {
-          "sha1": "ef4b22ab8620df3d3aefa12551a27dc96df94ec8",
-          "filename": "1483840596582223876.json",
-          "file_type": "json"
-        },
-        "t_id": "1483840596582223876"
-      },
-      {
-        "id": "fdd9ac14-d03d-48b1-90b3-7839a0129ed0",
-        "result_metadata": {
-          "confidence": 0,
-          "score": 1
-        },
-        "name": "OxfordPhysics",
-        "url": "https://pbs.twimg.com/media/FJFFryvXIAInwCZ.jpg",
-        "text": "Quantum physics @maria__violaris, DPhil student at @UniofOxford, is creating a video series about #quantum paradoxes using @qiskit with @IBM Quantum. Her 1st video is about playing a game of quantum #minesweeper based on the quantum bomb paradox, watch ▶️ https://t.co/O9Bmmj2yQk https://t.co/5cQY45Szye",
-        "enriched_text": {
-          "sentiment": {
-            "document": {
-              "score": 0,
-              "label": "neutral"
-            }
-          },
-          "entities": [
-            {
-              "count": 1,
-              "sentiment": {
-                "score": -0.426294,
-                "label": "negative"
-              },
-              "text": "IBM Quantum",
-              "relevance": 0.961762,
-              "type": "Company"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@maria__violaris",
-              "relevance": 0.961762,
-              "type": "TwitterHandle"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#minesweeper",
-              "relevance": 0.961762,
-              "type": "Hashtag"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@UniofOxford",
-              "relevance": 0.961762,
-              "type": "TwitterHandle"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#quantum",
-              "relevance": 0.961762,
-              "type": "Hashtag"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@qiskit",
-              "relevance": 0.961762,
-              "type": "TwitterHandle"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@IBM",
-              "relevance": 0.961762,
-              "type": "TwitterHandle"
-            }
-          ],
-          "concepts": [
-            {
-              "text": "Game",
-              "relevance": 0.938227,
-              "dbpedia_resource": "http://dbpedia.org/resource/Game"
-            },
-            {
-              "text": "Quantum mechanics",
-              "relevance": 0.91666,
-              "dbpedia_resource": "http://dbpedia.org/resource/Quantum_mechanics"
-            },
-            {
-              "text": "Play",
-              "relevance": 0.872093,
-              "dbpedia_resource": "http://dbpedia.org/resource/Play_(activity)"
-            },
-            {
-              "text": "Physics",
-              "relevance": 0.824769,
-              "dbpedia_resource": "http://dbpedia.org/resource/Physics"
-            },
-            {
-              "text": "Toy",
-              "relevance": 0.76665,
-              "dbpedia_resource": "http://dbpedia.org/resource/Toy"
-            },
-            {
-              "text": "Photon",
-              "relevance": 0.762717,
-              "dbpedia_resource": "http://dbpedia.org/resource/Photon"
-            },
-            {
-              "text": "Quantum",
-              "relevance": 0.727297,
-              "dbpedia_resource": "http://dbpedia.org/resource/Quantum"
-            },
-            {
-              "text": "Chemistry",
-              "relevance": 0.722441,
-              "dbpedia_resource": "http://dbpedia.org/resource/Chemistry"
-            }
-          ],
-          "categories": [
-            {
-              "score": 0.998935,
-              "label": "/science/physics/atomic physics"
-            }
-          ]
-        },
-        "extracted_metadata": {
-          "sha1": "926a3b0252ca653c6e24f50aa236b78a91fb9a36",
-          "filename": "1482044046868627457.json",
-          "file_type": "json"
-        },
-        "t_id": "1482044046868627457"
-      },
-      {
-        "id": "405306e1-4267-408b-913f-e4b3fd94b723",
+        "id": "bc37969a-5641-4705-9272-2f1e87063b74",
         "result_metadata": {
           "confidence": 0,
           "score": 1
@@ -481,7 +199,7 @@
         "t_id": "1506284486031458305"
       },
       {
-        "id": "416370cb-2e7e-4044-bba7-62363ddd809c",
+        "id": "b43fe1df-16e7-49cd-88d6-3b37d23c65ba",
         "result_metadata": {
           "confidence": 0,
           "score": 1
@@ -606,388 +324,30 @@
         "t_id": "1511711023652352001"
       },
       {
-        "id": "f075c7b3-e397-4bb0-a3bd-f570df6b7e27",
+        "id": "9d744574-0100-4970-82d9-35cc20fb5311",
         "result_metadata": {
           "confidence": 0,
           "score": 1
         },
-        "name": "CGIU",
-        "url": "",
-        "text": "We're excited to welcome them into the CGI U Class of 2022 and collaborate with them and IBM’s @CallforCode to develop their project in the months ahead.",
+        "name": "OxfordPhysics",
+        "url": "https://pbs.twimg.com/media/FJFFryvXIAInwCZ.jpg",
+        "text": "Quantum physics @maria__violaris, DPhil student at @UniofOxford, is creating a video series about #quantum paradoxes using @qiskit with @IBM Quantum. Her 1st video is about playing a game of quantum #minesweeper based on the quantum bomb paradox, watch ▶️ https://t.co/O9Bmmj2yQk https://t.co/5cQY45Szye",
         "enriched_text": {
           "sentiment": {
             "document": {
-              "score": 0.951837,
-              "label": "positive"
+              "score": 0,
+              "label": "neutral"
             }
           },
           "entities": [
             {
               "count": 1,
               "sentiment": {
-                "score": 0.932193,
-                "label": "positive"
-              },
-              "text": "IBM",
-              "relevance": 0.33,
-              "type": "Company"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@CallforCode",
-              "relevance": 0.33,
-              "type": "TwitterHandle"
-            }
-          ],
-          "concepts": [
-            {
-              "text": "Linux",
-              "relevance": 0.9072,
-              "dbpedia_resource": "http://dbpedia.org/resource/Linux"
-            }
-          ],
-          "categories": [
-            {
-              "score": 0.880308,
-              "label": "/technology and computing/operating systems"
-            },
-            {
-              "score": 0.843321,
-              "label": "/technology and computing/hardware/computer"
-            },
-            {
-              "score": 0.809213,
-              "label": "/technology and computing/hardware/computer peripherals"
-            }
-          ]
-        },
-        "extracted_metadata": {
-          "sha1": "b35d270e886ead7ce35fb3ccf6c1802bf73d5813",
-          "filename": "1515065074276130818.json",
-          "file_type": "json"
-        },
-        "t_id": "1515065074276130818"
-      },
-      {
-        "id": "ccd02b9f-654a-4f31-bc51-ddcbfb541b71",
-        "result_metadata": {
-          "confidence": 0,
-          "score": 1
-        },
-        "name": "_UoW",
-        "url": "",
-        "text": "Read Louisa’s blog on studying as a degree apprentice whilst working at IBM. *nl* “Apprenticeships exist in all forms &amp; you’ll meet some great people along the way.” *nl* 👉 https://t.co/MXQuyaHPoq",
-        "enriched_text": {
-          "sentiment": {
-            "document": {
-              "score": 0.667456,
-              "label": "positive"
-            }
-          },
-          "entities": [
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "IBM",
-              "relevance": 0.938974,
-              "type": "Company"
-            }
-          ],
-          "concepts": [
-            {
-              "text": "Doctorate",
-              "relevance": 0.94727,
-              "dbpedia_resource": "http://dbpedia.org/resource/Doctorate"
-            },
-            {
-              "text": "Apprenticeship",
-              "relevance": 0.5874,
-              "dbpedia_resource": "http://dbpedia.org/resource/Apprenticeship"
-            },
-            {
-              "text": "Academic degree",
-              "relevance": 0.57156,
-              "dbpedia_resource": "http://dbpedia.org/resource/Academic_degree"
-            }
-          ],
-          "categories": [
-            {
-              "score": 0.792923,
-              "label": "/technology and computing/operating systems"
-            },
-            {
-              "score": 0.747243,
-              "label": "/technology and computing/hardware/computer"
-            },
-            {
-              "score": 0.718825,
-              "label": "/technology and computing/hardware/computer peripherals"
-            }
-          ]
-        },
-        "extracted_metadata": {
-          "sha1": "67f43b84a3bb4eeeccad4c238b0cb4ea5aec8ebe",
-          "filename": "1490987758189707271.json",
-          "file_type": "json"
-        },
-        "t_id": "1490987758189707271"
-      },
-      {
-        "id": "96583933-61fc-4893-a048-ab0bc1618c86",
-        "result_metadata": {
-          "confidence": 0,
-          "score": 1
-        },
-        "name": "SUNY",
-        "url": "",
-        "text": "A partnership between @ualbany and @IBM is growing, and it will bring more #SUNYResearch into the correlation between climate change and weather impacts. Learn more about what's to come in this @WAMCRadio conversation: https://t.co/mt85nsg4T1",
-        "enriched_text": {
-          "sentiment": {
-            "document": {
-              "score": -0.330708,
-              "label": "negative"
-            }
-          },
-          "entities": [
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "IBM",
-              "relevance": 0.259048,
-              "type": "Company"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#SUNYResearch",
-              "relevance": 0.259048,
-              "type": "Hashtag"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@WAMCRadio",
-              "relevance": 0.259048,
-              "type": "TwitterHandle"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@ualbany",
-              "relevance": 0.259048,
-              "type": "TwitterHandle"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@IBM",
-              "relevance": 0.259048,
-              "type": "TwitterHandle"
-            }
-          ],
-          "concepts": [
-            {
-              "text": "Weather",
-              "relevance": 0.909247,
-              "dbpedia_resource": "http://dbpedia.org/resource/Weather"
-            },
-            {
-              "text": "Climate change",
-              "relevance": 0.898816,
-              "dbpedia_resource": "http://dbpedia.org/resource/Climate_change"
-            },
-            {
-              "text": "Climate",
-              "relevance": 0.882206,
-              "dbpedia_resource": "http://dbpedia.org/resource/Climate"
-            },
-            {
-              "text": "Meteorology",
-              "relevance": 0.586845,
-              "dbpedia_resource": "http://dbpedia.org/resource/Meteorology"
-            }
-          ],
-          "categories": [
-            {
-              "score": 0.963823,
-              "label": "/science/weather"
-            },
-            {
-              "score": 0.805648,
-              "label": "/science/ecology/environmental disaster"
-            },
-            {
-              "score": 0.766555,
-              "label": "/business and industrial/energy/renewable energy"
-            }
-          ]
-        },
-        "extracted_metadata": {
-          "sha1": "3857c6765d9f72032c0f1f762379ace23f59b07d",
-          "filename": "1501934662783946753.json",
-          "file_type": "json"
-        },
-        "t_id": "1501934662783946753"
-      },
-      {
-        "id": "0a737ecf-806a-4be5-a67f-77ce47c05bdd",
-        "result_metadata": {
-          "confidence": 0,
-          "score": 1
-        },
-        "name": "unisouthampton",
-        "url": "https://pbs.twimg.com/media/FKcniY4XoAQAfPN.jpg",
-        "text": "\"We all learned a lot from the project and how to better ourselves.\" *nl*  *nl* @UoS_Careers offers students opportunities to develop skills and gain industry experience. One is The Student Innovation Challenge. *nl*  *nl* Business student Rahul tells us about his experience of working with @IBM. https://t.co/pEOL3PDbHU",
-        "enriched_text": {
-          "sentiment": {
-            "document": {
-              "score": 0.570437,
-              "label": "positive"
-            }
-          },
-          "entities": [
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Rahul",
-              "relevance": 0.919292,
-              "type": "Person"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "IBM.",
-              "relevance": 0.395926,
-              "type": "Company"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@UoS_Careers",
-              "relevance": 0.395926,
-              "type": "TwitterHandle"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@IBM",
-              "relevance": 0.395926,
-              "type": "TwitterHandle"
-            }
-          ],
-          "concepts": [
-            {
-              "text": "Education",
-              "relevance": 0.887158,
-              "dbpedia_resource": "http://dbpedia.org/resource/Education"
-            },
-            {
-              "text": "Student",
-              "relevance": 0.7832,
-              "dbpedia_resource": "http://dbpedia.org/resource/Student"
-            }
-          ],
-          "categories": [
-            {
-              "score": 0.929966,
-              "label": "/sports/baseball"
-            },
-            {
-              "score": 0.888888,
-              "label": "/education/homework and study tips"
-            },
-            {
-              "score": 0.734528,
-              "label": "/education/studying business"
-            }
-          ]
-        },
-        "extracted_metadata": {
-          "sha1": "eca9084ac535e1e2c39de53207cf723935b01c22",
-          "filename": "1489547026803019776.json",
-          "file_type": "json"
-        },
-        "t_id": "1489547026803019776"
-      },
-      {
-        "id": "f08c9f9d-ac83-495a-9dac-0d34d938ce88",
-        "result_metadata": {
-          "confidence": 0,
-          "score": 1
-        },
-        "name": "RoehamptonUni",
-        "url": "",
-        "text": "#ICYMI: We spoke to Rafa, a third year BSc Human Resource Management student who completed a one-year placement at IBM, about his top tips to make the most of the opportunity of a placement year. *nl*  *nl* Read more on the Roehampton Blog: *nl* https://t.co/e1c946DbSw",
-        "enriched_text": {
-          "sentiment": {
-            "document": {
-              "score": 0.930425,
-              "label": "positive"
-            }
-          },
-          "entities": [
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Roehampton Blog",
-              "relevance": 0.937511,
-              "type": "PrintMedia"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": -0.333328,
+                "score": -0.426294,
                 "label": "negative"
               },
-              "text": "Rafa",
-              "relevance": 0.811578,
-              "type": "Person"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "IBM",
-              "relevance": 0.54222,
+              "text": "IBM Quantum",
+              "relevance": 0.961762,
               "type": "Company"
             },
             {
@@ -996,9 +356,9 @@
                 "score": 0,
                 "label": "neutral"
               },
-              "text": "one-year",
-              "relevance": 0.54222,
-              "type": "Quantity"
+              "text": "@maria__violaris",
+              "relevance": 0.961762,
+              "type": "TwitterHandle"
             },
             {
               "count": 1,
@@ -1006,47 +366,109 @@
                 "score": 0,
                 "label": "neutral"
               },
-              "text": "#ICYMI",
-              "relevance": 0.54222,
+              "text": "#minesweeper",
+              "relevance": 0.961762,
               "type": "Hashtag"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@UniofOxford",
+              "relevance": 0.961762,
+              "type": "TwitterHandle"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "#quantum",
+              "relevance": 0.961762,
+              "type": "Hashtag"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@qiskit",
+              "relevance": 0.961762,
+              "type": "TwitterHandle"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@IBM",
+              "relevance": 0.961762,
+              "type": "TwitterHandle"
             }
           ],
           "concepts": [
             {
-              "text": "The Opportunity",
-              "relevance": 0.91136,
-              "dbpedia_resource": "http://dbpedia.org/resource/The_Opportunity"
+              "text": "Game",
+              "relevance": 0.938227,
+              "dbpedia_resource": "http://dbpedia.org/resource/Game"
             },
             {
-              "text": "Human resource management",
-              "relevance": 0.886784,
-              "dbpedia_resource": "http://dbpedia.org/resource/Human_resource_management"
+              "text": "Quantum mechanics",
+              "relevance": 0.91666,
+              "dbpedia_resource": "http://dbpedia.org/resource/Quantum_mechanics"
+            },
+            {
+              "text": "Play",
+              "relevance": 0.872093,
+              "dbpedia_resource": "http://dbpedia.org/resource/Play_(activity)"
+            },
+            {
+              "text": "Physics",
+              "relevance": 0.824769,
+              "dbpedia_resource": "http://dbpedia.org/resource/Physics"
+            },
+            {
+              "text": "Toy",
+              "relevance": 0.76665,
+              "dbpedia_resource": "http://dbpedia.org/resource/Toy"
+            },
+            {
+              "text": "Photon",
+              "relevance": 0.762717,
+              "dbpedia_resource": "http://dbpedia.org/resource/Photon"
+            },
+            {
+              "text": "Quantum",
+              "relevance": 0.727297,
+              "dbpedia_resource": "http://dbpedia.org/resource/Quantum"
+            },
+            {
+              "text": "Chemistry",
+              "relevance": 0.722441,
+              "dbpedia_resource": "http://dbpedia.org/resource/Chemistry"
             }
           ],
           "categories": [
             {
-              "score": 0.721964,
-              "label": "/technology and computing/operating systems"
-            },
-            {
-              "score": 0.677602,
-              "label": "/technology and computing/hardware/computer"
-            },
-            {
-              "score": 0.654513,
-              "label": "/technology and computing/hardware/computer peripherals"
+              "score": 0.998935,
+              "label": "/science/physics/atomic physics"
             }
           ]
         },
         "extracted_metadata": {
-          "sha1": "3333ec6c095c625f2c5b8186bf529b17176fc772",
-          "filename": "1511645000232284164.json",
+          "sha1": "926a3b0252ca653c6e24f50aa236b78a91fb9a36",
+          "filename": "1482044046868627457.json",
           "file_type": "json"
         },
-        "t_id": "1511645000232284164"
+        "t_id": "1482044046868627457"
       },
       {
-        "id": "4ea27ff9-efa4-443f-af52-10ac61165566",
+        "id": "6db40bb4-90bf-41c4-8883-4c3ea67c815b",
         "result_metadata": {
           "confidence": 0,
           "score": 1
@@ -1150,7 +572,212 @@
         "t_id": "1498749907007680521"
       },
       {
-        "id": "78c9364f-4c44-47c9-8617-f3c2586e294f",
+        "id": "d8f4b8d9-4a24-494c-a109-a7dfb74d946f",
+        "result_metadata": {
+          "confidence": 0,
+          "score": 1
+        },
+        "name": "UniOfHull",
+        "url": "",
+        "text": "Computer Science students starting in September are guaranteed a paid year in industry. 💰 *nl*  *nl* Students have previously worked at the likes of Microsoft, IBM and BT. 🖥️ *nl*  *nl* They will spend 3 months at @Lampada_DS, before heading on to other companies. *nl*  *nl* More 👇 *nl*  *nl* https://t.co/3k65OPpe6h",
+        "enriched_text": {
+          "sentiment": {
+            "document": {
+              "score": 0.782156,
+              "label": "positive"
+            }
+          },
+          "entities": [
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "Microsoft",
+              "relevance": 0.547779,
+              "type": "Company",
+              "disambiguation": {
+                "subtype": [
+                  "OperatingSystemDeveloper",
+                  "ProcessorManufacturer",
+                  "SoftwareDeveloper",
+                  "VentureFundedCompany",
+                  "VideoGameDeveloper",
+                  "VideoGamePublisher",
+                  "ProgrammingLanguageDesigner"
+                ],
+                "name": "Microsoft",
+                "dbpedia_resource": "http://dbpedia.org/resource/Microsoft"
+              }
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "IBM",
+              "relevance": 0.524706,
+              "type": "Company",
+              "disambiguation": {
+                "subtype": [
+                  "SoftwareLicense",
+                  "OperatingSystemDeveloper",
+                  "ProcessorManufacturer",
+                  "SoftwareDeveloper",
+                  "CompanyFounder",
+                  "ProgrammingLanguageDesigner",
+                  "ProgrammingLanguageDeveloper"
+                ],
+                "name": "IBM",
+                "dbpedia_resource": "http://dbpedia.org/resource/IBM"
+              }
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "BT.",
+              "relevance": 0.301643,
+              "type": "Company"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@Lampada_DS",
+              "relevance": 0.301643,
+              "type": "TwitterHandle"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "3 months",
+              "relevance": 0.301643,
+              "type": "Quantity"
+            }
+          ],
+          "concepts": [
+            {
+              "text": "Computer",
+              "relevance": 0.914754,
+              "dbpedia_resource": "http://dbpedia.org/resource/Computer"
+            },
+            {
+              "text": "Computer science",
+              "relevance": 0.911116,
+              "dbpedia_resource": "http://dbpedia.org/resource/Computer_science"
+            },
+            {
+              "text": "Computational science",
+              "relevance": 0.832372,
+              "dbpedia_resource": "http://dbpedia.org/resource/Computational_science"
+            },
+            {
+              "text": "Industry",
+              "relevance": 0.714,
+              "dbpedia_resource": "http://dbpedia.org/resource/Industry"
+            }
+          ],
+          "categories": [
+            {
+              "score": 0.961504,
+              "label": "/sports/baseball"
+            },
+            {
+              "score": 0.924394,
+              "label": "/science/computer science"
+            },
+            {
+              "score": 0.856842,
+              "label": "/technology and computing/operating systems"
+            }
+          ]
+        },
+        "extracted_metadata": {
+          "sha1": "ef4b22ab8620df3d3aefa12551a27dc96df94ec8",
+          "filename": "1483840596582223876.json",
+          "file_type": "json"
+        },
+        "t_id": "1483840596582223876"
+      },
+      {
+        "id": "c283d4e8-5f2a-418c-8c5b-b1ea87aaeab2",
+        "result_metadata": {
+          "confidence": 0,
+          "score": 1
+        },
+        "name": "CGIU",
+        "url": "",
+        "text": "We're excited to welcome them into the CGI U Class of 2022 and collaborate with them and IBM’s @CallforCode to develop their project in the months ahead.",
+        "enriched_text": {
+          "sentiment": {
+            "document": {
+              "score": 0.951837,
+              "label": "positive"
+            }
+          },
+          "entities": [
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0.932193,
+                "label": "positive"
+              },
+              "text": "IBM",
+              "relevance": 0.33,
+              "type": "Company"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@CallforCode",
+              "relevance": 0.33,
+              "type": "TwitterHandle"
+            }
+          ],
+          "concepts": [
+            {
+              "text": "Linux",
+              "relevance": 0.9072,
+              "dbpedia_resource": "http://dbpedia.org/resource/Linux"
+            }
+          ],
+          "categories": [
+            {
+              "score": 0.880308,
+              "label": "/technology and computing/operating systems"
+            },
+            {
+              "score": 0.843321,
+              "label": "/technology and computing/hardware/computer"
+            },
+            {
+              "score": 0.809213,
+              "label": "/technology and computing/hardware/computer peripherals"
+            }
+          ]
+        },
+        "extracted_metadata": {
+          "sha1": "b35d270e886ead7ce35fb3ccf6c1802bf73d5813",
+          "filename": "1515065074276130818.json",
+          "file_type": "json"
+        },
+        "t_id": "1515065074276130818"
+      },
+      {
+        "id": "42478a57-27f2-48c8-bcb4-9466793087f5",
         "result_metadata": {
           "confidence": 0,
           "score": 1
@@ -1290,7 +917,110 @@
         "t_id": "1511712215342190592"
       },
       {
-        "id": "6ba0e230-2f32-41c9-a952-41531673967f",
+        "id": "ee2ba0ab-b176-458b-bdc9-6562cc244e00",
+        "result_metadata": {
+          "confidence": 0,
+          "score": 1
+        },
+        "name": "UniOfHull",
+        "url": "",
+        "text": "Students have previously worked at industry giants like IBM, Microsoft and BT but wherever you end up, you’ll be paid a salary during your year in industry. *nl*  *nl* Our placement team set up everything, plus they'll stay in touch throughout the year to give you any support you need.",
+        "enriched_text": {
+          "sentiment": {
+            "document": {
+              "score": 0.781639,
+              "label": "positive"
+            }
+          },
+          "entities": [
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "BT",
+              "relevance": 0.88045,
+              "type": "Company"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "IBM",
+              "relevance": 0.807489,
+              "type": "Company",
+              "disambiguation": {
+                "subtype": [
+                  "SoftwareLicense",
+                  "OperatingSystemDeveloper",
+                  "ProcessorManufacturer",
+                  "SoftwareDeveloper",
+                  "CompanyFounder",
+                  "ProgrammingLanguageDesigner",
+                  "ProgrammingLanguageDeveloper"
+                ],
+                "name": "IBM",
+                "dbpedia_resource": "http://dbpedia.org/resource/IBM"
+              }
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "Microsoft",
+              "relevance": 0.699275,
+              "type": "Company",
+              "disambiguation": {
+                "subtype": [
+                  "OperatingSystemDeveloper",
+                  "ProcessorManufacturer",
+                  "SoftwareDeveloper",
+                  "VentureFundedCompany",
+                  "VideoGameDeveloper",
+                  "VideoGamePublisher",
+                  "ProgrammingLanguageDesigner"
+                ],
+                "name": "Microsoft",
+                "dbpedia_resource": "http://dbpedia.org/resource/Microsoft"
+              }
+            }
+          ],
+          "concepts": [
+            {
+              "text": "Industry",
+              "relevance": 0.9044,
+              "dbpedia_resource": "http://dbpedia.org/resource/Industry"
+            }
+          ],
+          "categories": [
+            {
+              "score": 0.911033,
+              "label": "/technology and computing/operating systems"
+            },
+            {
+              "score": 0.757218,
+              "label": "/technology and computing/hardware/computer"
+            },
+            {
+              "score": 0.715399,
+              "label": "/technology and computing/hardware/computer/servers"
+            }
+          ]
+        },
+        "extracted_metadata": {
+          "sha1": "846c7bb3ad56ad41586aca2f84de22b7e99c48bb",
+          "filename": "1479403797902512138.json",
+          "file_type": "json"
+        },
+        "t_id": "1479403797902512138"
+      },
+      {
+        "id": "5a9048ad-222e-42e2-8623-f007a4a50fe5",
         "result_metadata": {
           "confidence": 0,
           "score": 1
@@ -1376,7 +1106,7 @@
         "t_id": "1496815435857244161"
       },
       {
-        "id": "d73063ef-18da-4248-a82d-3559d345ee22",
+        "id": "eeb2098b-da07-434a-aedf-66030d293934",
         "result_metadata": {
           "confidence": 0,
           "score": 1
@@ -1491,18 +1221,18 @@
         "t_id": "1511946923665674243"
       },
       {
-        "id": "8940b057-1b9f-4080-a96d-517d245553f0",
+        "id": "26a61899-b158-4bd0-a409-bb0f3d0f7208",
         "result_metadata": {
           "confidence": 0,
           "score": 1
         },
-        "name": "UniOfHull",
-        "url": "",
-        "text": "Students have previously worked at industry giants like IBM, Microsoft and BT but wherever you end up, you’ll be paid a salary during your year in industry. *nl*  *nl* Our placement team set up everything, plus they'll stay in touch throughout the year to give you any support you need.",
+        "name": "unisouthampton",
+        "url": "https://pbs.twimg.com/media/FKcniY4XoAQAfPN.jpg",
+        "text": "\"We all learned a lot from the project and how to better ourselves.\" *nl*  *nl* @UoS_Careers offers students opportunities to develop skills and gain industry experience. One is The Student Innovation Challenge. *nl*  *nl* Business student Rahul tells us about his experience of working with @IBM. https://t.co/pEOL3PDbHU",
         "enriched_text": {
           "sentiment": {
             "document": {
-              "score": 0.781639,
+              "score": 0.570437,
               "label": "positive"
             }
           },
@@ -1513,8 +1243,18 @@
                 "score": 0,
                 "label": "neutral"
               },
-              "text": "BT",
-              "relevance": 0.88045,
+              "text": "Rahul",
+              "relevance": 0.919292,
+              "type": "Person"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "IBM.",
+              "relevance": 0.395926,
               "type": "Company"
             },
             {
@@ -1523,22 +1263,9 @@
                 "score": 0,
                 "label": "neutral"
               },
-              "text": "IBM",
-              "relevance": 0.807489,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "SoftwareLicense",
-                  "OperatingSystemDeveloper",
-                  "ProcessorManufacturer",
-                  "SoftwareDeveloper",
-                  "CompanyFounder",
-                  "ProgrammingLanguageDesigner",
-                  "ProgrammingLanguageDeveloper"
-                ],
-                "name": "IBM",
-                "dbpedia_resource": "http://dbpedia.org/resource/IBM"
-              }
+              "text": "@UoS_Careers",
+              "relevance": 0.395926,
+              "type": "TwitterHandle"
             },
             {
               "count": 1,
@@ -1546,76 +1273,361 @@
                 "score": 0,
                 "label": "neutral"
               },
-              "text": "Microsoft",
-              "relevance": 0.699275,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "OperatingSystemDeveloper",
-                  "ProcessorManufacturer",
-                  "SoftwareDeveloper",
-                  "VentureFundedCompany",
-                  "VideoGameDeveloper",
-                  "VideoGamePublisher",
-                  "ProgrammingLanguageDesigner"
-                ],
-                "name": "Microsoft",
-                "dbpedia_resource": "http://dbpedia.org/resource/Microsoft"
-              }
+              "text": "@IBM",
+              "relevance": 0.395926,
+              "type": "TwitterHandle"
             }
           ],
           "concepts": [
             {
-              "text": "Industry",
-              "relevance": 0.9044,
-              "dbpedia_resource": "http://dbpedia.org/resource/Industry"
+              "text": "Education",
+              "relevance": 0.887158,
+              "dbpedia_resource": "http://dbpedia.org/resource/Education"
+            },
+            {
+              "text": "Student",
+              "relevance": 0.7832,
+              "dbpedia_resource": "http://dbpedia.org/resource/Student"
             }
           ],
           "categories": [
             {
-              "score": 0.911033,
-              "label": "/technology and computing/operating systems"
+              "score": 0.929966,
+              "label": "/sports/baseball"
             },
             {
-              "score": 0.757218,
-              "label": "/technology and computing/hardware/computer"
+              "score": 0.888888,
+              "label": "/education/homework and study tips"
             },
             {
-              "score": 0.715399,
-              "label": "/technology and computing/hardware/computer/servers"
+              "score": 0.734528,
+              "label": "/education/studying business"
             }
           ]
         },
         "extracted_metadata": {
-          "sha1": "846c7bb3ad56ad41586aca2f84de22b7e99c48bb",
-          "filename": "1479403797902512138.json",
+          "sha1": "eca9084ac535e1e2c39de53207cf723935b01c22",
+          "filename": "1489547026803019776.json",
           "file_type": "json"
         },
-        "t_id": "1479403797902512138"
+        "t_id": "1489547026803019776"
+      },
+      {
+        "id": "9726ec27-a4d5-4bf3-9b3b-1a6fe362882c",
+        "result_metadata": {
+          "confidence": 0,
+          "score": 1
+        },
+        "name": "RoehamptonUni",
+        "url": "",
+        "text": "#ICYMI: We spoke to Rafa, a third year BSc Human Resource Management student who completed a one-year placement at IBM, about his top tips to make the most of the opportunity of a placement year. *nl*  *nl* Read more on the Roehampton Blog: *nl* https://t.co/e1c946DbSw",
+        "enriched_text": {
+          "sentiment": {
+            "document": {
+              "score": 0.930425,
+              "label": "positive"
+            }
+          },
+          "entities": [
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "Roehampton Blog",
+              "relevance": 0.937511,
+              "type": "PrintMedia"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": -0.333328,
+                "label": "negative"
+              },
+              "text": "Rafa",
+              "relevance": 0.811578,
+              "type": "Person"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "IBM",
+              "relevance": 0.54222,
+              "type": "Company"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "one-year",
+              "relevance": 0.54222,
+              "type": "Quantity"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "#ICYMI",
+              "relevance": 0.54222,
+              "type": "Hashtag"
+            }
+          ],
+          "concepts": [
+            {
+              "text": "The Opportunity",
+              "relevance": 0.91136,
+              "dbpedia_resource": "http://dbpedia.org/resource/The_Opportunity"
+            },
+            {
+              "text": "Human resource management",
+              "relevance": 0.886784,
+              "dbpedia_resource": "http://dbpedia.org/resource/Human_resource_management"
+            }
+          ],
+          "categories": [
+            {
+              "score": 0.721964,
+              "label": "/technology and computing/operating systems"
+            },
+            {
+              "score": 0.677602,
+              "label": "/technology and computing/hardware/computer"
+            },
+            {
+              "score": 0.654513,
+              "label": "/technology and computing/hardware/computer peripherals"
+            }
+          ]
+        },
+        "extracted_metadata": {
+          "sha1": "3333ec6c095c625f2c5b8186bf529b17176fc772",
+          "filename": "1511645000232284164.json",
+          "file_type": "json"
+        },
+        "t_id": "1511645000232284164"
+      },
+      {
+        "id": "cfd435fd-b2e2-46d5-a6b0-0d15a136dc1f",
+        "result_metadata": {
+          "confidence": 0,
+          "score": 1
+        },
+        "name": "SUNY",
+        "url": "",
+        "text": "A partnership between @ualbany and @IBM is growing, and it will bring more #SUNYResearch into the correlation between climate change and weather impacts. Learn more about what's to come in this @WAMCRadio conversation: https://t.co/mt85nsg4T1",
+        "enriched_text": {
+          "sentiment": {
+            "document": {
+              "score": -0.330708,
+              "label": "negative"
+            }
+          },
+          "entities": [
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "IBM",
+              "relevance": 0.259048,
+              "type": "Company"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "#SUNYResearch",
+              "relevance": 0.259048,
+              "type": "Hashtag"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@WAMCRadio",
+              "relevance": 0.259048,
+              "type": "TwitterHandle"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@ualbany",
+              "relevance": 0.259048,
+              "type": "TwitterHandle"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@IBM",
+              "relevance": 0.259048,
+              "type": "TwitterHandle"
+            }
+          ],
+          "concepts": [
+            {
+              "text": "Weather",
+              "relevance": 0.909247,
+              "dbpedia_resource": "http://dbpedia.org/resource/Weather"
+            },
+            {
+              "text": "Climate change",
+              "relevance": 0.898816,
+              "dbpedia_resource": "http://dbpedia.org/resource/Climate_change"
+            },
+            {
+              "text": "Climate",
+              "relevance": 0.882206,
+              "dbpedia_resource": "http://dbpedia.org/resource/Climate"
+            },
+            {
+              "text": "Meteorology",
+              "relevance": 0.586845,
+              "dbpedia_resource": "http://dbpedia.org/resource/Meteorology"
+            }
+          ],
+          "categories": [
+            {
+              "score": 0.963823,
+              "label": "/science/weather"
+            },
+            {
+              "score": 0.805648,
+              "label": "/science/ecology/environmental disaster"
+            },
+            {
+              "score": 0.766555,
+              "label": "/business and industrial/energy/renewable energy"
+            }
+          ]
+        },
+        "extracted_metadata": {
+          "sha1": "3857c6765d9f72032c0f1f762379ace23f59b07d",
+          "filename": "1501934662783946753.json",
+          "file_type": "json"
+        },
+        "t_id": "1501934662783946753"
+      },
+      {
+        "id": "b79d72e1-1494-48e3-9166-d6ef799d823e",
+        "result_metadata": {
+          "confidence": 0,
+          "score": 1
+        },
+        "name": "_UoW",
+        "url": "",
+        "text": "Read Louisa’s blog on studying as a degree apprentice whilst working at IBM. *nl* “Apprenticeships exist in all forms &amp; you’ll meet some great people along the way.” *nl* 👉 https://t.co/MXQuyaHPoq",
+        "enriched_text": {
+          "sentiment": {
+            "document": {
+              "score": 0.667456,
+              "label": "positive"
+            }
+          },
+          "entities": [
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "IBM",
+              "relevance": 0.938974,
+              "type": "Company"
+            }
+          ],
+          "concepts": [
+            {
+              "text": "Doctorate",
+              "relevance": 0.94727,
+              "dbpedia_resource": "http://dbpedia.org/resource/Doctorate"
+            },
+            {
+              "text": "Apprenticeship",
+              "relevance": 0.5874,
+              "dbpedia_resource": "http://dbpedia.org/resource/Apprenticeship"
+            },
+            {
+              "text": "Academic degree",
+              "relevance": 0.57156,
+              "dbpedia_resource": "http://dbpedia.org/resource/Academic_degree"
+            }
+          ],
+          "categories": [
+            {
+              "score": 0.792923,
+              "label": "/technology and computing/operating systems"
+            },
+            {
+              "score": 0.747243,
+              "label": "/technology and computing/hardware/computer"
+            },
+            {
+              "score": 0.718825,
+              "label": "/technology and computing/hardware/computer peripherals"
+            }
+          ]
+        },
+        "extracted_metadata": {
+          "sha1": "67f43b84a3bb4eeeccad4c238b0cb4ea5aec8ebe",
+          "filename": "1490987758189707271.json",
+          "file_type": "json"
+        },
+        "t_id": "1490987758189707271"
       }
     ],
     "retrieval_details": {
       "document_retrieval_strategy": "untrained"
     }
   },
-  "_id": "a_1650244995498",
+  "_id": "a_1650291521349",
   "query_type": "all",
   "summary": {
     "concepts": [
       [
-        "Computer",
+        "Sriram Raghavan",
         30
       ],
       [
-        "Computer science",
+        "Science",
         20
       ],
       [
-        "Computational science",
+        "Scientist",
         10
       ],
       [
-        "Industry",
+        "Keynote",
+        10
+      ],
+      [
+        "Scientists",
+        10
+      ],
+      [
+        "Johnny Gaddaar",
+        30
+      ],
+      [
+        "Ek Hasina Thi",
         20
       ],
       [
@@ -1651,82 +1663,6 @@
         10
       ],
       [
-        "Sriram Raghavan",
-        30
-      ],
-      [
-        "Science",
-        20
-      ],
-      [
-        "Scientist",
-        10
-      ],
-      [
-        "Keynote",
-        10
-      ],
-      [
-        "Scientists",
-        10
-      ],
-      [
-        "Johnny Gaddaar",
-        30
-      ],
-      [
-        "Ek Hasina Thi",
-        20
-      ],
-      [
-        "Linux",
-        10
-      ],
-      [
-        "Doctorate",
-        10
-      ],
-      [
-        "Apprenticeship",
-        10
-      ],
-      [
-        "Academic degree",
-        10
-      ],
-      [
-        "Weather",
-        10
-      ],
-      [
-        "Climate change",
-        10
-      ],
-      [
-        "Climate",
-        10
-      ],
-      [
-        "Meteorology",
-        10
-      ],
-      [
-        "Education",
-        10
-      ],
-      [
-        "Student",
-        10
-      ],
-      [
-        "The Opportunity",
-        10
-      ],
-      [
-        "Human resource management",
-        10
-      ],
-      [
         "Minor scale",
         10
       ],
@@ -1740,6 +1676,26 @@
       ],
       [
         "Minor chord",
+        10
+      ],
+      [
+        "Computer",
+        30
+      ],
+      [
+        "Computer science",
+        20
+      ],
+      [
+        "Computational science",
+        10
+      ],
+      [
+        "Industry",
+        20
+      ],
+      [
+        "Linux",
         10
       ],
       [
@@ -1781,57 +1737,53 @@
       [
         "IBM System/360",
         10
+      ],
+      [
+        "Education",
+        10
+      ],
+      [
+        "Student",
+        10
+      ],
+      [
+        "The Opportunity",
+        10
+      ],
+      [
+        "Human resource management",
+        10
+      ],
+      [
+        "Weather",
+        10
+      ],
+      [
+        "Climate change",
+        10
+      ],
+      [
+        "Climate",
+        10
+      ],
+      [
+        "Meteorology",
+        10
+      ],
+      [
+        "Doctorate",
+        10
+      ],
+      [
+        "Apprenticeship",
+        10
+      ],
+      [
+        "Academic degree",
+        10
       ]
     ],
     "entities": [
-      [
-        "Microsoft",
-        20
-      ],
-      [
-        "IBM",
-        90
-      ],
-      [
-        "BT.",
-        10
-      ],
-      [
-        "@Lampada_DS",
-        10
-      ],
-      [
-        "3 months",
-        10
-      ],
-      [
-        "IBM Quantum",
-        10
-      ],
-      [
-        "@maria__violaris",
-        10
-      ],
-      [
-        "#minesweeper",
-        10
-      ],
-      [
-        "@UniofOxford",
-        10
-      ],
-      [
-        "#quantum",
-        10
-      ],
-      [
-        "@qiskit",
-        10
-      ],
-      [
-        "@IBM",
-        50
-      ],
       [
         "Sriram Raghavan",
         30
@@ -1861,6 +1813,10 @@
         10
       ],
       [
+        "@IBM",
+        50
+      ],
+      [
         "#AI",
         30
       ],
@@ -1869,19 +1825,75 @@
         20
       ],
       [
+        "IBM Quantum",
+        10
+      ],
+      [
+        "@maria__violaris",
+        10
+      ],
+      [
+        "#minesweeper",
+        10
+      ],
+      [
+        "@UniofOxford",
+        10
+      ],
+      [
+        "#quantum",
+        10
+      ],
+      [
+        "@qiskit",
+        10
+      ],
+      [
+        "Widener",
+        10
+      ],
+      [
+        "IBM",
+        90
+      ],
+      [
+        "@GoldmanSachs",
+        10
+      ],
+      [
+        "@RepMGS",
+        10
+      ],
+      [
+        "Microsoft",
+        20
+      ],
+      [
+        "BT.",
+        10
+      ],
+      [
+        "@Lampada_DS",
+        10
+      ],
+      [
+        "3 months",
+        10
+      ],
+      [
         "@CallforCode",
         10
       ],
       [
-        "#SUNYResearch",
+        "BT",
         10
       ],
       [
-        "@WAMCRadio",
+        "Cameron",
         10
       ],
       [
-        "@ualbany",
+        "#OnThisDay",
         10
       ],
       [
@@ -1913,27 +1925,15 @@
         10
       ],
       [
-        "Widener",
+        "#SUNYResearch",
         10
       ],
       [
-        "@GoldmanSachs",
+        "@WAMCRadio",
         10
       ],
       [
-        "@RepMGS",
-        10
-      ],
-      [
-        "Cameron",
-        10
-      ],
-      [
-        "#OnThisDay",
-        10
-      ],
-      [
-        "BT",
+        "@ualbany",
         10
       ]
     ],
@@ -1947,19 +1947,19 @@
         120
       ],
       [
-        "operating systems",
-        80
-      ],
-      [
         "computer",
         80
       ],
       [
-        "science",
-        50
+        "operating systems",
+        80
       ],
       [
         "automotive and vehicles",
+        50
+      ],
+      [
+        "science",
         50
       ],
       [
@@ -1971,15 +1971,15 @@
         40
       ],
       [
+        "performance vehicles",
+        30
+      ],
+      [
         "sports",
         30
       ],
       [
         "baseball",
-        30
-      ],
-      [
-        "performance vehicles",
         30
       ],
       [
@@ -1995,6 +1995,14 @@
         10
       ],
       [
+        "coupe",
+        10
+      ],
+      [
+        "motor shows",
+        10
+      ],
+      [
         "physics",
         10
       ],
@@ -2003,11 +2011,19 @@
         10
       ],
       [
-        "coupe",
+        "servers",
         10
       ],
       [
-        "motor shows",
+        "software engineering",
+        10
+      ],
+      [
+        "homework and study tips",
+        10
+      ],
+      [
+        "studying business",
         10
       ],
       [
@@ -2032,22 +2048,6 @@
       ],
       [
         "renewable energy",
-        10
-      ],
-      [
-        "homework and study tips",
-        10
-      ],
-      [
-        "studying business",
-        10
-      ],
-      [
-        "software engineering",
-        10
-      ],
-      [
-        "servers",
         10
       ]
     ],

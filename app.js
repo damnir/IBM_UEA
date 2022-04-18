@@ -56,22 +56,23 @@ app.get("/records/:id", async (req, res) => {
 })
 
 app.post('/records/:id', async (req, res) => {
+    console.log(req.params)
     data = []
-    doc = await dbclient.query_one(req.params)
-
-    doc['results']['result'].array.forEach(element => {
-        data.push(data, element['t_id'])
-    });
+    doc = await dbclient.query_one(String(req.params.id)).then( () => {
+        doc['result']['results'].forEach(element => {
+            data.push(element['t_id'])
+        });
+    })
 
     // console.log(req.params)
-    // console.log(data)
+    // console.log("POO:" + data)
 
     res.status(200).send({
         message: data,
         id: req.params['id']
     })
 
-    console.log(message)
+    // console.log(message)
 })
 
 app.post('/', (req, res) => {
@@ -81,6 +82,8 @@ app.post('/', (req, res) => {
 });
 
 app.post('/records', (req, res) => {
+    console.log("POO:" + data)
+
     res.status(200).send({
         message: read_result()
     })
@@ -125,6 +128,12 @@ app.post('/submit-form', (req, res) => {
     //     }
 
     // }
+
+
+})
+
+app.get('/new_query', (req, res) => {
+    res.render("new_query")
 
 })
 
