@@ -17,13 +17,15 @@ SCOPES = ['https://www.googleapis.com/auth/presentations']
 # The ID of a sample presentation.
 PRESENTATION_ID = '1PYJKAZwK8OhWF6uyFRI-VuiMMkFmgYZ4PhZXVXJNIHA'
 
+
 def main():
     creds = None
     # The file token.json stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
     # time.
     if os.path.exists('./gapis/token.json'):
-        creds = Credentials.from_authorized_user_file('./gapis/token.json', SCOPES)
+        creds = Credentials.from_authorized_user_file(
+            './gapis/token.json', SCOPES)
     # If there are no (valid) credentials available, let the user log in.
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
@@ -46,40 +48,59 @@ def main():
             presentationId=PRESENTATION_ID).execute()
         slides = presentation.get('slides')
 
-        size = {'width': {'magnitude': 3000000, 'unit': 'EMU'}, 'height': {'magnitude': 3000000, 'unit': 'EMU'}}
-        transform = {'scaleX': 1.0244, 'scaleY': 0.95, 'translateX': 399125, 'translateY': 2459275, 'unit': 'EMU'}
+        size = {'width': {'magnitude': 3000000, 'unit': 'EMU'},
+                'height': {'magnitude': 3000000, 'unit': 'EMU'}}
+        transform = {'scaleX': 1.0244, 'scaleY': 0.95,
+                     'translateX': 399125, 'translateY': 2459275, 'unit': 'EMU'}
 
     except HttpError as err:
         print(err)
 
     requests = [
-    {
-        "duplicateObject" : {
-            "objectId": "main_slide"
+        {
+            "duplicateObject": {
+                "objectId": "main_slide"
+            }
         }
-    }
     ]
 
     body = {
         'requests': requests
     }
     response = service.presentations() \
-    .batchUpdate(presentationId=PRESENTATION_ID, body=body).execute()
+        .batchUpdate(presentationId=PRESENTATION_ID, body=body).execute()
 
     next_slide = response.get('replies')[0]['duplicateObject']['objectId']
     requests = []
+    i = 0
+    watson = open("./data/watson_response.json", 'r', encoding="utf8")
+    data = json.load(watson)
+    for tweet in data['result']['results']:
 
-    for filename in os.listdir("./data/query_result/"):
-        with open(os.path.join("./data/query_result/", filename), 'r', encoding="utf8") as f:
-            jf = json.load(f)
-            image = False
+        # sentiment
+        sentiment = "{} ({})".format(tweet['enriched_text']['sentiment']['document']
+                     ['label'], tweet['enriched_text']['sentiment']['document']['score'])
+        # entities
+        entities = ""
+        for s in tweet['enriched_text']['entities']:
+            entities += "{} ({}) ".format(s['text'], s['relevance'])
 
-            if(jf['url'] != ""):
-                image = True
+        concepts = ""
+        for s in tweet['enriched_text']['concepts']:
+            concepts += "{} ({}) ".format(s['text'], s['relevance'])
 
-            requests = [
+        categories = ""
+        for s in tweet['enriched_text']['categories']:
+            categories += "{}({}) ".format(s['label'], s['score'])
+
+        image = False
+
+        if(tweet['url'] != ""):
+            image = True
+
+        requests = [
             {
-                "duplicateObject" : {
+                "duplicateObject": {
                     "objectId": "main_slide"
                 }
             },
@@ -90,7 +111,7 @@ def main():
                         'text': '{{username}}',
                         'matchCase': False
                     },
-                    'replaceText': jf['name']
+                    'replaceText': tweet['name']
                 }
             },
             {
@@ -100,43 +121,82 @@ def main():
                         'text': '{{text}}',
                         'matchCase': False
                     },
-                    'replaceText': jf['text'].replace("*nl*", "\n")
+                    'replaceText': tweet['text'].replace("*nl*", "\n")
                 }
             },
-            ]
-
-            if image:
-                emu4M = {
-                    'magnitude': 4000000,
-                    'unit': 'EMU'
+            {
+                'replaceAllText': {
+                    'pageObjectIds': [next_slide],
+                    'containsText': {
+                        'text': '{{sentiment}}',
+                        'matchCase': False
+                    },
+                    'replaceText': sentiment
                 }
-                requests.append({
+            },
+            {
+                'replaceAllText': {
+                    'pageObjectIds': [next_slide],
+                    'containsText': {
+                        'text': '{{entities}}',
+                        'matchCase': False
+                    },
+                    'replaceText': entities
+                }
+            },
+            {
+                'replaceAllText': {
+                    'pageObjectIds': [next_slide],
+                    'containsText': {
+                        'text': '{{concepts}}',
+                        'matchCase': False
+                    },
+                    'replaceText': concepts
+                }
+            },
+            {
+                'replaceAllText': {
+                    'pageObjectIds': [next_slide],
+                    'containsText': {
+                        'text': '{{categories}}',
+                        'matchCase': False
+                    },
+                    'replaceText': categories
+                }
+            },
+        ]
+
+        if image:
+            emu4M = {
+                'magnitude': 4000000,
+                'unit': 'EMU'
+            }
+            requests.append({
                 'createImage': {
-                    'objectId': jf['t_id'] + "img",
-                    'url': jf['url'],
+                    'objectId': tweet['t_id'] + "img",
+                    'url': tweet['url'],
                     'elementProperties': {
                         'pageObjectId': next_slide,
                         'size': size,
                         'transform': transform
                     }
                 }
-                })
+            })
 
-            body = {
-                'requests': requests
-            }
-            response = service.presentations() \
+        body = {
+            'requests': requests
+        }
+        response = service.presentations() \
             .batchUpdate(presentationId=PRESENTATION_ID, body=body).execute()
 
-            print(response)
+        print(response)
 
-            next_slide = response.get('replies')[0]['duplicateObject']['objectId']
-            # print(next_slide)
-            # print(response)
-            requests = []
-            # time.sleep(4)
-
-      
+        next_slide = response.get('replies')[0]['duplicateObject']['objectId']
+        # print(next_slide)
+        # print(response)
+        requests = []
+        i = i+1
+        # time.sleep(4)
 
 
 if __name__ == '__main__':

@@ -58,7 +58,7 @@
                             <div class="card-header">
                                 <%=id%>
                             </div>
-                            
+
                             <div class="card-body">
                                 <h5 class="card-title">QUERY: Type: <%=query['info']['accountsOptions']%> (
                                         <%=query['info']['since']%> - <%=query['info']['until']%> )</h5>
@@ -140,8 +140,9 @@
                         </div>
 
                     </div>
-
-                    <button type="button" class="btn btn-success mt-3 w-100">Export to Google Sheets</button>
+                    <form method="POST" action="/records/export-sheets">
+                        <button type="submit" class="btn btn-success mt-3 w-100">Export to Google Sheets</button>
+                    </form>
 
 
                 </div>
@@ -166,7 +167,9 @@
                         </div>
                     </div>
                     <div class="row">
-                        <button type="button" class="btn btn-warning w-100">Export to Google Slides</button>
+                        <form method="POST" action="/records/export-slides">
+                            <button type="submit" class="btn btn-warning w-100">Export to Google Slides</button>
+                        </form>
                     </div>
 
                 </div>

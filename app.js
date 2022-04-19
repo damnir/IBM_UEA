@@ -54,10 +54,31 @@ app.get("/records/:id", async (req, res) => {
 })
 
 app.post('/records/:id', async (req, res) => {
-    
+
+    if (req.params.id === "export-slides") {
+        var process = spawn("py", ['gapis/gslides.py'])
+
+        process.on('exit', async function () {
+            console.log("slides exported")
+        })
+
+        res.redirect("https://docs.google.com/presentation/d/1PYJKAZwK8OhWF6uyFRI-VuiMMkFmgYZ4PhZXVXJNIHA")
+        return
+    }
+    if (req.params.id === "export-sheets") {
+        var process = spawn("py", ['gapis/gsheets.py'])
+
+        process.on('exit', async function () {
+            console.log("sheets exported")
+        })
+
+        res.redirect("https://docs.google.com/spreadsheets/d/1HLmj5BNqdCj-k7s9e3Q4gYhiLQjtcxpXnkpAj1p7SBk")
+        return
+    }
+
     console.log(req.params)
     data = []
-    doc = await dbclient.query_one(String(req.params.id)).then( () => {
+    doc = await dbclient.query_one(String(req.params.id)).then(() => {
         doc['result']['results'].forEach(element => {
             data.push(element['t_id'])
         });
@@ -71,6 +92,31 @@ app.post('/records/:id', async (req, res) => {
 
 })
 
+app.get('/records/:id/:export'), (req, res) => {
+
+    res.redirect('https://docs.google.com/presentation/d/1PYJKAZwK8OhWF6uyFRI-VuiMMkFmgYZ4PhZXVXJNIHA')
+}
+
+app.post('/records/:id/:export'), (req, res) => {
+
+    if (req.params.export === "slides") {
+
+        var process = spawn("py", ['gapis/gslides.py'])
+    }
+
+    process.on('exit', async function () {
+        console.log("slides exported")
+    })
+}
+
+// app.post('/export-sheets'), (req, res) => {
+//     var process = spawn("py", ['gapis/gsheets.py'])
+
+//     process.on('exit', async function () {
+//         console.log("sheets exported")
+//     })
+// }
+
 app.post('/submit-form', async (req, res) => {
     // watsonclient.new_request(req.body)
 
@@ -79,10 +125,10 @@ app.post('/submit-form', async (req, res) => {
 
     var rtArg = ""
 
-    if(req.body.retweets === 'on') {
+    if (req.body.retweets === 'on') {
         rtArg += 'r'
     }
-    if(req.body.replies === 'on') {
+    if (req.body.replies === 'on') {
         rtArg += 'p'
     }
 
@@ -92,10 +138,10 @@ app.post('/submit-form', async (req, res) => {
 
     process.on('exit', async function () {
         console.log("query finished")
-        if(read_result() === ""){
+        if (read_result() === "") {
             console.log("no results.")
         }
-        else{
+        else {
             // watsonclient.refresh_collection()
             // res.post("/processing")
             watsonclient.new_request(req.body)

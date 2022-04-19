@@ -47,26 +47,42 @@ def main():
 
 
     rng = 2
-    for filename in os.listdir("./data/query_result/"):
-        with open(os.path.join("./data/query_result/", filename), 'r', encoding="utf8") as f:
-            jf = json.load(f)
+    watson = open("./data/watson_response.json", 'r', encoding="utf8")
+    data = json.load(watson)
+    for tweet in data['result']['results']:
 
-            cell_range = ("A{}:G{}").format(rng, rng); rng+=1
+        # sentiment
+        sentiment = "{} ({})".format(tweet['enriched_text']['sentiment']['document']
+                     ['label'], tweet['enriched_text']['sentiment']['document']['score'])
+        # entities
+        entities = ""
+        for s in tweet['enriched_text']['entities']:
+            entities += "{} ({})\n".format(s['text'], s['relevance'])
 
-            #id, name, text, sentiment, concepts, keyword, categories
-            values = [
-                [
-                    jf['t_id'], jf['name'], jf['text'].replace('*nl*', '\n'), "placeholder", "placeholder", "placeholder", "placeholder"
-                ]
+        concepts = ""
+        for s in tweet['enriched_text']['concepts']:
+            concepts += "{} ({})\n".format(s['text'], s['relevance'])
+
+        categories = ""
+        for s in tweet['enriched_text']['categories']:
+            categories += "{}({})\n".format(s['label'], s['score'])
+
+        cell_range = ("A{}:G{}").format(rng, rng); rng+=1
+
+        #id, name, text, sentiment, concepts, keyword, categories
+        values = [
+            [
+                tweet['t_id'], tweet['name'], tweet['text'].replace('*nl*', '\n'), sentiment, entities, concepts, categories
             ]
+        ]
 
-            body = {
-                'values':values
-            }
+        body = {
+            'values':values
+        }
 
-            result = service.spreadsheets().values().update(
-            spreadsheetId=SAMPLE_SPREADSHEET_ID, range=cell_range,
-            valueInputOption='RAW', body=body).execute()
+        result = service.spreadsheets().values().update(
+        spreadsheetId=SAMPLE_SPREADSHEET_ID, range=cell_range,
+        valueInputOption='RAW', body=body).execute()
 
 if __name__ == '__main__':
     main()
