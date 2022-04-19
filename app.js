@@ -14,10 +14,6 @@ app.use(express.static('public'))
 var accounts
 var doc
 
-// console.log(dbclient.query_id("all_accounts", "data"))
-// var twttr = require("./twitter_widgets")
-
-
 app.set('view engine', 'ejs')
 app.use(body_parser.urlencoded({ extended: true }))
 
@@ -52,7 +48,6 @@ app.get("/records/:id", async (req, res) => {
         id: req.params['id'],
         entities: doc['summary']['entities']
     })
-    // console.log(doc)
 })
 
 app.post('/records/:id', async (req, res) => {
@@ -64,71 +59,44 @@ app.post('/records/:id', async (req, res) => {
         });
     })
 
-    // console.log(req.params)
-    // console.log("POO:" + data)
-
     res.status(200).send({
         message: data,
         id: req.params['id']
     })
 
-    // console.log(message)
-})
-
-app.post('/', (req, res) => {
-    res.status(200).send({
-        message: read_result()
-    })
-});
-
-app.post('/records', (req, res) => {
-    console.log("POO:" + data)
-
-    res.status(200).send({
-        message: read_result()
-    })
-});
-
-app.post("/new_query", (req, res) => {
-    var tweets = read_result()
-
-    if (tweets) {
-        res.status(200).send({ message: tweets })
-    }
-    else {
-        res.status(418)
-    }
-
-    res.redirect("/")
 })
 
 app.post('/submit-form', (req, res) => {
-    // const query = req.body.query
-    // console.log(query)
 
-    // //query - ibm university until:2022-04-10 since:2021-04-01
-    // var process = spawn("go", ["run", "scraper.go", query]);
-    // // var process = spawn("go", ["run", "scraper.go", "a"]);
+    console.log(req.body)
+    var args = ["run", "scraper.go", req.body.accountsOptions]
 
-    // process.on('exit', function () {
-    //     console.log("query finished")
-    //     watsonclient.refresh_collection()
-    //     wait()
+    var rtArg = ""
 
-    // })
+    if(req.body.retweets === 'on') {
+        rtArg += 'r'
+    }
+    if(req.body.replies === 'on') {
+        rtArg += 'p'
+    }
 
-    // async function wait() {
-    //     if (!watsonclient.check_status) {
-    //         console.log("false")
-    //         await sleep(2000)
-    //         wait()
-    //     }
-    //     else {
-    //         res.redirect("/")
-    //     }
+    args.push(rtArg)
+    args.push(req.body.until)
+    args.push(req.body.since)
 
-    // }
+    var process = spawn("go", args);
 
+    process.on('exit', function () {
+        console.log("query finished")
+        if(read_result() === ""){
+            console.log("no results.")
+        }
+        else{
+            watsonclient.refresh_collection()
+        }
+    })
+
+    console.log(args)
 
 })
 
@@ -136,20 +104,12 @@ app.get('/new_query', (req, res) => {
     res.render("new_query")
 
 })
-
-function sleep(ms) {
-    return new Promise((resolve) => {
-        setTimeout(resolve, ms)
-    })
-}
-
 function read_result() {
 
     var data = ""
 
     try {
         data = fs.readFileSync('data/query_result.txt', 'utf8')
-        // fs.unlink("data/query_result.txt", () => {})
         console.log(data)
     } catch (err) {
         console.error(err)
@@ -157,23 +117,5 @@ function read_result() {
 
     return data
 }
-
-function read_accounts() {
-
-    var accounts = ""
-
-    try {
-        accounts = fs.readFileSync('data/accounts.txt', 'utf8')
-    } catch (err) {
-        console.error(err)
-    }
-
-    return accounts.split('\n')
-}
-
-
-
-// dbclient.pushNewWatson(watsonclient.query())
-// watsonclient.query()
 
 app.listen(8080, () => console.log("listening on 8080"))

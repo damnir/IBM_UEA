@@ -26,7 +26,6 @@ function pushNewWatson(data, collection) {
             db.close();
         });
 
-        // db.close();
     });
 }
 

@@ -25,33 +25,33 @@ func run_search(query string, retweets bool, replies bool, until string, since s
 	query += (" until:" + until + " since:" + since)
 
 	fmt.Println(query)
-	// var tweets []string
+	var tweets []string
 
-	// f, err := os.OpenFile("data/query_result.txt",
-	// 	os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
-	// if err != nil {
-	// 	log.Println(err)
-	// }
-	// defer f.Close()
+	f, err := os.OpenFile("data/query_result.txt",
+		os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	if err != nil {
+		log.Println(err)
+	}
+	defer f.Close()
 
-	// scraper := twitterscraper.New()
-	// scraper.SetSearchMode(twitterscraper.SearchLatest)
+	scraper := twitterscraper.New()
+	scraper.SetSearchMode(twitterscraper.SearchLatest)
 
-	// for tweet := range scraper.WithDelay(1).SearchTweets(context.Background(),
-	// 	query, 15) { //50 limit
-	// 	if tweet.Error != nil {
-	// 		panic(tweet.Error)
-	// 	}
+	for tweet := range scraper.WithDelay(1).SearchTweets(context.Background(),
+		query, 15) { //50 limit
+		if tweet.Error != nil {
+			panic(tweet.Error)
+		}
 
-	// 	tweets = append(tweets, tweet.ID)
+		tweets = append(tweets, tweet.ID)
 
-	// 	if _, err := f.WriteString(tweet.ID + "\n"); err != nil {
-	// 		log.Println(err)
-	// 	}
+		if _, err := f.WriteString(tweet.ID + "\n"); err != nil {
+			log.Println(err)
+		}
 
-	// 	toJson(tweet.Tweet)
+		toJson(tweet.Tweet)
 
-	// }
+	}
 
 }
 
