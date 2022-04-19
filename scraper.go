@@ -38,7 +38,7 @@ func run_search(query string, retweets bool, replies bool, until string, since s
 	scraper.SetSearchMode(twitterscraper.SearchLatest)
 
 	for tweet := range scraper.WithDelay(1).SearchTweets(context.Background(),
-		query, 15) { //50 limit
+		query, 50) { //50 limit
 		if tweet.Error != nil {
 			panic(tweet.Error)
 		}
@@ -129,7 +129,13 @@ func test_users(locations []string) {
 
 func query_all(qt string, retweets bool, replies bool, until string, since string) {
 
-	file, err := os.Open("data/query.txt")
+	path := ""
+	if qt == "russel" {
+		path = "data/query2.txt"
+	} else {
+		path = "data/query.txt"
+	}
+	file, err := os.Open(path)
 
 	if err != nil {
 		log.Fatalf("failed to open")

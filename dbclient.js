@@ -1,6 +1,7 @@
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/";
 const fs = require('fs')
+const axios = require('axios')
 
 
 const client = new MongoClient(url);
@@ -24,6 +25,7 @@ function pushNewWatson(data, collection) {
             if (err) throw err;
             console.log("1 document inserted");
             db.close();
+            
         });
 
     });

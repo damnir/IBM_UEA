@@ -16,13 +16,16 @@ var doc
 
 app.set('view engine', 'ejs')
 app.use(body_parser.urlencoded({ extended: true }))
+app.use(watsonclient.router)
 
 app.get("/", async (req, res) => {
 
     accounts = await dbclient.query_id("all_accounts", "data")
+    docs = await dbclient.query_all()
 
     res.render("main", {
-        accounts: accounts
+        accounts: accounts,
+        recs: docs
     })
 })
 
@@ -51,6 +54,7 @@ app.get("/records/:id", async (req, res) => {
 })
 
 app.post('/records/:id', async (req, res) => {
+    
     console.log(req.params)
     data = []
     doc = await dbclient.query_one(String(req.params.id)).then( () => {
@@ -59,6 +63,7 @@ app.post('/records/:id', async (req, res) => {
         });
     })
 
+
     res.status(200).send({
         message: data,
         id: req.params['id']
@@ -66,7 +71,8 @@ app.post('/records/:id', async (req, res) => {
 
 })
 
-app.post('/submit-form', (req, res) => {
+app.post('/submit-form', async (req, res) => {
+    // watsonclient.new_request(req.body)
 
     console.log(req.body)
     var args = ["run", "scraper.go", req.body.accountsOptions]
@@ -80,19 +86,20 @@ app.post('/submit-form', (req, res) => {
         rtArg += 'p'
     }
 
-    args.push(rtArg)
-    args.push(req.body.until)
-    args.push(req.body.since)
+    args.push(rtArg); args.push(req.body.until); args.push(req.body.since)
 
     var process = spawn("go", args);
 
-    process.on('exit', function () {
+    process.on('exit', async function () {
         console.log("query finished")
         if(read_result() === ""){
             console.log("no results.")
         }
         else{
-            watsonclient.refresh_collection()
+            // watsonclient.refresh_collection()
+            // res.post("/processing")
+            watsonclient.new_request(req.body)
+            // console.log("\n\nBOO MOTHERFUCKER\n\n")
         }
     })
 
@@ -102,8 +109,8 @@ app.post('/submit-form', (req, res) => {
 
 app.get('/new_query', (req, res) => {
     res.render("new_query")
-
 })
+
 function read_result() {
 
     var data = ""

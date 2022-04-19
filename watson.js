@@ -4,9 +4,18 @@ const fs = require('fs')
 
 var response = ""
 var collectionId = ""
+var extra = ""
 
 const fileName = './data/watson_api.json';
 const file = require(fileName);
+
+var express = require('express');
+var router = express.Router();
+
+// router.use(function timeLog(req, res, next) {
+//     console.log('Time: ', Date.now());
+//     next();
+//   });
 
 const discovery = new DiscoveryV1({
     version: '2020-08-27',
@@ -38,6 +47,7 @@ function query() {
         .then(queryResponse => {
             queryResponse["_id"] = "a_" + Date.now()
             queryResponse["query_type"] = "all"
+            queryResponse["info"] = extra
 
             // queryResponse['summary'] = summarise(queryResponse)
             queryResponse['summary'] = summarise(queryResponse)
@@ -52,7 +62,7 @@ function query() {
                 }
                 //file written successfully
             })
-
+            
 
             db.pushNewWatson(JSON.parse(response))
         })
@@ -276,8 +286,15 @@ function refresh_collection() {
     }
 }
 
+function new_request(params) {
+    extra = params
+
+    refresh_collection()
+    // console.log("poopoo::::" + extra + "poopoooo")
+}
+
 module.exports = {
-    query, refresh_collection, add_documents, check_status
+    router, query, refresh_collection, add_documents, check_status, new_request
 }
 
 function read_result() {
@@ -308,3 +325,5 @@ function read_result() {
 // test()
 
 // test()
+
+// new_request()

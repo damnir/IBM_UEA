@@ -117,56 +117,29 @@
 
                     </div>
                 </form>
-
-
             </div>
             <div class="col">
 
-                <h4 class="ms-2">Recent Records</h4>
+                <h4 class="">Recent Records</h4>
 
-                <div class="card mt-2">
-                    <div class="card-header">
-                        a_1650244995498
+                <div class="col">
+                    <div class="list-group mt-2">
+                        <% for (var i=0; i < recs.length; i+=1) { %>
+                            <div class="card mt-2">
+                                <div class="card-header">
+                                    <%=recs[i]['_id']%>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">QUERY: Type: <%=recs[i]['info']['accountsOptions']%> ( 2022-04-25 - 2022-01-01 )</h5>
+                                    <p class="card-text">Topics: all | Retweets: <%=recs[i]['info']['retweets']%> | Replies: <%=recs[i]['info']['replies']%> | Mentions: <%=recs[i]['info']['mentions']%></p>
+                                    <p class="card-text">Matching Results: <%=recs[i]['result']['matching_results']%></p>
+                                    <a href="/records/<%=  recs[i]['_id']%> " class="btn btn-light w-100">View</a>
+                                </div>
+                            </div>
+    
+                            <% } %>
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title">QUERY: All Accounts ( 2022-04-25 - 2022-01-01 )</h5>
-                        <p class="card-text">Topics: all | Retweets: yes | Replies: yes | Mentions: yes</p>
-                        <p class="card-text">Matching Results: 14</p>
-                        <a href="#" class="btn btn-light w-100">View</a>
-                    </div>
-                </div>
-                <div class="card mt-2">
-                    <div class="card-header">
-                        a_1650244995498
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">QUERY: All Accounts ( 2022-04-25 - 2022-01-01 )</h5>
-                        <p class="card-text">Topics: all | Retweets: yes | Replies: yes | Mentions: yes</p>
-                        <p class="card-text">Matching Results: 14</p>
-                        <a href="#" class="btn btn-light w-100">View</a>
-                    </div>
-                </div>
-                <div class="card mt-2">
-                    <div class="card-header">
-                        a_1650244995498
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">QUERY: All Accounts ( 2022-04-25 - 2022-01-01 )</h5>
-                        <p class="card-text">Topics: all | Retweets: yes | Replies: yes | Mentions: yes</p>
-                        <p class="card-text">Matching Results: 14</p>
-                        <a href="#" class="btn btn-light w-100">View</a>
-                    </div>
-                </div>
-                <div class="card mt-2">
-                    <div class="card-header">
-                        a_1650244995498
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">QUERY: All Accounts ( 2022-04-25 - 2022-01-01 )</h5>
-                        <p class="card-text">Topics: all | Retweets: yes | Replies: yes | Mentions: yes</p>
-                        <p class="card-text">Matching Results: 14</p>
-                        <a href="#" class="btn btn-light w-100">View</a>
-                    </div>
+    
                 </div>
 
             </div>

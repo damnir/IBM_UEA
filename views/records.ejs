@@ -46,21 +46,54 @@
         </div>
     </nav>
 
-    <div class="mt-4 w-100 ms-5">
+    <div class="mt-4 ms-5">
         <div class="row w-100">
-            <div class="col-2">
+            <div class="col">
 
                 <h3 class=" ">Records:</h3>
 
                 <div class="list-group mt-2">
-                    All (extended)
-                    <% for (var i=0; i < recs.length; i+=1) { %>
+                    <% if (query !=null) { %>
+                        <div class="card text-light bg-secondary mb-3 mt-2">
+                            <div class="card-header">
+                                <%=id%>
+                            </div>
+                            
+                            <div class="card-body">
+                                <h5 class="card-title">QUERY: Type: <%=query['info']['accountsOptions']%> (
+                                        <%=query['info']['since']%> - <%=query['info']['until']%> )</h5>
+                                <p class="card-text">Topics: all | Retweets: <%=query['info']['retweets']%> | Replies:
+                                        <%=query['info']['replies']%> | Mentions: <%=query['info']['mentions']%>
+                                </p>
+                                <p class="card-text">Matching Results: <%=query['result']['matching_results']%>
+                                </p>
+                            </div>
+                        </div>
 
-                        <a href="/records/<%=  recs[i]['_id']%> " class="list-group-item list-group-item-action">
-                            <%= recs[i]['_id'] %>
-                        </a>
+                        <hr class="rounded">
 
-                        <% } %>
+
+                        <%}%>
+                            <% for (var i=0; i < recs.length; i+=1) { %>
+                                <div class="card mt-2">
+                                    <div class="card-header">
+                                        <%=recs[i]['_id']%>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">QUERY: Type: <%=recs[i]['info']['accountsOptions']%> (
+                                                <%=recs[i]['info']['since']%> - <%=recs[i]['info']['until']%> )</h5>
+                                        <p class="card-text">Topics: all | Retweets: <%=recs[i]['info']['retweets']%> |
+                                                Replies: <%=recs[i]['info']['replies']%> | Mentions:
+                                                    <%=recs[i]['info']['mentions']%>
+                                        </p>
+                                        <p class="card-text">Matching Results:
+                                            <%=recs[i]['result']['matching_results']%>
+                                        </p>
+                                        <a href="/records/<%=  recs[i]['_id']%> " class="btn btn-light w-100">View</a>
+                                    </div>
+                                </div>
+
+                                <% } %>
                 </div>
 
             </div>
