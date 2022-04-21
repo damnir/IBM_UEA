@@ -24,7 +24,7 @@ func run_search(query string, retweets bool, replies bool, until string, since s
 	}
 	query += (" until:" + until + " since:" + since)
 
-	fmt.Println(query)
+	// fmt.Println(query)
 	var tweets []string
 
 	f, err := os.OpenFile("data/query_result.txt",
@@ -48,6 +48,8 @@ func run_search(query string, retweets bool, replies bool, until string, since s
 		if _, err := f.WriteString(tweet.ID + "\n"); err != nil {
 			log.Println(err)
 		}
+
+		fmt.Println(tweet)
 
 		toJson(tweet.Tweet)
 
