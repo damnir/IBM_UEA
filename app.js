@@ -23,7 +23,7 @@ app.get("/", async (req, res) => {
     accounts = await dbclient.query_id("all_accounts", "data")
     docs = await dbclient.query_all()
 
-    res.render("main", {
+    res.status(200).render("main", {
         accounts: accounts,
         recs: docs
     })
@@ -40,10 +40,23 @@ app.get("/records", async (req, res) => {
     })
 })
 
+app.post("/records", async (req, res) => {
+    docs = await dbclient.query_all()
+
+    res.status(200).send({
+        recs: docs,
+    })
+})
+
 app.get("/records/:id", async (req, res) => {
 
     doc = await dbclient.query_one(req.params)
     docs = await dbclient.query_all()
+
+    if(!doc) {
+        res.sendStatus(400)
+        return
+    }
 
     res.render("records", {
         recs: docs,
@@ -79,13 +92,19 @@ app.post('/records/:id', async (req, res) => {
     console.log(req.params)
     data = []
     doc = await dbclient.query_one(String(req.params.id)).then(() => {
+        console.log("JASF" + doc)
+        if(!doc){
+            // res.status(400)
+            return
+        }
         doc['result']['results'].forEach(element => {
             data.push(element['t_id'])
         });
     })
 
+    // if(!doc) return
 
-    res.status(200).send({
+    res.send({
         message: data,
         id: req.params['id']
     })
@@ -140,12 +159,11 @@ app.post('/submit-form', async (req, res) => {
         console.log("query finished")
         if (read_result() === "") {
             console.log("no results.")
+            res.status(204).send("0 results matching the query.")
         }
         else {
-            // watsonclient.refresh_collection()
-            // res.post("/processing")
-            watsonclient.new_request(req.body)
-            // console.log("\n\nBOO MOTHERFUCKER\n\n")
+            // watsonclient.new_request(req.body)
+            res.status(202).send("Tweets found, starting analysis...")
         }
     })
 
@@ -172,5 +190,7 @@ function read_result() {
 
     return data
 }
+
+module.exports = app
 
 app.listen(8080, () => console.log("listening on 8080"))

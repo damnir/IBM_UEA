@@ -1,0 +1,36 @@
+{
+  "name": "ibm_uea",
+  "version": "1.0.0",
+  "description": "dissertation project",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npx mocha --reporter spec --timeout 100000 --require mocha-suppress-logs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/damnir/IBM_UEA.git"
+  },
+  "author": "damir nikic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/damnir/IBM_UEA/issues"
+  },
+  "homepage": "https://github.com/damnir/IBM_UEA#readme",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "body-parser": "^1.20.0",
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "ejs": "^3.1.7",
+    "express": "^4.17.3",
+    "ibm-watson": "^7.0.0",
+    "mocha": "^9.2.2",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "mocha-suppress-logs": "^0.3.1"
+  }
+}

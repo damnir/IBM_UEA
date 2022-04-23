@@ -38,16 +38,15 @@ var queryParams = {
     count: '25'
 };
 
-function query() {
+async function query() {
     queryParams = {
         environmentId: '44c46920-a956-4d4a-b37e-3120a33f7216',
         collectionId: file.collectionid,
         // naturalLanguageQuery: "covid",
-        count: '25'
+        count: '50'
     };
-    var db = require('./dbclient')
-    discovery.query(queryParams)
-        .then(queryResponse => {
+    await discovery.query(queryParams)
+        .then(async queryResponse => {
             queryResponse["_id"] = "a_" + Date.now()
             queryResponse["query_type"] = "all"
             queryResponse["info"] = extra
@@ -67,11 +66,18 @@ function query() {
             })
 
 
-            db.pushNewWatson(JSON.parse(response))
+            // db.pushNewWatson(JSON.parse(response))
+            // pushToDb(response)
         })
         .catch(err => {
             console.log('error:', err);
         });
+
+}
+
+async function pushToDb(data) {
+    var db = require('./dbclient')
+    db.pushNewWatson(JSON.parse(data))
 
 }
 
@@ -231,7 +237,7 @@ function get_docs_id() {
     return data.split('\n')
 }
 
-function add_documents() {
+async function add_documents() {
 
     data = get_docs_id()
 
@@ -245,8 +251,8 @@ function add_documents() {
         addRequest(addDocumentParams)
     })
 
-    function addRequest(params) {
-        discovery.addDocument(params)
+    async function addRequest(params) {
+        await discovery.addDocument(params)
             .then(async documentAccepted => {
                 const resnponse = documentAccepted.result;
                 console.log(JSON.stringify(resnponse, null, 2));
@@ -262,12 +268,14 @@ function add_documents() {
             await sleep(1500)
             if (await check_status() === true) {
                 stop = true
+                return true
             }
         }
-        query()
+        // query()
     }
 
-    test()
+    await test()
+    return true
 }
 
 async function check_status() {
@@ -308,7 +316,9 @@ function sleep(ms) {
     });
 }
 
-function refresh_collection() {
+async function refresh_collection() {
+
+    success = false
 
     var deleteCollectionParams = {
         environmentId: file.envid,
@@ -321,34 +331,41 @@ function refresh_collection() {
         language: 'en',
     };
 
-    discovery.deleteCollection(deleteCollectionParams)
-        .then(deleteCollectionResponse => {
-            console.log(JSON.stringify(deleteCollectionResponse, null, 2));
-            createNewCollection(createCollectionParams)
-        })
-        .catch(err => {
-            console.log('error:', err);
-        });
+    try {
 
-    function createNewCollection(params) {
-        discovery.createCollection(params)
-            .then(collection => {
-                console.log(JSON.stringify(collection, null, 2));
-
-                file.collectionid = collection.result.collection_id
-
-                fs.writeFile(fileName, JSON.stringify(file, null, 2), function writeJSON(err) {
-                    if (err) return console.log(err);
-                    console.log(JSON.stringify(file));
-                    console.log('writing to ' + fileName);
-                });
-
-                add_documents()
-
+        await discovery.deleteCollection(deleteCollectionParams)
+            .then(async deleteCollectionResponse => {
+                console.log(JSON.stringify(deleteCollectionResponse, null, 2));
+                await createNewCollection(createCollectionParams)
             })
             .catch(err => {
                 console.log('error:', err);
             });
+
+        async function createNewCollection(params) {
+            await discovery.createCollection(params)
+                .then(collection => {
+                    console.log(JSON.stringify(collection, null, 2));
+
+                    file.collectionid = collection.result.collection_id
+
+                    fs.writeFile(fileName, JSON.stringify(file, null, 2), function writeJSON(err) {
+                        if (err) return console.log(err);
+                        console.log(JSON.stringify(file));
+                        console.log('writing to ' + fileName);
+                    });
+
+                    // add_documents()
+                    success = true
+
+                })
+                .catch(err => {
+                    console.log('error:', err);
+                });
+        }
+    }
+    finally{
+        return success
     }
 }
 
@@ -394,3 +411,13 @@ function read_result() {
 
 // new_request()
 // query()
+async function test() {
+    test = await refresh_collection()
+    console.log(test)
+}
+
+// async function test() {
+//     test = await add_documents()
+//     console.log(test)
+// }
+// test()

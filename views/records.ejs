@@ -100,7 +100,7 @@
             <% if(id !=null) { %>
                 <div class="col-3">
                     <h3>Query Feeed</h3>
-                    <div id="tweet_container" class="w-100 ms-2 mt-2" style="overflow-y:scroll; height:800px;">
+                    <div id="tweet_container" class="w-100 ms-2 mt-2" style="overflow-y:scroll; height:90vh;">
                         <div id="tweet" style="max-width: 95%; margin:auto"> </div>
                     </div>
                     <script src="../bundle.js"></script>
@@ -110,13 +110,13 @@
 
                 <div class="col-3">
 
-                    <div class="row" style="height: 400px;">
+                    <div class="row" style="height: 400px; margin:auto;">
 
                         <h2>Analysis Summary</h2>
 
                         <h3>Sentiment:</h3>
 
-                        <div>
+                        <div style="margin: auto; position: relative;">
                             <h5>Positive: <%= Math.round(query['summary']['sentiment']['positive'] * 100 /
                                     query['result']['matching_results'])%>%
                                     | Neutral: <%= Math.round(query['summary']['sentiment']['neutral'] * 100 /
@@ -124,7 +124,7 @@
                                         | Negative: <%= Math.round(query['summary']['sentiment']['negative'] * 100 /
                                             query['result']['matching_results'])%>%</h5>
                         </div>
-                        <div style="width: 450px; height: 280px; position: relative;">
+                        <div style="width: 450px; height: 280px; position: relative; margin: auto;">
                             <canvas id="myChart"></canvas>
                         </div>
 
@@ -135,7 +135,7 @@
 
                         <h3>Top Categories:</h3>
 
-                        <div style="width: 450px; height: 310px; position: relative;">
+                        <div style="width: 450px; height: 310px; position: relative; margin: auto;">
                             <canvas id="categoryChart"></canvas>
                         </div>
 
@@ -152,7 +152,7 @@
                     <div class="row" style="height: 350px;">
                         <h3>Entities:</h3>
                         <div id='my_canvas' class="canvas"
-                            style="width: 450px; height: 300px; background-color: rgb(255, 224, 224); position: relative;">
+                            style="width: 450px; height: 300px; background-color: rgb(255, 224, 224); position: relative; margin: auto;">
 
                         </div>
                     </div>
@@ -162,7 +162,7 @@
 
                         <h3>Concepts:</h3>
                         <div id='my_canvas2' class="canvas mb-2 mt-1"
-                            style="width: 450px; height: 300px; background-color: rgb(255, 224, 224); position: relative;">
+                            style="width: 450px; height: 300px; background-color: rgb(255, 224, 224); position: relative; margin: auto;">
 
                         </div>
                     </div>
