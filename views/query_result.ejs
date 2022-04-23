@@ -45,24 +45,48 @@
             </div>
         </div>
     </nav>
-    <div class="w-50">
 
-        <form method="POST" action="/new_query/q">
-            <div class="w-100" style="  margin-left: 50%; margin-top: 15%">
-                <h1>Discover</h1>
-                Query All Tweet Records
-                <input type="text" class="form-control" placeholder="query" name="poo" aria-label="Query" aria-describedby="basic-addon1">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <form method="POST" action="/new_query/q">
+                    <div class="w-100" style="margin-top: 5%">
+                        <h1>Discover</h1>
+                        Query All Tweet Records
+                        <input type="text" class="form-control" placeholder="query" name="poo" aria-label="Query" aria-describedby="basic-addon1">
+
+
+                        <button type="submit" class="btn btn-primary mt-1 w-100">Submit Query</button>
+                    </div>
+                </form>
+                <hr class="rounded">
+
+                Export to get Tweet by Tweet analysis
+
+                <form method="POST" action="/records/export-sheets">
+                    <button type="submit" class="btn btn-outline-success mt-1 w-100">Export to Google Sheets</button>
+                </form>
+
+                <form method="POST" action="/records/export-slides">
+                    <button type="submit" class="btn btn-outline-warning w-100 mt-1">Export to Google Slides</button>
+                </form>
                 
-                <button type="submit" class="btn btn-primary mt-1 w-100">Submit Query</button>
-
-
             </div>
-        </form>
+            <div class="col" style="margin-top: 5%">
+                <h3>Query Results:</h3>
 
+                <div id="tweet_container" class="w-100 ms-2 mt-2" style="overflow-y:scroll; height:800px;">
+                    <div id="tweet" style="max-width: 95%; margin:auto"> </div>
+                </div>
+                <script src="../bundle.js"></script>
+
+                <script>
+                    bundle.query("<%=id%>")
+                    console.log("POO")
+                </script>
+            </div>
+        </div>
     </div>
-
-
-    <script src="../bundle.js"></script>
 
 </body>
 

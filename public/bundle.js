@@ -221,7 +221,29 @@ function load(path, id){
     })
 }
 
-module.exports = { load }
+function query(qr) {
+    axios
+    .post('http://localhost:8080/new_query/' + qr)
+    .then(res => {
+        console.log("yes")
+
+        console.log(res)
+        if(res.status == 200) {
+            data = res.data.message
+            arr = []
+            data['result']['results'].forEach(element => {
+                arr.push(element['t_id'])
+            })
+            response = arr
+            load_tweets();
+        }
+
+    })
+    .catch(error => {
+        console.error(error)
+    })}
+
+module.exports = { load, query }
 
 
 TwitterWidgetsLoader.load();

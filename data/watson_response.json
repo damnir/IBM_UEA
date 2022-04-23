@@ -12,31 +12,31 @@
     "content-security-policy": "default-src 'none'",
     "access-control-allow-headers": "Origin, Content-Type, Content-Length, Accept, X-Watson-Authorization-Token, X-WDC-PL-OPT-OUT, X-Watson-UserInfo, X-Watson-Learning-Opt-Out, X-Watson-Metadata",
     "content-type": "application/json;charset=utf-8",
-    "content-length": "4836",
+    "content-length": "5113",
     "strict-transport-security": "max-age=31536000; includeSubDomains;",
-    "x-dp-watson-tran-id": "2a5b4902-46a0-45b4-a310-e7948d409ae6",
-    "x-request-id": "2a5b4902-46a0-45b4-a310-e7948d409ae6",
-    "x-global-transaction-id": "2a5b4902-46a0-45b4-a310-e7948d409ae6",
+    "x-dp-watson-tran-id": "82c118b0-0e86-4822-b17d-9632d884c106",
+    "x-request-id": "82c118b0-0e86-4822-b17d-9632d884c106",
+    "x-global-transaction-id": "82c118b0-0e86-4822-b17d-9632d884c106",
     "server": "watson-gateway",
-    "x-edgeconnect-midmile-rtt": "91",
-    "x-edgeconnect-origin-mex-latency": "414",
-    "date": "Tue, 19 Apr 2022 03:02:19 GMT",
+    "x-edgeconnect-midmile-rtt": "90",
+    "x-edgeconnect-origin-mex-latency": "400",
+    "date": "Fri, 22 Apr 2022 03:22:42 GMT",
     "connection": "close",
     "vary": "Accept-Encoding"
   },
   "result": {
-    "matching_results": 11,
-    "session_token": "1_nfp5lJzp1W9yWTJ0oO6zaR6sbi",
+    "matching_results": 12,
+    "session_token": "1_nfp5lJzp1W9zT1P0oO6zaR6sbi",
     "results": [
       {
-        "id": "c37a6551-b3b8-4888-96b1-b79e7148cfe5",
+        "id": "ed540e48-1d11-407b-be3b-6d533850282e",
         "result_metadata": {
           "confidence": 0,
           "score": 1
         },
         "name": "BristolUni",
         "url": "https://pbs.twimg.com/media/EtT28TFXUAEo2fY.jpg",
-        "text": "📢 It’s official! Our graduates are some of the most sought after by top UK employers! *nl*  *nl* 🙌 A who’s who of British companies – including IBM, AstraZenca and the BBC –  listed Bristol students among those they most want on their books. *nl*  *nl* More here 👉 https://t.co/ogNQaE0V96 https://t.co/rKDeQGko03",
+        "text": "📢 It’s official! Our graduates are some of the most sought after by top UK employers!\n\n🙌 A who’s who of British companies – including IBM, AstraZenca and the BBC –  listed Bristol students among those they most want on their books.\n\nMore here 👉 https://t.co/ogNQaE0V96 https://t.co/rKDeQGko03",
         "enriched_text": {
           "sentiment": {
             "document": {
@@ -52,7 +52,7 @@
                 "label": "neutral"
               },
               "text": "Bristol",
-              "relevance": 0.823071,
+              "relevance": 0.909505,
               "type": "Location",
               "disambiguation": {
                 "subtype": [
@@ -71,7 +71,7 @@
                 "label": "neutral"
               },
               "text": "IBM",
-              "relevance": 0.767479,
+              "relevance": 0.847355,
               "type": "Company"
             },
             {
@@ -81,7 +81,7 @@
                 "label": "neutral"
               },
               "text": "BBC",
-              "relevance": 0.760572,
+              "relevance": 0.837146,
               "type": "Company",
               "disambiguation": {
                 "subtype": [
@@ -108,7 +108,7 @@
                 "label": "neutral"
               },
               "text": "UK",
-              "relevance": 0.665428,
+              "relevance": 0.719146,
               "type": "Location",
               "disambiguation": {
                 "subtype": [
@@ -123,7 +123,7 @@
                 "label": "neutral"
               },
               "text": "official",
-              "relevance": 0.660865,
+              "relevance": 0.712148,
               "type": "JobTitle"
             }
           ],
@@ -156,20 +156,746 @@
           ],
           "categories": [
             {
-              "score": 0.962401,
-              "label": "/sports/baseball"
+              "score": 0.813931,
+              "label": "/technology and computing/operating systems"
+            },
+            {
+              "score": 0.806001,
+              "label": "/society/work"
+            },
+            {
+              "score": 0.760506,
+              "label": "/technology and computing/hardware/computer"
             }
           ]
         },
         "extracted_metadata": {
-          "sha1": "396e5562670397ac2a1043c8efb92937f687da65",
+          "sha1": "4c06ef33bf0a790be1e440c6166ffc6d704c8fae",
           "filename": "1356981001101131776.json",
           "file_type": "json"
         },
         "t_id": "1356981001101131776"
       },
       {
-        "id": "9f6d6fe9-8af3-44b0-8798-a066134c5cdb",
+        "id": "4eca3b97-17e9-4aff-8a53-a7fa7f877073",
+        "result_metadata": {
+          "confidence": 0,
+          "score": 1
+        },
+        "name": "UniofExeter",
+        "url": "https://pbs.twimg.com/media/E2-GzKEWEAEe_eT.jpg",
+        "text": "Students within our @UoE_Physics department have had the fantastic opportunity to work with real-life quantum computers thanks to @Kyriienko and the @IBM Quantum Educators Program. #ExcellenceinEducation\n\nRead more: https://t.co/5wcgQtZAk4 https://t.co/9pqVGH4NjN",
+        "enriched_text": {
+          "sentiment": {
+            "document": {
+              "score": 0.968464,
+              "label": "positive"
+            }
+          },
+          "entities": [
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0.877053,
+                "label": "positive"
+              },
+              "text": "IBM",
+              "relevance": 0.890714,
+              "type": "Company"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "#ExcellenceinEducation",
+              "relevance": 0.890714,
+              "type": "Hashtag"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@UoE_Physics",
+              "relevance": 0.890714,
+              "type": "TwitterHandle"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@Kyriienko",
+              "relevance": 0.890714,
+              "type": "TwitterHandle"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@IBM",
+              "relevance": 0.890714,
+              "type": "TwitterHandle"
+            }
+          ],
+          "concepts": [
+            {
+              "text": "Computer",
+              "relevance": 0.927699,
+              "dbpedia_resource": "http://dbpedia.org/resource/Computer"
+            },
+            {
+              "text": "Computation",
+              "relevance": 0.555342,
+              "dbpedia_resource": "http://dbpedia.org/resource/Computation"
+            },
+            {
+              "text": "Education",
+              "relevance": 0.54516,
+              "dbpedia_resource": "http://dbpedia.org/resource/Education"
+            }
+          ],
+          "categories": [
+            {
+              "score": 0.998853,
+              "label": "/technology and computing/hardware/computer"
+            }
+          ]
+        },
+        "extracted_metadata": {
+          "sha1": "435e9d52403d6ca25d4c8cad35bfdfbe618453b2",
+          "filename": "1400486224385785857.json",
+          "file_type": "json"
+        },
+        "t_id": "1400486224385785857"
+      },
+      {
+        "id": "b09202c0-d3fd-4164-a6df-6c1ba64fe2e0",
+        "result_metadata": {
+          "confidence": 0,
+          "score": 1
+        },
+        "name": "UniofExeter",
+        "url": "https://pbs.twimg.com/media/EP66of-WoAA3Z7L.jpg",
+        "text": "Our Digital and Technology Solutions #DegreeApprenticeship is accredited by @TPDegrees. Our existing partners include @IBM @bt_uk and @RollsRoyce. Find out more at https://t.co/oWwlGvScgh #NAW2020 #LookBeyond https://t.co/qxUmM7DkKK",
+        "enriched_text": {
+          "sentiment": {
+            "document": {
+              "score": 0.650773,
+              "label": "positive"
+            }
+          },
+          "entities": [
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "#DegreeApprenticeship",
+              "relevance": 0.01,
+              "type": "Hashtag"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "#LookBeyond",
+              "relevance": 0.01,
+              "type": "Hashtag"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@RollsRoyce",
+              "relevance": 0.01,
+              "type": "TwitterHandle"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@TPDegrees",
+              "relevance": 0.01,
+              "type": "TwitterHandle"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "#NAW2020",
+              "relevance": 0.01,
+              "type": "Hashtag"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@bt_uk",
+              "relevance": 0.01,
+              "type": "TwitterHandle"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@IBM",
+              "relevance": 0.01,
+              "type": "TwitterHandle"
+            }
+          ],
+          "concepts": [],
+          "categories": [
+            {
+              "score": 0.999764,
+              "label": "/business and industrial/business software"
+            },
+            {
+              "score": 0.997231,
+              "label": "/technology and computing/internet technology"
+            },
+            {
+              "score": 0.994914,
+              "label": "/technology and computing/enterprise technology"
+            }
+          ]
+        },
+        "extracted_metadata": {
+          "sha1": "dcbc89e44bab402a76c309f9758b4aa4599e42ff",
+          "filename": "1224621356077195264.json",
+          "file_type": "json"
+        },
+        "t_id": "1224621356077195264"
+      },
+      {
+        "id": "69c51ae5-b83f-4931-a60a-903a91cbe863",
+        "result_metadata": {
+          "confidence": 0,
+          "score": 1
+        },
+        "name": "UniversityLeeds",
+        "url": "https://pbs.twimg.com/media/EVtoAkTWkAA2y-s.jpg",
+        "text": "Today @LIDA_UK joins a powerful alliance led by Rolls-Royce to find new and faster ways to support businesses and governments as they recover from the impact of #COVID19. \n\nOther founder members of Emer²gent  include IBM, Google Cloud, Truata, @ODIleeds and @TheDataCity. \n\n📈💡 https://t.co/bOYySEZfOY",
+        "enriched_text": {
+          "sentiment": {
+            "document": {
+              "score": 0.79728,
+              "label": "positive"
+            }
+          },
+          "entities": [
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0.908572,
+                "label": "positive"
+              },
+              "text": "Rolls-Royce",
+              "relevance": 0.944464,
+              "type": "Company"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "founder",
+              "relevance": 0.738563,
+              "type": "JobTitle"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "Google",
+              "relevance": 0.701684,
+              "type": "Company",
+              "disambiguation": {
+                "subtype": [
+                  "AcademicInstitution",
+                  "AwardPresentingOrganization",
+                  "OperatingSystemDeveloper",
+                  "ProgrammingLanguageDeveloper",
+                  "SoftwareDeveloper",
+                  "VentureFundedCompany"
+                ],
+                "name": "Google",
+                "dbpedia_resource": "http://dbpedia.org/resource/Google"
+              }
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "IBM",
+              "relevance": 0.658709,
+              "type": "Company"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "Truata",
+              "relevance": 0.543772,
+              "type": "Location",
+              "disambiguation": {
+                "subtype": [
+                  "City"
+                ]
+              }
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@TheDataCity",
+              "relevance": 0.543772,
+              "type": "TwitterHandle"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@ODIleeds",
+              "relevance": 0.543772,
+              "type": "TwitterHandle"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "#COVID19",
+              "relevance": 0.543772,
+              "type": "Hashtag"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@LIDA_UK",
+              "relevance": 0.543772,
+              "type": "TwitterHandle"
+            }
+          ],
+          "concepts": [
+            {
+              "text": "Cloud computing",
+              "relevance": 0.947913,
+              "dbpedia_resource": "http://dbpedia.org/resource/Cloud_computing"
+            }
+          ],
+          "categories": [
+            {
+              "score": 0.778032,
+              "label": "/technology and computing/operating systems"
+            },
+            {
+              "score": 0.717982,
+              "label": "/technology and computing/internet technology/web search"
+            },
+            {
+              "score": 0.712173,
+              "label": "/technology and computing/hardware/computer"
+            }
+          ]
+        },
+        "extracted_metadata": {
+          "sha1": "768cc2ba21973cddaf136c5d83e17579ca76066b",
+          "filename": "1250707689698721797.json",
+          "file_type": "json"
+        },
+        "t_id": "1250707689698721797"
+      },
+      {
+        "id": "9feb48b3-daa9-4dfe-8eda-92dfbfac5b9f",
+        "result_metadata": {
+          "confidence": 0,
+          "score": 1
+        },
+        "name": "durham_uni",
+        "url": "https://pbs.twimg.com/media/Ecy2lVZXoAIvf1D.png",
+        "text": "Thanks to a seven-year partnership with @IBM, we were able to provide vital data analysis reports to the NHS and local authorities to support Covid-19 planning. Find out more ➡️ https://t.co/wVa5OYovNn  #DUresearch #DUinspire\n\n@CamilaCSCaiado @complexcase @comp_sci_durham https://t.co/THocL5b0Hk",
+        "enriched_text": {
+          "sentiment": {
+            "document": {
+              "score": 0.980703,
+              "label": "positive"
+            }
+          },
+          "entities": [
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0.662083,
+                "label": "positive"
+              },
+              "text": "NHS",
+              "relevance": 0.863039,
+              "type": "Organization"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0.776246,
+                "label": "positive"
+              },
+              "text": "IBM",
+              "relevance": 0.362889,
+              "type": "Company"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@comp_sci_durham",
+              "relevance": 0.362889,
+              "type": "TwitterHandle"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@CamilaCSCaiado",
+              "relevance": 0.362889,
+              "type": "TwitterHandle"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@complexcase",
+              "relevance": 0.362889,
+              "type": "TwitterHandle"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "#DUresearch",
+              "relevance": 0.362889,
+              "type": "Hashtag"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "#DUinspire",
+              "relevance": 0.362889,
+              "type": "Hashtag"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "seven-year",
+              "relevance": 0.362889,
+              "type": "Quantity"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@IBM",
+              "relevance": 0.362889,
+              "type": "TwitterHandle"
+            }
+          ],
+          "concepts": [
+            {
+              "text": "Local government",
+              "relevance": 0.886784,
+              "dbpedia_resource": "http://dbpedia.org/resource/Local_government"
+            },
+            {
+              "text": "Data",
+              "relevance": 0.840921,
+              "dbpedia_resource": "http://dbpedia.org/resource/Data"
+            },
+            {
+              "text": "Business intelligence",
+              "relevance": 0.82944,
+              "dbpedia_resource": "http://dbpedia.org/resource/Business_intelligence"
+            }
+          ],
+          "categories": [
+            {
+              "score": 0.698256,
+              "label": "/news"
+            },
+            {
+              "score": 0.650477,
+              "label": "/law, govt and politics"
+            },
+            {
+              "score": 0.636008,
+              "label": "/business and industrial/business operations/business plans"
+            }
+          ]
+        },
+        "extracted_metadata": {
+          "sha1": "ebd3d70543f1652e1aabaf28ebf22cb2033c5ca1",
+          "filename": "1282600751567642624.json",
+          "file_type": "json"
+        },
+        "t_id": "1282600751567642624"
+      },
+      {
+        "id": "ccd93b59-f250-4ebb-80ab-b4cb9c0109ae",
+        "result_metadata": {
+          "confidence": 0,
+          "score": 1
+        },
+        "name": "unisouthampton",
+        "url": "https://pbs.twimg.com/media/FKcniY4XoAQAfPN.jpg",
+        "text": "\"We all learned a lot from the project and how to better ourselves.\"\n\n@UoS_Careers offers students opportunities to develop skills and gain industry experience. One is The Student Innovation Challenge.\n\nBusiness student Rahul tells us about his experience of working with @IBM. https://t.co/pEOL3PDbHU",
+        "enriched_text": {
+          "sentiment": {
+            "document": {
+              "score": 0.627442,
+              "label": "positive"
+            }
+          },
+          "entities": [
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "Rahul",
+              "relevance": 0.802212,
+              "type": "Person"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "IBM.",
+              "relevance": 0.3168,
+              "type": "Company"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@UoS_Careers",
+              "relevance": 0.3168,
+              "type": "TwitterHandle"
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "@IBM",
+              "relevance": 0.3168,
+              "type": "TwitterHandle"
+            }
+          ],
+          "concepts": [
+            {
+              "text": "Education",
+              "relevance": 0.887158,
+              "dbpedia_resource": "http://dbpedia.org/resource/Education"
+            },
+            {
+              "text": "Student",
+              "relevance": 0.7832,
+              "dbpedia_resource": "http://dbpedia.org/resource/Student"
+            }
+          ],
+          "categories": [
+            {
+              "score": 0.979664,
+              "label": "/education/homework and study tips"
+            },
+            {
+              "score": 0.871586,
+              "label": "/education/studying business"
+            },
+            {
+              "score": 0.796049,
+              "label": "/education/teaching and classroom resources"
+            }
+          ]
+        },
+        "extracted_metadata": {
+          "sha1": "7376a5c24a0ee6ca3d07f3fd4bad08fb27658ae7",
+          "filename": "1489547026803019776.json",
+          "file_type": "json"
+        },
+        "t_id": "1489547026803019776"
+      },
+      {
+        "id": "9ddabd3d-0bdf-4d0d-8a8c-b53f942f988b",
+        "result_metadata": {
+          "confidence": 0,
+          "score": 1
+        },
+        "name": "imperialcollege",
+        "url": "https://pbs.twimg.com/media/FPuDtxpXwAMTJQL.jpg",
+        "text": "#OnThisDay 1964: The IBM System/360 mainframe computer system family was announced https://t.co/OFV4Q80N9v",
+        "enriched_text": {
+          "sentiment": {
+            "document": {
+              "score": 0,
+              "label": "neutral"
+            }
+          },
+          "entities": [
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "IBM",
+              "relevance": 0.33,
+              "type": "Company",
+              "disambiguation": {
+                "subtype": [
+                  "SoftwareLicense",
+                  "OperatingSystemDeveloper",
+                  "ProcessorManufacturer",
+                  "SoftwareDeveloper",
+                  "CompanyFounder",
+                  "ProgrammingLanguageDesigner",
+                  "ProgrammingLanguageDeveloper"
+                ],
+                "name": "IBM",
+                "dbpedia_resource": "http://dbpedia.org/resource/IBM"
+              }
+            },
+            {
+              "count": 1,
+              "sentiment": {
+                "score": 0,
+                "label": "neutral"
+              },
+              "text": "#OnThisDay",
+              "relevance": 0.33,
+              "type": "Hashtag"
+            }
+          ],
+          "concepts": [
+            {
+              "text": "IBM",
+              "relevance": 0.966547,
+              "dbpedia_resource": "http://dbpedia.org/resource/IBM"
+            },
+            {
+              "text": "Computer",
+              "relevance": 0.745876,
+              "dbpedia_resource": "http://dbpedia.org/resource/Computer"
+            },
+            {
+              "text": "Mainframe computer",
+              "relevance": 0.697239,
+              "dbpedia_resource": "http://dbpedia.org/resource/Mainframe_computer"
+            },
+            {
+              "text": "Personal computer",
+              "relevance": 0.621672,
+              "dbpedia_resource": "http://dbpedia.org/resource/Personal_computer"
+            },
+            {
+              "text": "Operating system",
+              "relevance": 0.561232,
+              "dbpedia_resource": "http://dbpedia.org/resource/Operating_system"
+            },
+            {
+              "text": "Minicomputer",
+              "relevance": 0.525309,
+              "dbpedia_resource": "http://dbpedia.org/resource/Minicomputer"
+            },
+            {
+              "text": "Server",
+              "relevance": 0.502893,
+              "dbpedia_resource": "http://dbpedia.org/resource/Server_(computing)"
+            },
+            {
+              "text": "IBM System/360",
+              "relevance": 0.479663,
+              "dbpedia_resource": "http://dbpedia.org/resource/IBM_System/360"
+            }
+          ],
+          "categories": [
+            {
+              "score": 0.984439,
+              "label": "/technology and computing/hardware/computer"
+            },
+            {
+              "score": 0.972964,
+              "label": "/technology and computing/hardware/computer peripherals"
+            },
+            {
+              "score": 0.959749,
+              "label": "/technology and computing/operating systems"
+            }
+          ]
+        },
+        "extracted_metadata": {
+          "sha1": "b76da29c04e5018f694ce29fcb30d445eba52bbe",
+          "filename": "1511946923665674243.json",
+          "file_type": "json"
+        },
+        "t_id": "1511946923665674243"
+      },
+      {
+        "id": "acdddda3-b1c1-4f92-96ee-932fd5699674",
         "result_metadata": {
           "confidence": 0,
           "score": 1
@@ -211,7 +937,7 @@
             {
               "count": 1,
               "sentiment": {
-                "score": 0.389609,
+                "score": 0.38961,
                 "label": "positive"
               },
               "text": "Director",
@@ -329,355 +1055,14 @@
         "t_id": "1252276852586135553"
       },
       {
-        "id": "c17de668-5d99-4ed2-91d6-fd39715ebbe6",
-        "result_metadata": {
-          "confidence": 0,
-          "score": 1
-        },
-        "name": "UniversityLeeds",
-        "url": "https://pbs.twimg.com/media/EVtoAkTWkAA2y-s.jpg",
-        "text": "Today @LIDA_UK joins a powerful alliance led by Rolls-Royce to find new and faster ways to support businesses and governments as they recover from the impact of #COVID19.  *nl*  *nl* Other founder members of Emer²gent  include IBM, Google Cloud, Truata, @ODIleeds and @TheDataCity.  *nl*  *nl* 📈💡 https://t.co/bOYySEZfOY",
-        "enriched_text": {
-          "sentiment": {
-            "document": {
-              "score": 0.678738,
-              "label": "positive"
-            }
-          },
-          "entities": [
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0.908572,
-                "label": "positive"
-              },
-              "text": "Rolls-Royce",
-              "relevance": 0.878506,
-              "type": "Company"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "founder",
-              "relevance": 0.694493,
-              "type": "JobTitle"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Google",
-              "relevance": 0.659445,
-              "type": "Company",
-              "disambiguation": {
-                "subtype": [
-                  "AcademicInstitution",
-                  "AwardPresentingOrganization",
-                  "OperatingSystemDeveloper",
-                  "ProgrammingLanguageDeveloper",
-                  "SoftwareDeveloper",
-                  "VentureFundedCompany"
-                ],
-                "name": "Google",
-                "dbpedia_resource": "http://dbpedia.org/resource/Google"
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "IBM",
-              "relevance": 0.620304,
-              "type": "Company"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Truata",
-              "relevance": 0.532865,
-              "type": "Location",
-              "disambiguation": {
-                "subtype": [
-                  "City"
-                ]
-              }
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@TheDataCity",
-              "relevance": 0.532865,
-              "type": "TwitterHandle"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@ODIleeds",
-              "relevance": 0.532865,
-              "type": "TwitterHandle"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#COVID19",
-              "relevance": 0.532865,
-              "type": "Hashtag"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@LIDA_UK",
-              "relevance": 0.532865,
-              "type": "TwitterHandle"
-            }
-          ],
-          "concepts": [
-            {
-              "text": "Cloud computing",
-              "relevance": 0.947913,
-              "dbpedia_resource": "http://dbpedia.org/resource/Cloud_computing"
-            }
-          ],
-          "categories": [
-            {
-              "score": 0.904408,
-              "label": "/sports/baseball"
-            },
-            {
-              "score": 0.72946,
-              "label": "/technology and computing/operating systems"
-            }
-          ]
-        },
-        "extracted_metadata": {
-          "sha1": "7fc6c05496ef1bcfc8bf3f7baae8bc10d6da1b4e",
-          "filename": "1250707689698721797.json",
-          "file_type": "json"
-        },
-        "t_id": "1250707689698721797"
-      },
-      {
-        "id": "53f6c1a7-ed4d-440f-b542-b0c990c79fa2",
-        "result_metadata": {
-          "confidence": 0,
-          "score": 1
-        },
-        "name": "unisouthampton",
-        "url": "https://pbs.twimg.com/media/FKcniY4XoAQAfPN.jpg",
-        "text": "\"We all learned a lot from the project and how to better ourselves.\" *nl*  *nl* @UoS_Careers offers students opportunities to develop skills and gain industry experience. One is The Student Innovation Challenge. *nl*  *nl* Business student Rahul tells us about his experience of working with @IBM. https://t.co/pEOL3PDbHU",
-        "enriched_text": {
-          "sentiment": {
-            "document": {
-              "score": 0.570437,
-              "label": "positive"
-            }
-          },
-          "entities": [
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "Rahul",
-              "relevance": 0.919292,
-              "type": "Person"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "IBM.",
-              "relevance": 0.395926,
-              "type": "Company"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@UoS_Careers",
-              "relevance": 0.395926,
-              "type": "TwitterHandle"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@IBM",
-              "relevance": 0.395926,
-              "type": "TwitterHandle"
-            }
-          ],
-          "concepts": [
-            {
-              "text": "Education",
-              "relevance": 0.887158,
-              "dbpedia_resource": "http://dbpedia.org/resource/Education"
-            },
-            {
-              "text": "Student",
-              "relevance": 0.7832,
-              "dbpedia_resource": "http://dbpedia.org/resource/Student"
-            }
-          ],
-          "categories": [
-            {
-              "score": 0.929966,
-              "label": "/sports/baseball"
-            },
-            {
-              "score": 0.888888,
-              "label": "/education/homework and study tips"
-            },
-            {
-              "score": 0.734528,
-              "label": "/education/studying business"
-            }
-          ]
-        },
-        "extracted_metadata": {
-          "sha1": "eca9084ac535e1e2c39de53207cf723935b01c22",
-          "filename": "1489547026803019776.json",
-          "file_type": "json"
-        },
-        "t_id": "1489547026803019776"
-      },
-      {
-        "id": "35cbd8ad-7b2c-4e08-9b39-1480563985c3",
-        "result_metadata": {
-          "confidence": 0,
-          "score": 1
-        },
-        "name": "UniofExeter",
-        "url": "https://pbs.twimg.com/media/E2-GzKEWEAEe_eT.jpg",
-        "text": "Students within our @UoE_Physics department have had the fantastic opportunity to work with real-life quantum computers thanks to @Kyriienko and the @IBM Quantum Educators Program. #ExcellenceinEducation *nl*  *nl* Read more: https://t.co/5wcgQtZAk4 https://t.co/9pqVGH4NjN",
-        "enriched_text": {
-          "sentiment": {
-            "document": {
-              "score": 0.968464,
-              "label": "positive"
-            }
-          },
-          "entities": [
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0.723709,
-                "label": "positive"
-              },
-              "text": "IBM",
-              "relevance": 0.33,
-              "type": "Company"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#ExcellenceinEducation",
-              "relevance": 0.33,
-              "type": "Hashtag"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@UoE_Physics",
-              "relevance": 0.33,
-              "type": "TwitterHandle"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@Kyriienko",
-              "relevance": 0.33,
-              "type": "TwitterHandle"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@IBM",
-              "relevance": 0.33,
-              "type": "TwitterHandle"
-            }
-          ],
-          "concepts": [
-            {
-              "text": "Computer",
-              "relevance": 0.927699,
-              "dbpedia_resource": "http://dbpedia.org/resource/Computer"
-            },
-            {
-              "text": "Computation",
-              "relevance": 0.555342,
-              "dbpedia_resource": "http://dbpedia.org/resource/Computation"
-            },
-            {
-              "text": "Education",
-              "relevance": 0.54516,
-              "dbpedia_resource": "http://dbpedia.org/resource/Education"
-            }
-          ],
-          "categories": [
-            {
-              "score": 0.994776,
-              "label": "/technology and computing/hardware/computer"
-            }
-          ]
-        },
-        "extracted_metadata": {
-          "sha1": "46d01d0048677ab2bfef52afcfe6b7348b34224b",
-          "filename": "1400486224385785857.json",
-          "file_type": "json"
-        },
-        "t_id": "1400486224385785857"
-      },
-      {
-        "id": "eec77b1b-5ee7-473c-81a6-f6d8c1aa33a9",
+        "id": "a5a72db5-b2ac-4ac8-911b-4e6ac5f4cc46",
         "result_metadata": {
           "confidence": 0,
           "score": 1
         },
         "name": "imperialcollege",
-        "url": "https://pbs.twimg.com/media/EyWeSn4W8AI9EqW.jpg",
-        "text": "#OnThisDay 1964: The IBM System/360 mainframe computer system family was announced https://t.co/yhBfdOEvEi",
+        "url": "https://pbs.twimg.com/media/D3iEGiCWAAEP4WE.jpg",
+        "text": "#OnThisDay 1964: The IBM System/360 mainframe computer system family was announced https://t.co/wCFZTDKm6l",
         "enriched_text": {
           "sentiment": {
             "document": {
@@ -778,125 +1163,14 @@
           ]
         },
         "extracted_metadata": {
-          "sha1": "4b3e9e287d042e5248e771cc01a904c7aec07265",
-          "filename": "1379682904897417219.json",
+          "sha1": "ebe62058f62b3ecd3a4f0bbd1c305437d44064f1",
+          "filename": "1114786157135585280.json",
           "file_type": "json"
         },
-        "t_id": "1379682904897417219"
+        "t_id": "1114786157135585280"
       },
       {
-        "id": "fda4d944-bae0-49ee-80d9-be75e762da57",
-        "result_metadata": {
-          "confidence": 0,
-          "score": 1
-        },
-        "name": "UniofExeter",
-        "url": "https://pbs.twimg.com/media/EP66of-WoAA3Z7L.jpg",
-        "text": "Our Digital and Technology Solutions #DegreeApprenticeship is accredited by @TPDegrees. Our existing partners include @IBM @bt_uk and @RollsRoyce. Find out more at https://t.co/oWwlGvScgh #NAW2020 #LookBeyond https://t.co/qxUmM7DkKK",
-        "enriched_text": {
-          "sentiment": {
-            "document": {
-              "score": 0.650773,
-              "label": "positive"
-            }
-          },
-          "entities": [
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#DegreeApprenticeship",
-              "relevance": 0.01,
-              "type": "Hashtag"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#LookBeyond",
-              "relevance": 0.01,
-              "type": "Hashtag"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@RollsRoyce",
-              "relevance": 0.01,
-              "type": "TwitterHandle"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@TPDegrees",
-              "relevance": 0.01,
-              "type": "TwitterHandle"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#NAW2020",
-              "relevance": 0.01,
-              "type": "Hashtag"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@bt_uk",
-              "relevance": 0.01,
-              "type": "TwitterHandle"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@IBM",
-              "relevance": 0.01,
-              "type": "TwitterHandle"
-            }
-          ],
-          "concepts": [],
-          "categories": [
-            {
-              "score": 0.999764,
-              "label": "/business and industrial/business software"
-            },
-            {
-              "score": 0.997231,
-              "label": "/technology and computing/internet technology"
-            },
-            {
-              "score": 0.994914,
-              "label": "/technology and computing/enterprise technology"
-            }
-          ]
-        },
-        "extracted_metadata": {
-          "sha1": "dcbc89e44bab402a76c309f9758b4aa4599e42ff",
-          "filename": "1224621356077195264.json",
-          "file_type": "json"
-        },
-        "t_id": "1224621356077195264"
-      },
-      {
-        "id": "3fd2c3c3-571b-41c9-a517-084235130d18",
+        "id": "23aab369-47bc-4425-a889-16041560a140",
         "result_metadata": {
           "confidence": 0,
           "score": 1
@@ -1011,14 +1285,14 @@
         "t_id": "1247412566617399296"
       },
       {
-        "id": "b4c658b6-bfcf-4756-a984-75100bb20c50",
+        "id": "4d58231d-cc55-45ec-8af0-a2207378311e",
         "result_metadata": {
           "confidence": 0,
           "score": 1
         },
         "name": "imperialcollege",
-        "url": "https://pbs.twimg.com/media/FPuDtxpXwAMTJQL.jpg",
-        "text": "#OnThisDay 1964: The IBM System/360 mainframe computer system family was announced https://t.co/OFV4Q80N9v",
+        "url": "https://pbs.twimg.com/media/EyWeSn4W8AI9EqW.jpg",
+        "text": "#OnThisDay 1964: The IBM System/360 mainframe computer system family was announced https://t.co/yhBfdOEvEi",
         "enriched_text": {
           "sentiment": {
             "document": {
@@ -1119,21 +1393,21 @@
           ]
         },
         "extracted_metadata": {
-          "sha1": "b76da29c04e5018f694ce29fcb30d445eba52bbe",
-          "filename": "1511946923665674243.json",
+          "sha1": "4b3e9e287d042e5248e771cc01a904c7aec07265",
+          "filename": "1379682904897417219.json",
           "file_type": "json"
         },
-        "t_id": "1511946923665674243"
+        "t_id": "1379682904897417219"
       },
       {
-        "id": "fefe080b-5e26-4ba5-b20c-502062f46574",
+        "id": "7d4b4d97-4ed8-4c67-8c2e-60c8c871732d",
         "result_metadata": {
           "confidence": 0,
           "score": 1
         },
         "name": "unisouthampton",
         "url": "https://pbs.twimg.com/media/EUlECCaU8AAiUPQ.jpg",
-        "text": "Your #StayAtHome mission is to break the code. 🕵️‍♀️🕵️‍♂️ *nl*  *nl* @Cipher_Master has launched a new codebreaking competition, with weekly challenges brought to you by  *nl* @MathsSoton, @IBM and @GCHQ *nl*  *nl* Mission instructions: https://t.co/hil9oojv8B *nl*  *nl* #CodeBreaking #HomeSchooling https://t.co/jgnm3QmAHC",
+        "text": "Your #StayAtHome mission is to break the code. 🕵️‍♀️🕵️‍♂️\n\n@Cipher_Master has launched a new codebreaking competition, with weekly challenges brought to you by \n@MathsSoton, @IBM and @GCHQ\n\nMission instructions: https://t.co/hil9oojv8B\n\n#CodeBreaking #HomeSchooling https://t.co/jgnm3QmAHC",
         "enriched_text": {
           "sentiment": {
             "document": {
@@ -1145,11 +1419,11 @@
             {
               "count": 1,
               "sentiment": {
-                "score": 0.24791,
+                "score": 0.595826,
                 "label": "positive"
               },
               "text": "IBM",
-              "relevance": 0.841667,
+              "relevance": 0.673182,
               "type": "Company"
             },
             {
@@ -1159,7 +1433,7 @@
                 "label": "neutral"
               },
               "text": "#HomeSchooling",
-              "relevance": 0.841667,
+              "relevance": 0.673182,
               "type": "Hashtag"
             },
             {
@@ -1169,7 +1443,7 @@
                 "label": "neutral"
               },
               "text": "@Cipher_Master",
-              "relevance": 0.841667,
+              "relevance": 0.673182,
               "type": "TwitterHandle"
             },
             {
@@ -1179,7 +1453,7 @@
                 "label": "neutral"
               },
               "text": "#CodeBreaking",
-              "relevance": 0.841667,
+              "relevance": 0.673182,
               "type": "Hashtag"
             },
             {
@@ -1189,7 +1463,7 @@
                 "label": "neutral"
               },
               "text": "#StayAtHome",
-              "relevance": 0.841667,
+              "relevance": 0.673182,
               "type": "Hashtag"
             },
             {
@@ -1199,7 +1473,7 @@
                 "label": "neutral"
               },
               "text": "@MathsSoton",
-              "relevance": 0.841667,
+              "relevance": 0.673182,
               "type": "TwitterHandle"
             },
             {
@@ -1209,7 +1483,7 @@
                 "label": "neutral"
               },
               "text": "@GCHQ",
-              "relevance": 0.841667,
+              "relevance": 0.673182,
               "type": "TwitterHandle"
             },
             {
@@ -1219,7 +1493,7 @@
                 "label": "neutral"
               },
               "text": "@IBM",
-              "relevance": 0.841667,
+              "relevance": 0.673182,
               "type": "TwitterHandle"
             }
           ],
@@ -1247,163 +1521,32 @@
           ],
           "categories": [
             {
-              "score": 0.982714,
-              "label": "/sports/baseball"
+              "score": 0.918982,
+              "label": "/technology and computing/hardware/computer components/chips and processors"
+            },
+            {
+              "score": 0.800127,
+              "label": "/technology and computing/programming languages"
+            },
+            {
+              "score": 0.76813,
+              "label": "/technology and computing/operating systems"
             }
           ]
         },
         "extracted_metadata": {
-          "sha1": "d2e7d4223881a76e31e6c540362a056e2e4ae08e",
+          "sha1": "2fb6a8b421857297a83ce6f64c78a49587ad60be",
           "filename": "1245624019501469697.json",
           "file_type": "json"
         },
         "t_id": "1245624019501469697"
-      },
-      {
-        "id": "f4f292b4-2e5d-49b1-8eb2-8cd17bc9aff3",
-        "result_metadata": {
-          "confidence": 0,
-          "score": 1
-        },
-        "name": "durham_uni",
-        "url": "https://pbs.twimg.com/media/Ecy2lVZXoAIvf1D.png",
-        "text": "Thanks to a seven-year partnership with @IBM, we were able to provide vital data analysis reports to the NHS and local authorities to support Covid-19 planning. Find out more ➡️ https://t.co/wVa5OYovNn  #DUresearch #DUinspire *nl*  *nl* @CamilaCSCaiado @complexcase @comp_sci_durham https://t.co/THocL5b0Hk",
-        "enriched_text": {
-          "sentiment": {
-            "document": {
-              "score": 0.980703,
-              "label": "positive"
-            }
-          },
-          "entities": [
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0.662083,
-                "label": "positive"
-              },
-              "text": "NHS",
-              "relevance": 0.818604,
-              "type": "Organization"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0.776246,
-                "label": "positive"
-              },
-              "text": "IBM",
-              "relevance": 0.363021,
-              "type": "Company"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@comp_sci_durham",
-              "relevance": 0.363021,
-              "type": "TwitterHandle"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@CamilaCSCaiado",
-              "relevance": 0.363021,
-              "type": "TwitterHandle"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@complexcase",
-              "relevance": 0.363021,
-              "type": "TwitterHandle"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#DUresearch",
-              "relevance": 0.363021,
-              "type": "Hashtag"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "#DUinspire",
-              "relevance": 0.363021,
-              "type": "Hashtag"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "seven-year",
-              "relevance": 0.363021,
-              "type": "Quantity"
-            },
-            {
-              "count": 1,
-              "sentiment": {
-                "score": 0,
-                "label": "neutral"
-              },
-              "text": "@IBM",
-              "relevance": 0.363021,
-              "type": "TwitterHandle"
-            }
-          ],
-          "concepts": [
-            {
-              "text": "Local government",
-              "relevance": 0.886784,
-              "dbpedia_resource": "http://dbpedia.org/resource/Local_government"
-            },
-            {
-              "text": "Data",
-              "relevance": 0.840921,
-              "dbpedia_resource": "http://dbpedia.org/resource/Data"
-            },
-            {
-              "text": "Business intelligence",
-              "relevance": 0.82944,
-              "dbpedia_resource": "http://dbpedia.org/resource/Business_intelligence"
-            }
-          ],
-          "categories": [
-            {
-              "score": 0.961404,
-              "label": "/sports/baseball"
-            }
-          ]
-        },
-        "extracted_metadata": {
-          "sha1": "67f27766206505833c0c4140e7d48b0f5b5af93c",
-          "filename": "1282600751567642624.json",
-          "file_type": "json"
-        },
-        "t_id": "1282600751567642624"
       }
     ],
     "retrieval_details": {
       "document_retrieval_strategy": "untrained"
     }
   },
-  "_id": "a_1650337340143",
+  "_id": "a_1650597763356",
   "query_type": "all",
   "info": {
     "accountsOptions": "russel",
@@ -1411,7 +1554,7 @@
     "retweets": "on",
     "replies": "on",
     "mentions": "on",
-    "since": "2020-01-01",
+    "since": "2019-01-01",
     "until": "2022-04-25"
   },
   "summary": {
@@ -1437,11 +1580,11 @@
         10
       ],
       [
-        "Abbas Kiarostami",
-        10
+        "Computer",
+        50
       ],
       [
-        "Cloud computing",
+        "Computation",
         10
       ],
       [
@@ -1449,44 +1592,56 @@
         20
       ],
       [
+        "Cloud computing",
+        10
+      ],
+      [
+        "Local government",
+        10
+      ],
+      [
+        "Data",
+        10
+      ],
+      [
+        "Business intelligence",
+        10
+      ],
+      [
         "Student",
         10
       ],
       [
-        "Computer",
+        "IBM",
         40
       ],
       [
-        "Computation",
-        10
-      ],
-      [
-        "IBM",
-        30
-      ],
-      [
         "Mainframe computer",
-        30
+        40
       ],
       [
         "Personal computer",
-        30
+        40
       ],
       [
         "Operating system",
-        30
+        40
       ],
       [
         "Minicomputer",
-        30
+        40
       ],
       [
         "Server",
-        30
+        40
       ],
       [
         "IBM System/360",
-        30
+        40
+      ],
+      [
+        "Abbas Kiarostami",
+        10
       ],
       [
         "Cryptanalysis",
@@ -1503,18 +1658,6 @@
       [
         "A-F Records",
         10
-      ],
-      [
-        "Local government",
-        10
-      ],
-      [
-        "Data",
-        10
-      ],
-      [
-        "Business intelligence",
-        10
       ]
     ],
     "entities": [
@@ -1524,7 +1667,7 @@
       ],
       [
         "IBM",
-        90
+        100
       ],
       [
         "BBC",
@@ -1536,82 +1679,6 @@
       ],
       [
         "official",
-        10
-      ],
-      [
-        "Director",
-        10
-      ],
-      [
-        "Professor",
-        10
-      ],
-      [
-        "#WeAreTogether",
-        10
-      ],
-      [
-        "#unisupport",
-        10
-      ],
-      [
-        "@InnovAgeUK",
-        10
-      ],
-      [
-        "#WeAreNCL",
-        10
-      ],
-      [
-        "#COVID19",
-        20
-      ],
-      [
-        "@nipalm",
-        10
-      ],
-      [
-        "@IBM",
-        60
-      ],
-      [
-        "Rolls-Royce",
-        10
-      ],
-      [
-        "founder",
-        10
-      ],
-      [
-        "Google",
-        10
-      ],
-      [
-        "Truata",
-        10
-      ],
-      [
-        "@TheDataCity",
-        10
-      ],
-      [
-        "@ODIleeds",
-        10
-      ],
-      [
-        "@LIDA_UK",
-        10
-      ],
-      [
-        "Rahul",
-        10
-      ],
-      [
-        "IBM.",
-        10
-      ],
-      [
-        "@UoS_Careers",
         10
       ],
       [
@@ -1627,8 +1694,8 @@
         10
       ],
       [
-        "#OnThisDay",
-        30
+        "@IBM",
+        60
       ],
       [
         "#DegreeApprenticeship",
@@ -1655,27 +1722,35 @@
         10
       ],
       [
-        "#HomeSchooling",
+        "Rolls-Royce",
         10
       ],
       [
-        "@Cipher_Master",
+        "founder",
         10
       ],
       [
-        "#CodeBreaking",
+        "Google",
         10
       ],
       [
-        "#StayAtHome",
+        "Truata",
         10
       ],
       [
-        "@MathsSoton",
+        "@TheDataCity",
         10
       ],
       [
-        "@GCHQ",
+        "@ODIleeds",
+        10
+      ],
+      [
+        "#COVID19",
+        20
+      ],
+      [
+        "@LIDA_UK",
         10
       ],
       [
@@ -1705,39 +1780,115 @@
       [
         "seven-year",
         10
+      ],
+      [
+        "Rahul",
+        10
+      ],
+      [
+        "IBM.",
+        10
+      ],
+      [
+        "@UoS_Careers",
+        10
+      ],
+      [
+        "#OnThisDay",
+        40
+      ],
+      [
+        "Director",
+        10
+      ],
+      [
+        "Professor",
+        10
+      ],
+      [
+        "#WeAreTogether",
+        10
+      ],
+      [
+        "#unisupport",
+        10
+      ],
+      [
+        "@InnovAgeUK",
+        10
+      ],
+      [
+        "#WeAreNCL",
+        10
+      ],
+      [
+        "@nipalm",
+        10
+      ],
+      [
+        "#HomeSchooling",
+        10
+      ],
+      [
+        "@Cipher_Master",
+        10
+      ],
+      [
+        "#CodeBreaking",
+        10
+      ],
+      [
+        "#StayAtHome",
+        10
+      ],
+      [
+        "@MathsSoton",
+        10
+      ],
+      [
+        "@GCHQ",
+        10
       ]
     ],
     "categories": [
       [
         "technology and computing",
-        130
+        230
       ],
       [
         "hardware",
-        70
-      ],
-      [
-        "sports",
-        50
-      ],
-      [
-        "baseball",
-        50
+        120
       ],
       [
         "operating systems",
-        40
+        70
       ],
       [
         "computer",
-        40
+        70
       ],
       [
         "computer peripherals",
-        30
+        40
       ],
       [
         "education",
+        30
+      ],
+      [
+        "business and industrial",
+        20
+      ],
+      [
+        "internet technology",
+        20
+      ],
+      [
+        "news",
+        20
+      ],
+      [
+        "law, govt and politics",
         20
       ],
       [
@@ -1745,19 +1896,31 @@
         10
       ],
       [
-        "news",
+        "society",
         10
       ],
       [
-        "law, govt and politics",
+        "work",
         10
       ],
       [
-        "family and parenting",
+        "business software",
         10
       ],
       [
-        "children",
+        "enterprise technology",
+        10
+      ],
+      [
+        "web search",
+        10
+      ],
+      [
+        "business operations",
+        10
+      ],
+      [
+        "business plans",
         10
       ],
       [
@@ -1769,25 +1932,33 @@
         10
       ],
       [
-        "business and industrial",
+        "teaching and classroom resources",
         10
       ],
       [
-        "business software",
+        "family and parenting",
         10
       ],
       [
-        "internet technology",
+        "children",
         10
       ],
       [
-        "enterprise technology",
+        "computer components",
+        10
+      ],
+      [
+        "chips and processors",
+        10
+      ],
+      [
+        "programming languages",
         10
       ]
     ],
     "sentiment": {
       "positive": 6,
-      "neutral": 5
+      "neutral": 6
     }
   }
 }

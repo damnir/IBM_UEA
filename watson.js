@@ -11,6 +11,8 @@ const file = require(fileName);
 
 var express = require('express');
 var router = express.Router();
+var body_parser = require("body-parser")
+
 
 // router.use(function timeLog(req, res, next) {
 //     console.log('Time: ', Date.now());
@@ -40,6 +42,7 @@ function query() {
     queryParams = {
         environmentId: '44c46920-a956-4d4a-b37e-3120a33f7216',
         collectionId: file.collectionid,
+        // naturalLanguageQuery: "covid",
         count: '25'
     };
     var db = require('./dbclient')
@@ -53,7 +56,7 @@ function query() {
             queryResponse['summary'] = summarise(queryResponse)
 
             response = JSON.stringify(queryResponse, null, 2)
-            // console.log(response);
+            console.log(response);
 
             fs.writeFile('./data/watson_response.json', response, err => {
                 if (err) {
@@ -62,7 +65,7 @@ function query() {
                 }
                 //file written successfully
             })
-            
+
 
             db.pushNewWatson(JSON.parse(response))
         })
@@ -71,6 +74,69 @@ function query() {
         });
 
 }
+
+async function nl_query(query) {
+    queryParams = {
+        environmentId: '44c46920-a956-4d4a-b37e-3120a33f7216',
+        collectionId: "d0782dc7-7d15-4471-b7e2-72bdbee4e5e9",
+        naturalLanguageQuery: query,
+        count: 25
+
+    };
+    try {
+        await discovery.query(queryParams)
+            .then(async queryResponse => {
+                // response = JSON.stringify(queryResponse, null, 2)
+                // console.log(response);
+                response = queryResponse
+                return queryResponse
+            })
+            .catch(err => {
+                console.log('error:', err);
+            });
+    }
+    finally {
+        return response
+    }
+}
+
+router.post("/new_query/:query", async (req, res) => {
+
+    if (req.params.query === "q") {
+        res.render("query_result", {
+            query: response,
+            id: req.body.poo
+        })
+    }
+    else {
+
+        console.log(req.params.query)
+        response = await nl_query(req.params.query)
+
+        res.send({
+            message: response
+        })
+    }
+
+})
+
+router.get("/new_query/:query", async (req, res) => {
+    console.log(req.body.poo)
+    // response = await nl_query(req.params.query)
+
+    res.render("query_result", {
+        query: response,
+        id: req.params.query
+    })
+
+    // req.body.forEach(obj => {
+    //     console.log(obj)
+    // })
+
+    // console.log(response)
+    console.log("ID" + req.body.poo)
+
+})
 
 function summarise(data) {
 
@@ -227,7 +293,7 @@ async function check_status() {
             .catch(err => {
                 console.log('error:', err);
             })
-    }finally {
+    } finally {
         // console.log(res['accounts'])
 
         return finished
@@ -309,7 +375,7 @@ function read_result() {
         console.error(err)
     }
 
-    if (data === ""){
+    if (data === "") {
         console.log("poo")
     }
 
@@ -327,3 +393,4 @@ function read_result() {
 // test()
 
 // new_request()
+// query()

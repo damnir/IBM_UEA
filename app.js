@@ -154,7 +154,9 @@ app.post('/submit-form', async (req, res) => {
 })
 
 app.get('/new_query', (req, res) => {
-    res.render("new_query")
+    res.render("new_query", {
+        watson_response: null
+    })
 })
 
 function read_result() {

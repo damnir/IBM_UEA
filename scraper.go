@@ -38,7 +38,7 @@ func run_search(query string, retweets bool, replies bool, until string, since s
 	scraper.SetSearchMode(twitterscraper.SearchLatest)
 
 	for tweet := range scraper.WithDelay(1).SearchTweets(context.Background(),
-		query, 50) { //50 limit
+		query, 100) { //50 limit
 		if tweet.Error != nil {
 			panic(tweet.Error)
 		}
@@ -177,7 +177,7 @@ func toJson(tweet twitterscraper.Tweet) {
 	// }
 	// fp.WriteString(string(e))
 	var text = tweet.Text
-	text = strings.Replace(text, "\n", " *nl* ", -1)
+	// text = strings.Replace(text, "\n", " *nl* ", -1)
 
 	// if len(tweet.Photos) >= 1 {
 	// 	fp.WriteString("{\"tweet_id\":" + "\"" + tweet.ID + "\"" + ",\n\"image\":" + "\"" + tweet.Photos[0] + "\"" + ",\n\"text\":" + "\"" + text + "\"\n}")
