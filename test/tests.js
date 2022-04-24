@@ -5,6 +5,8 @@ let chaitHttp = require("chai-http")
 let server = require("../app")
 let watson = require("../watson");
 let dbclient = require("../dbclient")
+const fs = require('fs')
+
 const { expect, assert } = require("chai");
 
 chai.should()
@@ -12,36 +14,64 @@ chai.use(chaitHttp)
 
 describe("Records Test (GET and POST tests)", () => {
 
-    describe("GET Tests", () => {
-        it("Get all records:", (done) => {
-            chai.request(server)
-                .post("/records")
-                .end((err, res) => {
-                    res.should.have.status(200)
-                    res.body.should.have.property('recs')
-                    done()
-                })
-        })
+    describe("GET records test", () => {
 
-        it("Gets a specific record:", (done) => {
-            chai.request(server)
-                .post("/records/a_1650336193906")
-                .end((err, res) => {
-                    res.body.should.have.property('message')
-                    res.body.should.have.property('id').eql("a_1650336193906")
-                    done()
-                })
+        describe("Get all records", () => {
+            it("Should return all previous analysis records", (done) => {
+                chai.request(server)
+                    .post("/records")
+                    .end((err, res) => {
+                        res.should.have.status(200)
+                        res.body.should.have.property('recs')
+                        done()
+                    })
+            })
         })
-
-        it("Gets a record that doesn't exist - 400 bad request", (done) => {
-            chai.request(server)
-                .get("/records/a_gb43iugbregrgbeui4gbuirelgbhjdfg")
-                .end((err, res) => {
-                    res.should.have.status(400)
-                    done()
-                })
+        describe("Get a specific record from the database", () => {
+            it("Should return the speficied record ", (done) => {
+                chai.request(server)
+                    .post("/records/a_1650336193906")
+                    .end((err, res) => {
+                        res.body.should.have.property('message')
+                        res.body.should.have.property('id').eql("a_1650336193906")
+                        done()
+                    })
+            })
+        })
+        describe("Get a record that doesn't exist", () => {
+            it("Should return a 400 status code", (done) => {
+                chai.request(server)
+                    .get("/records/a_gb43iugbregrgbeui4gbuirelgbhjdfg")
+                    .end((err, res) => {
+                        res.should.have.status(400)
+                        done()
+                    })
+            })
         })
     })
+
+    var id
+
+    describe("Adding a new record to the database", () => {
+        it("Should insert the sample document into the database and give it an ID", async () => {
+            var data
+            try {
+                data = fs.readFileSync('./data/sample_response.json', 'utf8')
+            } catch (err) {
+                console.error(err)
+            }
+            id = await dbclient.pushNewWatson(JSON.parse(data))
+            assert.equal(id, "a_test")
+        })
+    })
+
+    describe("Delete a record from the database", () => {
+        it("Should delete the sample document", async () => {
+            const status = await dbclient.delete_one(id)
+            assert.equal(status, true)
+        })
+    })
+
 })
 
 describe("Test Scraper Queries (POST form + run Go script)", () => {
@@ -56,12 +86,14 @@ describe("Test Scraper Queries (POST form + run Go script)", () => {
                     replies: "on",
                     accountsOptions: "russel",
                     since: "2023-01-01",
-                    until: "2024-01-01"
+                    until: "2024-01-01",
+                    rest: "yes"
                 }
 
                 chai.request(server)
                     .post("/submit-form")
-                    .field(parameters)
+                    .type("form")
+                    .send(parameters)
                     .end((err, res) => {
                         res.should.have.status(204)
                         done()
@@ -77,12 +109,14 @@ describe("Test Scraper Queries (POST form + run Go script)", () => {
                     replies: "on",
                     accountsOptions: "@tha39bgkj3qkjb4tj4kt",
                     since: "2021-01-01",
-                    until: "2022-01-01"
+                    until: "2022-01-01",
+                    rest: "yes"
                 }
 
                 chai.request(server)
                     .post("/submit-form")
-                    .field(parameters)
+                    .type("form")
+                    .send(parameters)
                     .end((err, res) => {
                         res.should.have.status(204)
                         done()
@@ -101,7 +135,8 @@ describe("Test Scraper Queries (POST form + run Go script)", () => {
                     replies: "on",
                     accountsOptions: "all",
                     since: "2021-01-01",
-                    until: "2022-06-06"
+                    until: "2022-06-06",
+                    rest: "yes"
                 }
 
                 chai.request(server)
@@ -123,7 +158,8 @@ describe("Test Scraper Queries (POST form + run Go script)", () => {
                     replies: "on",
                     accountsOptions: "russel",
                     since: "2021-01-01",
-                    until: "2022-06-06"
+                    until: "2022-06-06",
+                    rest: "yes"
                 }
 
                 chai.request(server)
@@ -145,7 +181,8 @@ describe("Test Scraper Queries (POST form + run Go script)", () => {
                     replies: "on",
                     accountsOptions: "unisouthampton",
                     since: "2021-01-01",
-                    until: "2022-06-06"
+                    until: "2022-06-06",
+                    rest: "yes"
                 }
 
                 chai.request(server)

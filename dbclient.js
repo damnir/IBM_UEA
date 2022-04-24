@@ -1,4 +1,5 @@
 var MongoClient = require('mongodb').MongoClient;
+var ObjectID = require('mongodb').ObjectId;
 var url = "mongodb://localhost:27017/";
 const fs = require('fs')
 const axios = require('axios')
@@ -15,21 +16,51 @@ function createCollection() {
     });
 }
 
-function pushNewWatson(data, collection) {
-    MongoClient.connect(url, function (err, db) {
+async function pushNewWatson(data, collection) {
+    var doc
+    try {
+        await MongoClient.connect(url, async function (err, db) {
+
+            if (err) throw err;
+
+            var dbo = db.db("mydb");
+            await dbo.collection("watson_response").insertOne(data, async function (err, res) {
+                if (err) throw err;
+                // console.log("1 document inserted");
+                db.close();
+
+            });
+
+        });
+    } finally {
+        return data._id
+
+    }
+}
+
+async function delete_one(id, collection) {
+    var deleted = true
+
+    await MongoClient.connect(url, async function (err, db) {
 
         if (err) throw err;
+        deleted = true
 
         var dbo = db.db("mydb");
-        dbo.collection("watson_response").insertOne(data, function (err, res) {
-            if (err) throw err;
-            console.log("1 document inserted");
-            db.close();
-            
-        });
+        await dbo.collection("watson_response").deleteOne(
+            { _id: id }, function (err, res) {
 
+                // console.log("doc with id " + id + "deleted");
+                if (err) {
+                    deleted = false
+                } 
+                db.close();
+            });
     });
+    return deleted
+
 }
+
 
 async function query_id(id, collection) {
 
@@ -111,13 +142,8 @@ async function query_one(id) {
 }
 
 
-
-
-
-
-
 module.exports = {
-    createCollection, pushNewWatson, query_id, query_all, query_one
+    createCollection, pushNewWatson, query_id, query_all, query_one, delete_one
 }
 
 // query_all()

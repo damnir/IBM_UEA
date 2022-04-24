@@ -8,6 +8,7 @@ var body_parser = require("body-parser")
 var dbclient = require('./dbclient')
 var watsonclient = require('./watson')
 const { resolve } = require("path")
+const e = require("express")
 
 app.use(express.static('public'))
 
@@ -53,7 +54,7 @@ app.get("/records/:id", async (req, res) => {
     doc = await dbclient.query_one(req.params)
     docs = await dbclient.query_all()
 
-    if(!doc) {
+    if (!doc) {
         res.sendStatus(400)
         return
     }
@@ -93,7 +94,7 @@ app.post('/records/:id', async (req, res) => {
     data = []
     doc = await dbclient.query_one(String(req.params.id)).then(() => {
         console.log("JASF" + doc)
-        if(!doc){
+        if (!doc) {
             // res.status(400)
             return
         }
@@ -139,7 +140,7 @@ app.post('/records/:id/:export'), (req, res) => {
 app.post('/submit-form', async (req, res) => {
     // watsonclient.new_request(req.body)
 
-    console.log(req.body)
+    // console.log(req.body)
     var args = ["run", "scraper.go", req.body.accountsOptions]
 
     var rtArg = ""
@@ -156,14 +157,22 @@ app.post('/submit-form', async (req, res) => {
     var process = spawn("go", args);
 
     process.on('exit', async function () {
-        console.log("query finished")
+        // console.log("query finished")
         if (read_result() === "") {
             console.log("no results.")
-            res.status(204).send("0 results matching the query.")
+            if (req.body.rest === "yes") {
+                res.sendStatus(204)
+            } else {
+                res.status(204).redirect("/")
+            }
         }
         else {
-            // watsonclient.new_request(req.body)
-            res.status(202).send("Tweets found, starting analysis...")
+            if(req.body.rest === "yes"){
+                res.sendStatus(202)
+            } else {
+                id = await watsonclient.new_request(req.body)
+                res.status(202).redirect("/records/" + id)
+            }
         }
     })
 
@@ -183,7 +192,7 @@ function read_result() {
 
     try {
         data = fs.readFileSync('data/query_result.txt', 'utf8')
-        console.log(data)
+        // console.log(data)
     } catch (err) {
         console.error(err)
     }

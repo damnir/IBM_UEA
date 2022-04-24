@@ -38,7 +38,8 @@ var queryParams = {
     count: '25'
 };
 
-async function query() {
+async function query(extra) {
+    var data
     queryParams = {
         environmentId: '44c46920-a956-4d4a-b37e-3120a33f7216',
         collectionId: file.collectionid,
@@ -55,7 +56,7 @@ async function query() {
             queryResponse['summary'] = summarise(queryResponse)
 
             response = JSON.stringify(queryResponse, null, 2)
-            console.log(response);
+            // console.log(response);
 
             fs.writeFile('./data/watson_response.json', response, err => {
                 if (err) {
@@ -68,16 +69,19 @@ async function query() {
 
             // db.pushNewWatson(JSON.parse(response))
             // pushToDb(response)
+            data = response
         })
         .catch(err => {
             console.log('error:', err);
         });
+    return data
 
 }
 
-async function pushToDb(data) {
+function pushToDb(data) {
     var db = require('./dbclient')
     db.pushNewWatson(JSON.parse(data))
+    return JSON.parse(data)._id
 
 }
 
@@ -369,10 +373,18 @@ async function refresh_collection() {
     }
 }
 
-function new_request(params) {
+async function new_request(params) {
     extra = params
 
-    refresh_collection()
+    await refresh_collection()
+    await add_documents()
+    data = await query(extra)
+    id = await pushToDb(data)
+
+
+    console.log(id)
+    return id
+    
     // console.log("poopoo::::" + extra + "poopoooo")
 }
 
@@ -411,10 +423,12 @@ function read_result() {
 
 // new_request()
 // query()
-async function test() {
-    test = await refresh_collection()
-    console.log(test)
-}
+// async function test() {
+//     test = await refresh_collection()
+//     console.log(test)
+// }
+
+// new_request()
 
 // async function test() {
 //     test = await add_documents()
