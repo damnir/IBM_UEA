@@ -50,7 +50,6 @@ async function delete_one(id, collection) {
         await dbo.collection("watson_response").deleteOne(
             { _id: id }, function (err, res) {
 
-                // console.log("doc with id " + id + "deleted");
                 if (err) {
                     deleted = false
                 } 
@@ -69,14 +68,10 @@ async function query_id(id, collection) {
     try {
         await client.connect();
         const database = client.db("mydb");
-        const movies = database.collection(collection);
-        // Query for a movie that has the title 'The Room'
+        const doc = database.collection(collection);
         const query = { _id: id };
 
-        res = await movies.findOne(query)
-        // since this method returns the matched document, not a cursor, print it directly
-        //   console.log(movie.accounts);
-
+        res = await doc.findOne(query)
 
     } finally {
         await client.close();
@@ -95,7 +90,6 @@ async function query_all() {
         await client.connect();
         const database = client.db("mydb");
         const data = database.collection("watson_response");
-        // Query for a movie that has the title 'The Room'
         const query = { query_type: "all" };
 
         res = await data.find(query)
@@ -119,10 +113,10 @@ async function query_one(id) {
     try {
         await client.connect();
         const database = client.db("mydb");
-        const movies = database.collection("watson_response");
+        const doc = database.collection("watson_response");
         const query = { _id: id['id'] };
 
-        res = await movies.findOne(query)
+        res = await doc.findOne(query)
 
     } finally {
         await client.close();
