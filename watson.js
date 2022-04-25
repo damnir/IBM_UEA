@@ -3,7 +3,6 @@ const { IamAuthenticator } = require('ibm-watson/auth');
 const fs = require('fs')
 
 var response = ""
-var collectionId = ""
 var extra = ""
 
 const fileName = './data/watson_api.json';
@@ -13,12 +12,7 @@ var express = require('express');
 var router = express.Router();
 var body_parser = require("body-parser")
 
-
-// router.use(function timeLog(req, res, next) {
-//     console.log('Time: ', Date.now());
-//     next();
-//   });
-
+//api setup
 const discovery = new DiscoveryV1({
     version: '2020-08-27',
     authenticator: new IamAuthenticator({
@@ -27,48 +21,68 @@ const discovery = new DiscoveryV1({
     serviceUrl: 'https://api.eu-gb.discovery.watson.cloud.ibm.com/instances/57273055-1496-469a-8c45-5fdf421f711b',
 });
 
+//env id for the archive collection
 const listCollectionsParams = {
     environmentId: '44c46920-a956-4d4a-b37e-3120a33f7216',
 };
 
-//tweet test 2
-var queryParams = {
-    environmentId: '44c46920-a956-4d4a-b37e-3120a33f7216',
-    collectionId: file.collectionid,
-    count: '25'
-};
+//post new NL query
+router.post("/new_query/:query", async (req, res) => {
 
+    //for client visual request render view
+    if (req.params.query === "q") {
+        res.render("query_result", {
+            query: response,
+            id: req.body.query
+        })
+    } // else just send the response
+    else {
+        response = await nl_query(req.params.query)
+
+        res.send({
+            message: response
+        })
+    }
+
+})
+
+//get NL query
+router.get("/new_query/:query", async (req, res) => {
+    console.log(req.body.query)
+
+    res.render("query_result", {
+        query: response,
+        id: req.params.query
+    })
+
+})
+
+//returns the whole dynamic collection
 async function query(extra) {
     var data
     queryParams = {
         environmentId: '44c46920-a956-4d4a-b37e-3120a33f7216',
         collectionId: file.collectionid,
-        // naturalLanguageQuery: "covid",
         count: '50'
     };
+
     await discovery.query(queryParams)
         .then(async queryResponse => {
             queryResponse["_id"] = "a_" + Date.now()
             queryResponse["query_type"] = "all"
             queryResponse["info"] = extra
-
-            // queryResponse['summary'] = summarise(queryResponse)
+            //add summary to the report
             queryResponse['summary'] = summarise(queryResponse)
 
             response = JSON.stringify(queryResponse, null, 2)
-            // console.log(response);
 
+            //change the local latest query response, also add to db later
             fs.writeFile('./data/watson_response.json', response, err => {
                 if (err) {
                     console.error(err)
                     return
                 }
-                //file written successfully
             })
-
-
-            // db.pushNewWatson(JSON.parse(response))
-            // pushToDb(response)
             data = response
         })
         .catch(err => {
@@ -78,6 +92,7 @@ async function query(extra) {
 
 }
 
+//add record to the db
 function pushToDb(data) {
     var db = require('./dbclient')
     db.pushNewWatson(JSON.parse(data))
@@ -85,6 +100,7 @@ function pushToDb(data) {
 
 }
 
+//NL discovery query api call
 async function nl_query(query) {
     queryParams = {
         environmentId: '44c46920-a956-4d4a-b37e-3120a33f7216',
@@ -96,8 +112,6 @@ async function nl_query(query) {
     try {
         await discovery.query(queryParams)
             .then(async queryResponse => {
-                // response = JSON.stringify(queryResponse, null, 2)
-                // console.log(response);
                 response = queryResponse
                 return queryResponse
             })
@@ -110,44 +124,7 @@ async function nl_query(query) {
     }
 }
 
-router.post("/new_query/:query", async (req, res) => {
-
-    if (req.params.query === "q") {
-        res.render("query_result", {
-            query: response,
-            id: req.body.poo
-        })
-    }
-    else {
-
-        console.log(req.params.query)
-        response = await nl_query(req.params.query)
-
-        res.send({
-            message: response
-        })
-    }
-
-})
-
-router.get("/new_query/:query", async (req, res) => {
-    console.log(req.body.poo)
-    // response = await nl_query(req.params.query)
-
-    res.render("query_result", {
-        query: response,
-        id: req.params.query
-    })
-
-    // req.body.forEach(obj => {
-    //     console.log(obj)
-    // })
-
-    // console.log(response)
-    console.log("ID" + req.body.poo)
-
-})
-
+//really ugly function for summarising the query, self explanatory
 function summarise(data) {
 
     var no_results = data['result']['matching_results']
@@ -208,31 +185,20 @@ function summarise(data) {
         return b[1] - a[1];
     });
 
-
     counts = [];
     sentiment.forEach(function (x) { counts[x] = (counts[x] || 0) + 1; });
-    // f_sentiment = []
-    // counts.forEach(element => f_sentiment.push([element]))
-    // counts.forEach(element => console.log(element))
-    // console.log(counts)
     sentiment = { 'positive': counts['positive'], 'neutral': counts['neutral'], 'negative': counts['negative'] }
     console.log(sentiment)
-
 
     return { 'concepts': top_concepts, 'entities': top_entities, 'categories': top_categories, 'sentiment': sentiment }
 }
 
+//get doc ids for the latest query
 function get_docs_id() {
     var data = []
     try {
-
         data = fs.readFileSync('data/query_result.txt', 'utf8')
-
         data = data.replace(/^\s+|\s+$/g, '');
-
-        // fs.unlink("data/query_result.txt", () => {})
-        console.log(data)
-        console.log(typeof (data))
     } catch (err) {
         console.error(err)
         return
@@ -241,10 +207,12 @@ function get_docs_id() {
     return data.split('\n')
 }
 
+//add documents and process them
 async function add_documents() {
 
     data = get_docs_id()
 
+    //load in the latest query results
     data.forEach(val => {
         var addDocumentParams = {
             environmentId: '44c46920-a956-4d4a-b37e-3120a33f7216',
@@ -255,6 +223,7 @@ async function add_documents() {
         addRequest(addDocumentParams)
     })
 
+    //add the documents
     async function addRequest(params) {
         await discovery.addDocument(params)
             .then(async documentAccepted => {
@@ -266,7 +235,8 @@ async function add_documents() {
             })
     }
 
-    async function test() {
+    //wait until the processing is finished
+    async function waitf() {
         var stop = false
         while (!stop) {
             await sleep(1500)
@@ -275,13 +245,13 @@ async function add_documents() {
                 return true
             }
         }
-        // query()
     }
 
-    await test()
+    await waitf()
     return true
 }
 
+//check status of the collection (ie number of documents being processed etc)
 async function check_status() {
 
     var finished = false
@@ -291,25 +261,22 @@ async function check_status() {
         collectionId: file.collectionid
     }
 
+    //only return true if it checks out that the processing is finished
     try {
         await discovery.getCollection(getCollectionParams)
             .then(collection => {
                 console.log(collection['result']['document_counts'])
                 if (collection['result']['document_counts']['processing'] == 0 &&
                     collection['result']['document_counts']['pending'] == 0) {
-                    // console.log(true)
+
                     finished = true
                 }
-
             })
             .catch(err => {
                 console.log('error:', err);
             })
     } finally {
-        // console.log(res['accounts'])
-
         return finished
-
     }
 
 }
@@ -336,7 +303,7 @@ async function refresh_collection() {
     };
 
     try {
-
+        //delete collection
         await discovery.deleteCollection(deleteCollectionParams)
             .then(async deleteCollectionResponse => {
                 console.log(JSON.stringify(deleteCollectionResponse, null, 2));
@@ -345,7 +312,7 @@ async function refresh_collection() {
             .catch(err => {
                 console.log('error:', err);
             });
-
+        //make a fresh collection
         async function createNewCollection(params) {
             await discovery.createCollection(params)
                 .then(collection => {
@@ -353,26 +320,25 @@ async function refresh_collection() {
 
                     file.collectionid = collection.result.collection_id
 
+                    //write the new collection ID to the API doc
                     fs.writeFile(fileName, JSON.stringify(file, null, 2), function writeJSON(err) {
                         if (err) return console.log(err);
                         console.log(JSON.stringify(file));
                         console.log('writing to ' + fileName);
                     });
-
-                    // add_documents()
                     success = true
-
                 })
                 .catch(err => {
                     console.log('error:', err);
                 });
         }
     }
-    finally{
+    finally {
         return success
     }
 }
 
+//The whole process
 async function new_request(params) {
     extra = params
 
@@ -384,54 +350,8 @@ async function new_request(params) {
 
     console.log(id)
     return id
-    
-    // console.log("poopoo::::" + extra + "poopoooo")
 }
 
 module.exports = {
     router, query, refresh_collection, add_documents, check_status, new_request
 }
-
-function read_result() {
-
-    var data = ""
-
-    try {
-        data = fs.readFileSync('data/query_result.txt', 'utf8')
-        // fs.unlink("data/query_result.txt", () => {})
-        console.log(data)
-    } catch (err) {
-        console.error(err)
-    }
-
-    if (data === "") {
-        console.log("poo")
-    }
-
-    return data
-}
-
-// console.log(read_result())
-
-// add_documents()
-// query()
-// get_docs_id()
-// refresh_collection()
-// test()
-
-// test()
-
-// new_request()
-// query()
-// async function test() {
-//     test = await refresh_collection()
-//     console.log(test)
-// }
-
-// new_request()
-
-// async function test() {
-//     test = await add_documents()
-//     console.log(test)
-// }
-// test()

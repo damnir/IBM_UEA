@@ -14,8 +14,17 @@ import (
 	twitterscraper "github.com/n0madic/twitter-scraper"
 )
 
+type TweetCompact struct {
+	T_id   string `json:"t_id"`
+	Name   string `json:"name"`
+	ImgUrl string `json:"url"`
+	Text   string `json:"text"`
+}
+
+//main query function
 func run_search(query string, retweets bool, replies bool, until string, since string) {
 
+	//check the parameters and update the query accordingly
 	if retweets {
 		query += " include:nativeretweets include:retweets"
 	}
@@ -24,9 +33,9 @@ func run_search(query string, retweets bool, replies bool, until string, since s
 	}
 	query += (" until:" + until + " since:" + since)
 
-	// fmt.Println(query)
 	var tweets []string
 
+	//save all responses in this file
 	f, err := os.OpenFile("data/query_result.txt",
 		os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
@@ -34,11 +43,13 @@ func run_search(query string, retweets bool, replies bool, until string, since s
 	}
 	defer f.Close()
 
+	//!!Have to save results locally to a file bc there isn't a nice way to send them back to javascript
+
 	scraper := twitterscraper.New()
-	scraper.SetSearchMode(twitterscraper.SearchLatest)
+	scraper.SetSearchMode(twitterscraper.SearchLatest) //search latest endpoint - more accurate results
 
 	for tweet := range scraper.WithDelay(1).SearchTweets(context.Background(),
-		query, 100) { //50 limit
+		query, 100) { //50 limit but can go over with cursors
 		if tweet.Error != nil {
 			panic(tweet.Error)
 		}
@@ -57,45 +68,8 @@ func run_search(query string, retweets bool, replies bool, until string, since s
 
 }
 
-func fetch(query string) {
-	scraper := twitterscraper.New()
-	//scraper.SetSearchMode(twitterscraper.SearchLatest)
-	fmt.Printf("now trying: %s\n", query)
-	// query += " until:2022-04-07"
-
-	for tweet := range scraper.WithDelay(1).GetTweets(context.Background(),
-		query, 5) { //50 limit
-		if tweet.Error != nil {
-			panic(tweet.Error)
-		}
-
-		unixTimeUTC := time.Unix(tweet.Timestamp, 0) //gives unix time stamp in utc
-
-		unitTimeInRFC3339 := unixTimeUTC.Format(time.RFC3339) //
-
-		// println("sending: " + tweet.Username)
-
-		// println(tweet.IsRetweet)
-		// if (strings.Contains(tweet.HTML, "IBM") || strings.Contains(tweet.HTML, "ibm") || strings.Contains(tweet.HTML, "@IBM")) && tweet.IsRetweet {
-		// 	// println("RETWEET: " + tweet.Text)
-		// 	// fmt.Print("\nRT: %s - date cre")
-		// 	fmt.Printf("Date created: %s\n Text: %s\n", unitTimeInRFC3339, tweet.Text)
-		// }
-		fmt.Printf("Date created: %s\n Text: %s\n", unitTimeInRFC3339, tweet.Text)
-
-	}
-}
-
-func get_tweet(id string) {
-	scraper := twitterscraper.New()
-	tweet, err := scraper.GetTweet(id)
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println(tweet.Retweets)
-}
-
-func test_users(locations []string) {
+//function to scrap UK uni associated accounts
+func scrape_users(locations []string) {
 	scraper := twitterscraper.New().SetSearchMode(twitterscraper.SearchUsers)
 
 	f, err := os.Create("accounts_new.txt")
@@ -106,17 +80,19 @@ func test_users(locations []string) {
 
 	defer f.Close()
 
+	//first scrape all profiles associated with the keyword 'university'
 	for profile := range scraper.WithDelay(2).SearchProfiles(context.Background(), "university", 5000) {
 		if profile.Error != nil {
 			panic(profile.Error)
 		}
+
 		fmt.Printf("Location: %s, Username: %s\n", profile.Location, profile.Name)
-		// fmt.Println(profile.Profile)
 
 		loc := profile.Location
 
+		//for every account, check the location against every location from the file
 		for _, location := range locations {
-			if strings.Contains(loc, location) {
+			if strings.Contains(loc, location) { //if it matches a UK location, add to the list
 				_, err2 := f.WriteString(profile.Username + "\n")
 
 				if err2 != nil {
@@ -129,14 +105,16 @@ func test_users(locations []string) {
 	}
 }
 
+//foramt the ALL query
 func query_all(qt string, retweets bool, replies bool, until string, since string) {
 
 	path := ""
-	if qt == "russel" {
+	if qt == "russel" { //load in ALL queries
 		path = "data/query2.txt"
-	} else {
+	} else { //load in Russel queries
 		path = "data/query.txt"
 	}
+
 	file, err := os.Open(path)
 
 	if err != nil {
@@ -152,8 +130,8 @@ func query_all(qt string, retweets bool, replies bool, until string, since strin
 		queries = append(queries, scanner.Text())
 	}
 
+	//run search for every query individually
 	for _, query := range queries {
-		// fmt.Println(query)
 		run_search(query, true, true, until, since)
 	}
 
@@ -161,29 +139,9 @@ func query_all(qt string, retweets bool, replies bool, until string, since strin
 
 }
 
-type TweetCompact struct {
-	T_id   string `json:"t_id"`
-	Name   string `json:"name"`
-	ImgUrl string `json:"url"`
-	Text   string `json:"text"`
-}
-
+//convert Tweet object to TweetCompact and parse as JSON
 func toJson(tweet twitterscraper.Tweet) {
-
-	// e, err := json.MarshalIndent(tweet, "", " ")
-	// if err != nil {
-	// 	fmt.Println(err)
-	// 	return
-	// }
-	// fp.WriteString(string(e))
 	var text = tweet.Text
-	// text = strings.Replace(text, "\n", " *nl* ", -1)
-
-	// if len(tweet.Photos) >= 1 {
-	// 	fp.WriteString("{\"tweet_id\":" + "\"" + tweet.ID + "\"" + ",\n\"image\":" + "\"" + tweet.Photos[0] + "\"" + ",\n\"text\":" + "\"" + text + "\"\n}")
-	// } else {
-	// 	fp.WriteString("{\"tweet_id\":" + "\"" + tweet.ID + "\"" + ",\n\"text\":" + "\"" + text + "\"\n}")
-	// }
 
 	var photo_url = ""
 
@@ -198,13 +156,38 @@ func toJson(tweet twitterscraper.Tweet) {
 		Text:   text,
 	}
 
-	// println(data.T_id)
-	// println(data.text)
-
 	out, _ := json.MarshalIndent(data, "", " ")
-	println(string(out))
 
 	_ = ioutil.WriteFile("data/query_result/"+tweet.ID+".json", out, 0644)
+}
+
+//Mainly for testing! - fetch user's timeline
+func fetch(query string) {
+	scraper := twitterscraper.New()
+
+	for tweet := range scraper.WithDelay(1).GetTweets(context.Background(),
+		query, 5) { //50 limit
+		if tweet.Error != nil {
+			panic(tweet.Error)
+		}
+
+		unixTimeUTC := time.Unix(tweet.Timestamp, 0)
+
+		unitTimeInRFC3339 := unixTimeUTC.Format(time.RFC3339)
+
+		fmt.Printf("Date created: %s\n Text: %s\n", unitTimeInRFC3339, tweet.Text)
+
+	}
+}
+
+//Mainly for testing! - fetch a single tweet by id
+func get_tweet(id string) {
+	scraper := twitterscraper.New()
+	tweet, err := scraper.GetTweet(id)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(tweet.Retweets)
 }
 
 func main() {

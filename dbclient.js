@@ -103,16 +103,11 @@ async function query_all() {
         await res.forEach(doc => {
             docs.push(doc)
         })
-        // since this method returns the matched document, not a cursor, print it directly
-        //   console.log(movie.accounts);
 
 
     } finally {
-        // console.log(docs[0]['result']['results'])
         await client.close();
         return docs
-        // return res['accounts']
-
     }
 }
 
@@ -125,17 +120,12 @@ async function query_one(id) {
         await client.connect();
         const database = client.db("mydb");
         const movies = database.collection("watson_response");
-        // Query for a movie that has the title 'The Room'
         const query = { _id: id['id'] };
 
         res = await movies.findOne(query)
-        // since this method returns the matched document, not a cursor, print it directly
-        //   console.log(movie.accounts);
-
 
     } finally {
         await client.close();
-        // console.log(res['accounts'])
         return res
 
     }
@@ -145,9 +135,3 @@ async function query_one(id) {
 module.exports = {
     createCollection, pushNewWatson, query_id, query_all, query_one, delete_one
 }
-
-// query_all()
-
-// pushNewWatso/n("moo: goo")
-// test()
-// console.log(query_id("all_accounts", "data"))

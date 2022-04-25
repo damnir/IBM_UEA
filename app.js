@@ -21,7 +21,9 @@ app.use(watsonclient.router)
 
 app.get("/", async (req, res) => {
 
+    //get all accounts from the database
     accounts = await dbclient.query_id("all_accounts", "data")
+    //get all document records from the database
     docs = await dbclient.query_all()
 
     res.status(200).render("main", {
@@ -36,21 +38,21 @@ app.get("/records", async (req, res) => {
 
     res.render("records", {
         recs: docs,
-        query: null,
+        query: null, //placeholders
         id: null
     })
 })
 
 app.post("/records", async (req, res) => {
     docs = await dbclient.query_all()
-
+    //query all records
     res.status(200).send({
         recs: docs,
     })
 })
 
 app.get("/records/:id", async (req, res) => {
-
+    //query all records + query with id
     doc = await dbclient.query_one(req.params)
     docs = await dbclient.query_all()
 
@@ -68,14 +70,14 @@ app.get("/records/:id", async (req, res) => {
 })
 
 app.post('/records/:id', async (req, res) => {
-
+    //export slides, sheets and redirect the user to the document
     if (req.params.id === "export-slides") {
         var process = spawn("py", ['gapis/gslides.py'])
 
         process.on('exit', async function () {
             console.log("slides exported")
         })
-
+        //HARD CODED URL because if credentials are missing, this is the only doc available
         res.redirect("https://docs.google.com/presentation/d/1PYJKAZwK8OhWF6uyFRI-VuiMMkFmgYZ4PhZXVXJNIHA")
         return
     }
@@ -95,15 +97,12 @@ app.post('/records/:id', async (req, res) => {
     doc = await dbclient.query_one(String(req.params.id)).then(() => {
         console.log("JASF" + doc)
         if (!doc) {
-            // res.status(400)
             return
         }
         doc['result']['results'].forEach(element => {
             data.push(element['t_id'])
         });
     })
-
-    // if(!doc) return
 
     res.send({
         message: data,
@@ -113,14 +112,14 @@ app.post('/records/:id', async (req, res) => {
 })
 
 app.get('/records/:id/:export'), (req, res) => {
-
+    //redirect the user to the slide, Hard coded bc it's linked to my google account
     res.redirect('https://docs.google.com/presentation/d/1PYJKAZwK8OhWF6uyFRI-VuiMMkFmgYZ4PhZXVXJNIHA')
 }
 
 app.post('/records/:id/:export'), (req, res) => {
 
     if (req.params.export === "slides") {
-
+        //start the slides script
         var process = spawn("py", ['gapis/gslides.py'])
     }
 
@@ -129,22 +128,13 @@ app.post('/records/:id/:export'), (req, res) => {
     })
 }
 
-// app.post('/export-sheets'), (req, res) => {
-//     var process = spawn("py", ['gapis/gsheets.py'])
-
-//     process.on('exit', async function () {
-//         console.log("sheets exported")
-//     })
-// }
-
 app.post('/submit-form', async (req, res) => {
-    // watsonclient.new_request(req.body)
-
-    // console.log(req.body)
+    //basic args for the scraper
     var args = ["run", "scraper.go", req.body.accountsOptions]
 
     var rtArg = ""
 
+    //retweet & replies params
     if (req.body.retweets === 'on') {
         rtArg += 'r'
     }
@@ -152,12 +142,14 @@ app.post('/submit-form', async (req, res) => {
         rtArg += 'p'
     }
 
+    //add rt args and since - until dates
     args.push(rtArg); args.push(req.body.until); args.push(req.body.since)
-
+    //start the scraper
     var process = spawn("go", args);
 
+    //if REST request, only send back status - for testing purposes only
+    //otherwise start analysis process if query returns some results
     process.on('exit', async function () {
-        // console.log("query finished")
         if (read_result() === "") {
             console.log("no results.")
             if (req.body.rest === "yes") {
@@ -170,29 +162,28 @@ app.post('/submit-form', async (req, res) => {
             if(req.body.rest === "yes"){
                 res.sendStatus(202)
             } else {
+                //start the analysis process and redirect client to the record once finished
                 id = await watsonclient.new_request(req.body)
                 res.status(202).redirect("/records/" + id)
             }
         }
     })
-
-    console.log(args)
-
 })
 
+//placeholder
 app.get('/new_query', (req, res) => {
     res.render("new_query", {
         watson_response: null
     })
 })
 
+//read results from the latest query
 function read_result() {
 
     var data = ""
 
     try {
         data = fs.readFileSync('data/query_result.txt', 'utf8')
-        // console.log(data)
     } catch (err) {
         console.error(err)
     }
